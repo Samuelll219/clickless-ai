@@ -1,0 +1,92 @@
+{
+  "type": "object",
+  "properties": {
+    "category": {
+      "type": "string",
+      "enum": [
+        "plant_milk",
+        "milk",
+        "yogurt",
+        "cheese",
+        "nut_butters",
+        "breakfast_cereal",
+        "snack_bars",
+        "chips",
+        "crackers",
+        "cookies",
+        "chocolate_candy",
+        "nuts_seeds",
+        "bread",
+        "rice_grains",
+        "pasta",
+        "pasta_sauce",
+        "soup",
+        "juice",
+        "coffee_tea",
+        "bakery",
+        "beverages",
+        "breakfast",
+        "dairy",
+        "pantry",
+        "snacks"
+      ]
+    },
+    "dietary_tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "gluten_free",
+          "organic",
+          "vegan",
+          "vegetarian",
+          "non_gmo",
+          "lactose_free",
+          "kosher",
+          "no_added_sugar",
+          "fair_trade"
+        ]
+      }
+    },
+    "excluded_allergens": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "gluten",
+          "milk",
+          "eggs",
+          "peanuts",
+          "tree_nuts",
+          "soy",
+          "fish",
+          "shellfish",
+          "sesame",
+          "mustard",
+          "celery",
+          "lupin",
+          "sulphites"
+        ]
+      }
+    },
+    "max_price": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "quantity": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "required": [
+    "category",
+    "dietary_tags",
+    "excluded_allergens",
+    "max_price",
+    "quantity"
+  ],
+  "additionalProperties": false
+}

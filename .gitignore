@@ -1,0 +1,3 @@
+data/raw/pages/
+__pycache__/
+.pytest_cache/

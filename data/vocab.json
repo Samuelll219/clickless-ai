@@ -1,0 +1,209 @@
+{
+  "categories": [
+    {
+      "name": "plant_milk",
+      "display": "Plant-based milk",
+      "group": "beverages",
+      "price_range": [
+        2.99,
+        6.49
+      ]
+    },
+    {
+      "name": "milk",
+      "display": "Milk",
+      "group": "dairy",
+      "price_range": [
+        2.49,
+        5.99
+      ]
+    },
+    {
+      "name": "yogurt",
+      "display": "Yogurt",
+      "group": "dairy",
+      "price_range": [
+        1.29,
+        6.99
+      ]
+    },
+    {
+      "name": "cheese",
+      "display": "Cheese",
+      "group": "dairy",
+      "price_range": [
+        2.99,
+        9.99
+      ]
+    },
+    {
+      "name": "nut_butters",
+      "display": "Nut butters",
+      "group": "pantry",
+      "price_range": [
+        2.99,
+        9.99
+      ]
+    },
+    {
+      "name": "breakfast_cereal",
+      "display": "Breakfast cereal",
+      "group": "breakfast",
+      "price_range": [
+        2.99,
+        6.99
+      ]
+    },
+    {
+      "name": "snack_bars",
+      "display": "Snack bars",
+      "group": "snacks",
+      "price_range": [
+        3.49,
+        9.99
+      ]
+    },
+    {
+      "name": "chips",
+      "display": "Chips",
+      "group": "snacks",
+      "price_range": [
+        2.49,
+        5.99
+      ]
+    },
+    {
+      "name": "crackers",
+      "display": "Crackers",
+      "group": "snacks",
+      "price_range": [
+        2.49,
+        5.99
+      ]
+    },
+    {
+      "name": "cookies",
+      "display": "Cookies",
+      "group": "snacks",
+      "price_range": [
+        2.99,
+        6.99
+      ]
+    },
+    {
+      "name": "chocolate_candy",
+      "display": "Chocolate & candy",
+      "group": "snacks",
+      "price_range": [
+        1.99,
+        7.99
+      ]
+    },
+    {
+      "name": "nuts_seeds",
+      "display": "Nuts & seeds",
+      "group": "snacks",
+      "price_range": [
+        3.99,
+        13.99
+      ]
+    },
+    {
+      "name": "bread",
+      "display": "Bread",
+      "group": "bakery",
+      "price_range": [
+        2.99,
+        6.99
+      ]
+    },
+    {
+      "name": "rice_grains",
+      "display": "Rice & grains",
+      "group": "pantry",
+      "price_range": [
+        1.99,
+        7.99
+      ]
+    },
+    {
+      "name": "pasta",
+      "display": "Pasta",
+      "group": "pantry",
+      "price_range": [
+        1.29,
+        4.99
+      ]
+    },
+    {
+      "name": "pasta_sauce",
+      "display": "Pasta sauce",
+      "group": "pantry",
+      "price_range": [
+        2.49,
+        7.99
+      ]
+    },
+    {
+      "name": "soup",
+      "display": "Soup",
+      "group": "pantry",
+      "price_range": [
+        1.99,
+        5.99
+      ]
+    },
+    {
+      "name": "juice",
+      "display": "Juice",
+      "group": "beverages",
+      "price_range": [
+        2.49,
+        7.49
+      ]
+    },
+    {
+      "name": "coffee_tea",
+      "display": "Coffee & tea",
+      "group": "beverages",
+      "price_range": [
+        3.99,
+        14.99
+      ]
+    }
+  ],
+  "category_groups": [
+    "bakery",
+    "beverages",
+    "breakfast",
+    "dairy",
+    "pantry",
+    "snacks"
+  ],
+  "dietary_tags": [
+    "gluten_free",
+    "organic",
+    "vegan",
+    "vegetarian",
+    "non_gmo",
+    "lactose_free",
+    "kosher",
+    "no_added_sugar",
+    "fair_trade"
+  ],
+  "allergens": [
+    "gluten",
+    "milk",
+    "eggs",
+    "peanuts",
+    "tree_nuts",
+    "soy",
+    "fish",
+    "shellfish",
+    "sesame",
+    "mustard",
+    "celery",
+    "lupin",
+    "sulphites"
+  ]
+}
