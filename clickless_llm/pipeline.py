@@ -4,8 +4,15 @@ from __future__ import annotations
 
 from typing import Any
 
-from clickless_llm.extractor import extract_constraints, ExtractionError
-from clickless_llm.validator import validate_constraints, ValidationError
+from clickless_llm.extractor import (
+    DEFAULT_MODEL,
+    ExtractionError,
+    extract_constraints,
+)
+from clickless_llm.validator import (
+    ValidationError,
+    validate_constraints,
+)
 
 
 class PipelineError(RuntimeError):
@@ -15,26 +22,66 @@ class PipelineError(RuntimeError):
 def extract_and_validate(
     user_request: str,
     max_retries: int = 2,
+    model: str = DEFAULT_MODEL,
 ) -> dict[str, Any]:
-    """Extract constraints and validate them, retrying invalid outputs.
+    """Extract and validate constraints with corrective retries.
 
-    max_retries=2 means one initial attempt plus up to two retries.
+    The first attempt uses the original user request.
+
+    If validation fails, the validation error is included in the next
+    request so the LLM has explicit feedback about what must be corrected.
+
+    max_retries=2 means:
+        1 initial attempt + up to 2 corrective attempts.
     """
 
+    if not user_request or not user_request.strip():
+        raise ValueError("user_request must not be empty")
+
+    if max_retries < 0:
+        raise ValueError("max_retries must be >= 0")
+
+    original_request = user_request.strip()
+    current_request = original_request
     last_error: Exception | None = None
 
     for attempt in range(max_retries + 1):
         try:
-            extracted = extract_constraints(user_request)
+            extracted = extract_constraints(
+                current_request,
+                model=model,
+            )
+
             return validate_constraints(extracted)
 
-        except (ValidationError, ExtractionError) as exc:
+        except ValidationError as exc:
             last_error = exc
 
             if attempt == max_retries:
                 break
 
+            current_request = (
+                f"{original_request}\n\n"
+                "Your previous constraint extraction was invalid.\n"
+                f"Validation error: {exc}\n"
+                "Extract the constraints again from the ORIGINAL "
+                "shopping request.\n"
+                "Correct the validation problem without inventing, "
+                "removing, or relaxing any user constraint."
+            )
+
+        except ExtractionError as exc:
+            last_error = exc
+
+            if attempt == max_retries:
+                break
+
+            # Communication or malformed-response failures may be
+            # transient, so retry the original request.
+            current_request = original_request
+
     raise PipelineError(
-        f"Could not produce valid constraints after "
-        f"{max_retries + 1} attempts. Last error: {last_error}"
+        "Could not produce valid constraints after "
+        f"{max_retries + 1} attempts. "
+        f"Last error: {last_error}"
     )

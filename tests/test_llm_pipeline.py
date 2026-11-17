@@ -175,3 +175,54 @@ def test_multiple_constraints():
     assert result["excluded_allergens"] == ["peanuts"]
     assert result["max_price"] == 12
     assert result["quantity"] == 3
+def test_validation_failure_is_used_for_retry(monkeypatch):
+    """A validation error should be fed back into the corrective retry."""
+
+    calls = []
+
+    invalid = {
+        "category": "snacks",
+        "dietary_tags": ["high_protein"],
+        "excluded_allergens": [],
+        "max_price": 10,
+        "quantity": 1,
+    }
+
+    valid = {
+        "category": "snacks",
+        "dietary_tags": ["vegan"],
+        "excluded_allergens": [],
+        "max_price": 10,
+        "quantity": 1,
+    }
+
+    def fake_extract(request, model=None):
+        calls.append(request)
+
+        if len(calls) == 1:
+            return invalid
+
+        return valid
+
+    monkeypatch.setattr(
+        "clickless_llm.pipeline.extract_constraints",
+        fake_extract,
+    )
+
+    result = extract_and_validate(
+        "Get me a vegan snack under $10",
+        max_retries=2,
+    )
+
+    assert result == valid
+
+    # One initial attempt + one corrective retry.
+    assert len(calls) == 2
+
+    # The retry must preserve the original request.
+    assert "Get me a vegan snack under $10" in calls[1]
+
+    # Most importantly, the validation failure must be supplied
+    # to the corrective attempt.
+    assert "Validation error:" in calls[1]
+    assert "high_protein" in calls[1]
