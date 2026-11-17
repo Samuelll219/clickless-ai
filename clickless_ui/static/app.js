@@ -10,9 +10,26 @@ const constraintsList = document.querySelector("#constraints");
 const productsList = document.querySelector("#products");
 const cartItems = document.querySelector("#cart-items");
 const cartStatus = document.querySelector("#cart-status");
+const undoRemove = document.querySelector("#undo-remove");
+let removedLine = null;
 const cartKey = "clickless-ai-cart";
 const dollars = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
 const cart = loadCart();
+
+function validLine(line) {
+  return line && typeof line.code === "string" && line.code.trim().length > 0 &&
+    typeof line.name === "string" && line.name.trim().length > 0 &&
+    Number.isSafeInteger(line.cents) && line.cents >= 0 &&
+    Number.isSafeInteger(line.quantity) && line.quantity > 0 &&
+    Number.isSafeInteger(line.cents * line.quantity);
+}
+
+function validCart(lines) {
+  return lines.every(validLine) &&
+    new Set(lines.map(line => line.code)).size === lines.length &&
+    Number.isSafeInteger(lines.reduce((sum, line) => sum + line.cents * line.quantity, 0)) &&
+    Number.isSafeInteger(lines.reduce((sum, line) => sum + line.quantity, 0));
+}
 
 function element(tag, text, className) {
   const node = document.createElement(tag);
@@ -40,22 +57,26 @@ function displayName(value) {
 function loadCart() {
   try {
     const lines = JSON.parse(localStorage.getItem(cartKey) ?? "[]");
-    if (!Array.isArray(lines)) return new Map();
-    return new Map(lines.filter(line =>
-      line && typeof line.code === "string" && line.code.length > 0 &&
-      typeof line.name === "string" && Number.isSafeInteger(line.cents) &&
-      line.cents >= 0 && Number.isSafeInteger(line.quantity) && line.quantity > 0
-    ).map(line => [line.code, line]));
+    if (!Array.isArray(lines) || !validCart(lines)) {
+      cartStatus.textContent = "The saved cart could not be restored. Please add your items again.";
+      return new Map();
+    }
+    return new Map(lines.map(line => [line.code, line]));
   } catch {
+    cartStatus.textContent = "The saved cart is unavailable. You can still shop in this tab.";
     return new Map();
   }
 }
 
 function changeCart(product, quantity, message, focusAction) {
-  if (!Number.isSafeInteger(quantity)) {
-    cartStatus.textContent = "That quantity is too large.";
-    return;
+  const proposed = [...cart.values()].filter(line => line.code !== product.code);
+  if (quantity > 0) proposed.push({ ...product, quantity });
+  if (!Number.isSafeInteger(quantity) || quantity < 0 || !validCart(proposed)) {
+    cartStatus.textContent = "Enter a valid quantity within the supported total.";
+    return false;
   }
+  removedLine = quantity === 0 ? cart.get(product.code) : null;
+  undoRemove.hidden = !removedLine;
   if (quantity > 0) {
     cart.set(product.code, { code: product.code, name: product.name, cents: product.cents, quantity });
   } else {
@@ -68,7 +89,14 @@ function changeCart(product, quantity, message, focusAction) {
     cartStatus.textContent += " Cart changes will last until this page closes.";
   }
   renderCart(product.code, focusAction);
+  return true;
 }
+
+undoRemove.addEventListener("click", () => {
+  if (!removedLine) return;
+  const line = removedLine;
+  changeCart(line, line.quantity, `Restored ${line.name}.`, "increase");
+});
 
 function renderCart(focusCode, focusAction) {
   cartItems.replaceChildren();
@@ -88,20 +116,48 @@ function renderCart(focusCode, focusAction) {
       `Updated ${line.name}.`, "increase"), `Increase quantity of ${line.name}`);
     const remove = button("Remove", () => changeCart(line, 0, `Removed ${line.name}.`, "remove"),
       `Remove ${line.name}`);
-    controls.append(decrease, element("span", line.quantity), increase, remove);
-    item.append(detail, element("p", `${money(line.cents)} each`, "meta"), controls);
+    const quantityInput = element("input", undefined, "quantity");
+    quantityInput.type = "number";
+    quantityInput.min = "1";
+    quantityInput.step = "1";
+    quantityInput.value = line.quantity;
+    quantityInput.setAttribute("aria-label", `Quantity of ${line.name}`);
+    quantityInput.addEventListener("change", () => {
+      const quantity = Number(quantityInput.value);
+      if (quantity < 1 || !changeCart(line, quantity, `Updated ${line.name}.`, "quantity")) {
+        quantityInput.value = line.quantity;
+        cartStatus.textContent = "Enter a positive whole-number quantity within the supported total.";
+      }
+    });
+    controls.append(decrease, quantityInput, increase, remove);
+    item.append(detail, element("p", `${money(line.cents)} each · ${line.code}`, "meta"), controls);
     cartItems.append(item);
     if (line.code === focusCode) {
-      nextFocus = focusAction === "decrease" ? decrease : increase;
+      nextFocus = focusAction === "quantity" ? quantityInput : focusAction === "decrease" ? decrease : increase;
     }
   }
   document.querySelector("#cart-empty").hidden = cart.size > 0;
   document.querySelector("#subtotal").textContent = money(subtotal);
+  const count = [...cart.values()].reduce((sum, line) => sum + line.quantity, 0);
+  document.querySelector("#cart-count").textContent = `${count} ${count === 1 ? "item" : "items"}`;
   if (focusAction) (nextFocus ?? cartItems.querySelector("button") ?? requestInput).focus();
 }
 
 function renderResults(result) {
-  const { constraints, products, quantity, status } = result;
+  const { constraints, products, quantity, status } = result ?? {};
+  const stringList = value => Array.isArray(value) && value.every(item => typeof item === "string");
+  if (!constraints || typeof constraints.category !== "string" ||
+      !stringList(constraints.dietary_tags) || !stringList(constraints.excluded_allergens) ||
+      !(constraints.max_price === null || (Number.isFinite(constraints.max_price) && constraints.max_price >= 0)) ||
+      !Number.isSafeInteger(quantity) || quantity < 1 || !Array.isArray(products) ||
+      !["matched", "no_match"].includes(status) || (status === "matched") !== (products.length > 0) ||
+      !products.every(product => product && typeof product.category === "string" &&
+        (product.brand == null || typeof product.brand === "string") &&
+        stringList(product.dietary_tags) && stringList(product.allergens) &&
+        Number.isFinite(product.price) && product.price >= 0 &&
+        validLine({ ...product, cents: Math.round(product.price * 100), quantity }))) {
+    throw new Error("The search returned incomplete product information. Please try again.");
+  }
   const fields = [
     ["Category", displayName(constraints.category)],
     ["Quantity", quantity],
@@ -120,7 +176,7 @@ function renderResults(result) {
 
   resultsTitle.textContent = status === "no_match" ? "No matching products" : "Matching products";
   searchStatus.textContent = status === "no_match"
-    ? "No products satisfy all of the extracted constraints."
+    ? "No products satisfy all of these constraints. Edit your request to search again."
     : `${products.length} ${products.length === 1 ? "match" : "matches"} found.`;
   if (status === "matched") {
     for (const product of products) {
@@ -145,6 +201,12 @@ function renderResults(result) {
       }
       if (product.allergens.length) {
         item.append(element("p", `Contains ${product.allergens.map(displayName).join(", ")}`, "meta"));
+      } else {
+        item.append(element("p", "No allergens recorded in this catalog.", "meta"));
+      }
+      item.append(element("p", `Barcode ${product.code}`, "meta"));
+      if (constraints.excluded_allergens.length) {
+        item.append(element("p", `Excluded allergens absent from catalog record: ${constraints.excluded_allergens.map(displayName).join(", ")}`, "meta match-detail"));
       }
       item.append(bottom);
       productsList.append(item);
@@ -160,33 +222,48 @@ form.addEventListener("submit", async event => {
   productsList.replaceChildren();
   searchStatus.classList.remove("error");
   const request = requestInput.value.trim();
-  if (!request) {
-    searchStatus.textContent = "Enter a shopping request.";
+  if (!request || request.length > 500) {
+    searchStatus.textContent = "Enter a shopping request between 1 and 500 characters.";
     requestInput.focus();
     return;
   }
 
   searchStatus.textContent = "Finding matching products…";
   submit.disabled = true;
+  submit.textContent = "Searching…";
+  form.setAttribute("aria-busy", "true");
   requestInput.readOnly = true;
+  const slowSearch = setTimeout(() => {
+    searchStatus.textContent = "Still searching. The first request may take longer while the model loads.";
+  }, 15000);
   try {
     const response = await fetch("/api/search", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ request }),
     });
-    const result = await response.json();
+    let result;
+    try {
+      result = await response.json();
+    } catch {
+      throw new Error("The search service returned an unreadable response. Please try again.");
+    }
     if (!response.ok) {
       searchStatus.classList.add("error");
-      searchStatus.textContent = result.error;
+      searchStatus.textContent = result?.error || "The search service is unavailable. Please try again.";
       return;
     }
     renderResults(result);
-  } catch {
+  } catch (error) {
     searchStatus.classList.add("error");
-    searchStatus.textContent = "The search failed. Try again.";
+    searchStatus.textContent = error instanceof TypeError
+      ? "Unable to reach the search service. Check your connection and try again."
+      : error.message;
   } finally {
+    clearTimeout(slowSearch);
+    form.setAttribute("aria-busy", "false");
     submit.disabled = false;
+    submit.textContent = "Find products";
     requestInput.readOnly = false;
   }
 });

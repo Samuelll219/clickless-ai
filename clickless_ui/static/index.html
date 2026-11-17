@@ -17,7 +17,8 @@
       <form id="search">
         <label for="request">Shopping request</label>
         <textarea id="request" name="request" rows="3" maxlength="500" required
-          placeholder="Find me 2 organic snacks under $5 each without peanuts."></textarea>
+          aria-describedby="request-help" placeholder="Find me 2 organic snacks under $5 each without peanuts."></textarea>
+        <p id="request-help" class="meta">Include a category, quantity, dietary preferences, and budget per item.</p>
         <button class="primary" type="submit">Find products</button>
       </form>
       <p id="search-status" class="status" role="status"></p>
@@ -28,11 +29,12 @@
       </section>
     </section>
     <aside class="cart" aria-labelledby="cart-title">
-      <h2 id="cart-title">Your cart</h2>
+      <div class="cart-heading"><h2 id="cart-title">Your cart</h2><span id="cart-count" class="meta"></span></div>
       <p id="cart-empty">Your cart is empty.</p>
       <ul id="cart-items"></ul>
       <div class="subtotal"><span>Subtotal</span><strong id="subtotal">$0.00</strong></div>
       <p id="cart-status" class="status" role="status"></p>
+      <button id="undo-remove" type="button" hidden>Undo removal</button>
     </aside>
   </main>
 </body>

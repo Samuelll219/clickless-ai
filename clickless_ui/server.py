@@ -42,20 +42,36 @@ def search(environ, start_response):
 
     try:
         from clickless_llm.config_c import run_config_c
-    except ModuleNotFoundError as exc:
+        from clickless_llm.pipeline import PipelineError
+        from clickless_llm.validator import ValidationError
+        from neo4j.exceptions import AuthError, ServiceUnavailable, SessionExpired
+    except ModuleNotFoundError:
         LOGGER.exception("Could not import Config C")
-        message = "Install the project dependencies from requirements.txt."
-        if exc.name in {"clickless_llm", "clickless_llm.config_c"}:
-            message = "Config C is unavailable. Run this UI with Soumya’s PR #1 included."
-        return respond(start_response, "503 Service Unavailable", {"error": message})
+        return respond(start_response, "503 Service Unavailable", {
+            "error": "Search is unavailable because the server setup is incomplete.",
+        })
 
     try:
         result = run_config_c(request.strip())
         return respond(start_response, "200 OK", result)
+    except PipelineError as exc:
+        LOGGER.exception("Constraint extraction failed")
+        if isinstance(exc.__cause__, ValidationError):
+            return respond(start_response, "422 Unprocessable Entity", {
+                "error": "We could not interpret this request. Include a product category and try rephrasing it.",
+            })
+        return respond(start_response, "503 Service Unavailable", {
+            "error": "The language service could not finish your request. Please try again shortly.",
+        })
+    except (ServiceUnavailable, SessionExpired, AuthError):
+        LOGGER.exception("Product database unavailable")
+        return respond(start_response, "503 Service Unavailable", {
+            "error": "The product database is unavailable. Please try again shortly.",
+        })
     except Exception:
         LOGGER.exception("Config C search failed")
         return respond(start_response, "502 Bad Gateway", {
-            "error": "The search could not finish. Check that Ollama and Neo4j are running, or try rephrasing your request.",
+            "error": "The search could not finish. Please try again.",
         })
 
 

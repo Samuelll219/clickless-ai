@@ -147,6 +147,39 @@ The UI work includes:
 - USD subtotals calculated in cents, with cart contents saved in the browser.
 - User-facing messages for no matches, invalid requests, and service errors.
 
+### UI reliability and usability improvements
+
+- Search progress and slow-model feedback, with duplicate submissions prevented while a request runs.
+- Direct whole-number quantity editing, item counts, and undo for the most recent removal. A subsequent cart change clears undo.
+- Requested-quantity line prices, visible barcodes, and catalog-based allergen match details.
+- Validation of returned products and saved cart data, preserving leading-zero barcodes and rejecting invalid prices, quantities, duplicate saved IDs, and unsafe totals.
+- Recovery messages for corrupt browser storage; shopping remains available in the current tab when saving fails.
+- Keyboard focus restoration after quantity edits, accessible control labels, and controls that wrap on narrow screens.
+- Separate messages for interpretation failures, language-service failures, and product-database failures; technical errors stay in server logs.
+
+### UI smoke checks
+
+Run from the repository root with the virtual environment active (Node.js is required for the cart check):
+
+```bash
+python -m pytest -m 'not integration' -q
+node --check clickless_ui/static/app.js
+node tests/ui_smoke.cjs
+```
+
+The Python checks exercise routes, request validation, Config C response forwarding,
+and service-error handling. The cart smoke check uses a simulated DOM to exercise
+quantity edits, undo, cents totals, persistence, no-match handling, and malformed data.
+The latest local run passed 79 Python tests and the cart smoke check; 4 service
+tests were skipped and 6 live integrations were deselected. These checks do not
+verify model accuracy or browser layout. A rendered-browser check remains pending:
+the execution sandbox prevented the local server from binding to port 8000.
+
+For a manual check, launch the UI with Ollama and Neo4j running, search for two
+items, add a match twice, edit its quantity, remove and undo, then reload to check
+persistence. Try an infeasible request and verify the cart stays intact. Repeat
+at a narrow phone-sized browser width and navigate the controls with Tab.
+
 ### Run the shopping UI and cart
 
 From the repository root:
