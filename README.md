@@ -131,3 +131,45 @@ Product IDs are OFF barcodes (`code`, string). Price is a float in USD.
 
 **Apriori add-ons.**
 `kg.cheapest_in_category(category, dietary_tags, excluded_allergens)`.
+
+## Sujay UI / cart — completed
+
+Sujay's UI and cart implementation is complete on the `Sujay-ui` branch. It connects the browser shopping flow to Soumya's [Config C PR #1](https://github.com/Samuelll219/clickless-ai/pull/1).
+
+The UI work includes:
+
+- A responsive shopping page with a natural-language request form.
+- A local Python web server that calls `run_config_c()` and returns extracted constraints, matches, quantity, and no-match status.
+- Product results with price, brand, category, dietary tags, and allergen details.
+- A cart that adds products at the requested quantity, groups by OFF barcode string, and supports quantity changes and removal.
+- USD subtotals calculated in cents, with cart contents saved in the browser.
+- User-facing messages for no matches, invalid requests, and service errors.
+
+### Run the shopping UI and cart
+
+Use a checkout that includes Soumya's Config C code.
+From the repository root:
+
+```bash
+python -m pip install -r requirements.txt
+ollama pull qwen2.5:7b
+# Start Ollama with ollama serve if it isn't already running.
+docker compose up -d
+python scripts/load_kg.py
+python -m clickless_ui
+```
+
+Open [ClickLess AI](http://127.0.0.1:8000). Enter a request, review the extracted
+criteria, and choose a matching product to add at the extracted quantity. A
+no-match response leaves the cart as it was. The price filter follows the KG's
+per-unit USD limit. The cart groups items by exact OFF barcode, calculates
+totals in cents, and saves quantities in this browser.
+
+To try the UI before PR #1 merges, use the locally fetched PR branch for the
+LLM package. Run the setup above through the catalog load, then launch with:
+
+```bash
+config_c_dir=$(mktemp -d)
+git archive origin/soumya-extractor-validator clickless_llm | tar -x -C "$config_c_dir"
+PYTHONPATH="$config_c_dir" python -m clickless_ui
+```

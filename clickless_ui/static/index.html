@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClickLess AI</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="shell wordmark"><span aria-hidden="true">+</span> ClickLess AI</div>
+  </header>
+  <main class="shell workspace">
+    <section class="shopping" aria-labelledby="shopping-title">
+      <h1 id="shopping-title">What are you shopping for?</h1>
+      <form id="search">
+        <label for="request">Shopping request</label>
+        <textarea id="request" name="request" rows="3" maxlength="500" required
+          placeholder="Find me 2 organic snacks under $5 each without peanuts."></textarea>
+        <button class="primary" type="submit">Find products</button>
+      </form>
+      <p id="search-status" class="status" role="status"></p>
+      <section id="results" aria-labelledby="results-title" hidden>
+        <h2 id="results-title">Matching products</h2>
+        <dl id="constraints"></dl>
+        <ul id="products" class="products"></ul>
+      </section>
+    </section>
+    <aside class="cart" aria-labelledby="cart-title">
+      <h2 id="cart-title">Your cart</h2>
+      <p id="cart-empty">Your cart is empty.</p>
+      <ul id="cart-items"></ul>
+      <div class="subtotal"><span>Subtotal</span><strong id="subtotal">$0.00</strong></div>
+      <p id="cart-status" class="status" role="status"></p>
+    </aside>
+  </main>
+</body>
+</html>
