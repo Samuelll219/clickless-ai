@@ -3,6 +3,7 @@
 import json
 import logging
 from pathlib import Path
+from threading import BoundedSemaphore
 
 
 STATIC_ROOT = Path(__file__).with_name("static")
@@ -13,6 +14,7 @@ ASSETS = {
 }
 MAX_REQUEST_BYTES = 8192
 LOGGER = logging.getLogger(__name__)
+SEARCH_SLOT = BoundedSemaphore(1)
 
 
 def respond(start_response, status, body, content_type="application/json"):
@@ -51,6 +53,10 @@ def search(environ, start_response):
             "error": "Search is unavailable because the server setup is incomplete.",
         })
 
+    if not SEARCH_SLOT.acquire(blocking=False):
+        return respond(start_response, "429 Too Many Requests", {
+            "error": "Another search is still finishing. Please retry shortly.",
+        })
     try:
         result = run_config_c(request.strip())
         return respond(start_response, "200 OK", result)
@@ -73,6 +79,8 @@ def search(environ, start_response):
         return respond(start_response, "502 Bad Gateway", {
             "error": "The search could not finish. Please try again.",
         })
+    finally:
+        SEARCH_SLOT.release()
 
 
 def application(environ, start_response):

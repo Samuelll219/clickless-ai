@@ -63,3 +63,37 @@ def test_invalid_extraction_has_actionable_message():
     error.__cause__ = ValidationError("unknown category")
     with patch("clickless_llm.config_c.run_config_c", side_effect=error):
         assert request()[0].startswith("422")
+
+
+def test_busy_search_does_not_block_assets_or_start_another_pipeline():
+    from concurrent.futures import ThreadPoolExecutor
+    from threading import Event
+
+    started, finish = Event(), Event()
+
+    def slow_pipeline(_):
+        started.set()
+        assert finish.wait(5)
+        return {"status": "no_match", "products": []}
+
+    with patch("clickless_llm.config_c.run_config_c", side_effect=slow_pipeline) as run:
+        with ThreadPoolExecutor(max_workers=1) as executor:
+            first = executor.submit(request)
+            try:
+                assert started.wait(5)
+                code, payload = request()
+                assert code.startswith("429")
+                assert "retry" in json.loads(payload)["error"]
+                assert request("/", "GET")[0] == "200 OK"
+                assert run.call_count == 1
+            finally:
+                finish.set()
+            assert first.result()[0] == "200 OK"
+        assert request()[0] == "200 OK"
+
+
+def test_failed_search_releases_capacity_for_retry():
+    with patch("clickless_llm.config_c.run_config_c", side_effect=RuntimeError("failure")):
+        assert request()[0].startswith("502")
+    with patch("clickless_llm.config_c.run_config_c", return_value={"status": "no_match"}):
+        assert request()[0] == "200 OK"

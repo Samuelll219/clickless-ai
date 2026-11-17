@@ -22,7 +22,7 @@ h2 { font-size: 1.35rem; }
 h3 { font-size: 1rem; overflow-wrap: anywhere; }
 form { display: grid; gap: .75rem; }
 label { font-weight: 650; }
-textarea, button, input { font: inherit; }
+textarea, button, input, select { font: inherit; }
 textarea { width: 100%; resize: vertical; border: 1px solid #9aad9f; border-radius: .75rem; background: white; padding: .9rem 1rem; color: inherit; }
 textarea::placeholder { color: var(--muted); }
 button { cursor: pointer; min-height: 44px; border: 1px solid var(--border); border-radius: .6rem; padding: .5rem .8rem; background: #fff; color: var(--green); font-weight: 700; }
@@ -55,8 +55,18 @@ ul { list-style: none; margin: 0; padding: 0; }
 .controls { justify-content: start; align-items: center; flex-wrap: wrap; margin-top: .6rem; }
 .controls button { min-width: 2.4rem; }
 .subtotal { border-top: 1px solid var(--border); padding-top: .85rem; margin-top: .65rem; }
+.actions, .examples { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem; }
+.examples { margin-top: 1rem; }
+.examples button { font-size: .9rem; }
+#result-tools { margin-bottom: .85rem; }
+select { max-width: 100%; min-height: 44px; padding: .5rem; border: 1px solid var(--border); border-radius: .6rem; color: inherit; background: white; }
+.mobile-cart { display: none; }
+#cart { scroll-margin-top: 1rem; }
+#clear-cart, #undo-remove { margin-top: .5rem; }
 @media (max-width: 700px) {
   .workspace { grid-template-columns: 1fr; }
+  body { padding-bottom: calc(5rem + env(safe-area-inset-bottom)); }
+  .mobile-cart { display: block; position: fixed; bottom: max(.75rem, env(safe-area-inset-bottom)); left: 1rem; right: 1rem; padding: .85rem 1rem; border-radius: .75rem; background: var(--green); color: white; text-align: center; text-decoration: none; font-weight: 700; box-shadow: 0 3px 12px #162c2533; z-index: 2; }
 }
 @media (max-width: 380px) {
   .product-top, .cart-line { flex-wrap: wrap; }

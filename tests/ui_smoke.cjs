@@ -17,6 +17,7 @@ class Element {
   setAttribute(name, value) { this[name] = value; }
   addEventListener(name, listener) { this.listeners[name] = listener; }
   focus() {}
+  contains(node) { return this.children.some(child => child === node || child.contains(node)); }
   querySelector(tag) {
     for (const child of this.children) {
       if (child.tag === tag) return child;
@@ -40,20 +41,39 @@ function page(storage = new Map(), unavailableStorage = false) {
   };
   get('#search').append(new Element('button'));
   get('#request').value = 'two bars';
+  get('#sort-products').value = 'original';
+  const example = get('#example');
+  example.dataset = { request: 'Find 1 vegan plant milk under $6 each.' };
   let response = match;
   let ok = true;
+  let pending = false;
+  let calls = 0;
+  let timerId = 0;
   const timers = new Map();
+  const events = {};
+  const localStorage = { getItem: key => storage.get(key), setItem: (key, value) => {
+    if (unavailableStorage) throw new Error('Storage unavailable');
+    storage.set(key, value);
+  } };
   vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../clickless_ui/static/app.js'), 'utf8'), {
-    document: { querySelector: get, createElement: tag => new Element(tag) },
-    localStorage: { getItem: key => storage.get(key), setItem: (key, value) => {
-      if (unavailableStorage) throw new Error('Storage unavailable');
-      storage.set(key, value);
-    } },
-    setTimeout: callback => { timers.set(1, callback); return 1; },
+    document: { querySelector: get, querySelectorAll: () => [example], createElement: tag => new Element(tag) },
+    window: { addEventListener: (name, listener) => { events[name] = listener; } },
+    localStorage, AbortController,
+    setTimeout: (callback, delay) => { timers.set(++timerId, { callback, delay }); return timerId; },
     clearTimeout: key => timers.delete(key),
-    fetch: async () => ({ ok, json: async () => response }),
+    fetch: async (url, options) => {
+      calls++;
+      if (pending) await new Promise((resolve, reject) => {
+        options.signal.addEventListener('abort', () => reject(new Error('Aborted')), { once: true });
+      });
+      return { ok, json: async () => response };
+    },
   });
+  get('#search').requestSubmit = () => get('#search').listeners.submit({ preventDefault() {} });
   return { get, timers, storage,
+    calls: () => calls,
+    hold: value => { pending = value; },
+    storageEvent: (key = 'clickless-ai-cart') => events.storage({ key, storageArea: localStorage }),
     search: () => get('#search').listeners.submit({ preventDefault() {} }),
     reply: (value, success = true) => { response = value; ok = success; },
     add: () => get('#products').children[0].querySelector('button').listeners.click(),
@@ -113,5 +133,76 @@ function page(storage = new Map(), unavailableStorage = false) {
   await noStorage.search(); noStorage.add();
   assert.equal(noStorage.get('#subtotal').textContent, '$4.30');
   assert.match(noStorage.get('#cart-status').textContent, /until this page closes/);
-  console.log('PASS: search, cart edits, removal undo, persistence, invalid data, and errors');
+  p.get('#clear-cart').listeners.click();
+  assert.equal(p.get('#subtotal').textContent, '$0.00');
+  assert.equal(p.get('#clear-cart').disabled, true);
+  p.get('#undo-remove').listeners.click();
+  assert.equal(p.get('#subtotal').textContent, '$15.05');
+  assert.match(p.get('#mobile-cart').textContent, /7 items.*\$15\.05/);
+
+  // Two pages sharing storage: updates, remote clears, and invalid updates.
+  const other = page(p.storage);
+  other.get('#clear-cart').listeners.click();
+  p.storageEvent();
+  assert.equal(p.get('#subtotal').textContent, '$0.00');
+  assert.equal(p.get('#undo-remove').hidden, true);
+  other.get('#undo-remove').listeners.click();
+  p.storageEvent();
+  assert.equal(p.get('#subtotal').textContent, '$15.05');
+  p.storage.set('clickless-ai-cart', 'broken');
+  p.storageEvent();
+  assert.equal(p.get('#subtotal').textContent, '$15.05');
+  assert.match(p.get('#cart-status').textContent, /unchanged/);
+  p.storage.delete('clickless-ai-cart');
+  p.storageEvent(null);
+  assert.equal(p.get('#subtotal').textContent, '$0.00');
+
+  const sorted = page();
+  const cheap = { ...product, code: '000007', name: 'Apple bar', price: 1 };
+  sorted.reply({ ...match, products: [product, cheap] });
+  await sorted.search();
+  sorted.get('#sort-products').value = 'price-asc';
+  sorted.get('#sort-products').listeners.change();
+  assert.equal(sorted.get('#products').children[0].querySelector('h3').textContent, 'Apple bar');
+  assert.equal(sorted.get('#products').children.length, 2);
+  sorted.add();
+  assert.equal(sorted.get('#subtotal').textContent, '$2.00');
+  sorted.get('#sort-products').value = 'price-desc';
+  sorted.get('#sort-products').listeners.change();
+  assert.equal(sorted.get('#products').children[0].querySelector('h3').textContent, product.name);
+  sorted.get('#sort-products').value = 'name';
+  sorted.get('#sort-products').listeners.change();
+  assert.equal(sorted.get('#products').children.length, 2);
+  assert.deepEqual(sorted.get('#products').children.map(item => item.querySelector('h3').textContent),
+    [product.name, cheap.name].sort((a, b) => a.localeCompare(b)));
+  sorted.get('#example').listeners.click();
+  assert.equal(sorted.get('#request').value, sorted.get('#example').dataset.request);
+
+  const slow = page();
+  await slow.search(); slow.add();
+  slow.hold(true);
+  let running = slow.search();
+  await slow.search();
+  assert.equal(slow.calls(), 2, 'Duplicate submit must not send another request');
+  assert.equal(slow.get('#cancel-search').hidden, false);
+  [...slow.timers.values()].find(timer => timer.delay === 15000).callback();
+  assert.match(slow.get('#search-status').textContent, /Still searching/);
+  slow.get('#cancel-search').listeners.click();
+  await running;
+  assert.match(slow.get('#search-status').textContent, /cancelled/);
+  assert.equal(slow.get('#subtotal').textContent, '$4.30');
+  assert.equal(slow.get('#retry-search').hidden, false);
+  assert.equal(slow.get('#search').querySelector('button').disabled, false);
+  assert.equal(slow.timers.size, 0);
+  running = slow.search();
+  [...slow.timers.values()].find(timer => timer.delay === 180000).callback();
+  await running;
+  assert.match(slow.get('#search-status').textContent, /timed out/);
+  assert.equal(slow.get('#subtotal').textContent, '$4.30');
+  assert.equal(slow.timers.size, 0);
+  slow.hold(false);
+  await slow.get('#retry-search').listeners.click();
+  assert.equal(slow.get('#products').children.length, 1);
+  assert.equal(slow.get('#retry-search').hidden, true);
+  console.log('PASS: cart edits/undo, storage sync, sorting, examples, cancellation, timeout, retry, and validation');
 })().catch(error => { console.error(error); process.exitCode = 1; });

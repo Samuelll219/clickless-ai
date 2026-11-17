@@ -11,7 +11,15 @@ const productsList = document.querySelector("#products");
 const cartItems = document.querySelector("#cart-items");
 const cartStatus = document.querySelector("#cart-status");
 const undoRemove = document.querySelector("#undo-remove");
-let removedLine = null;
+const clearCart = document.querySelector("#clear-cart");
+const cancelSearch = document.querySelector("#cancel-search");
+const retrySearch = document.querySelector("#retry-search");
+const sortProducts = document.querySelector("#sort-products");
+const exampleButtons = document.querySelectorAll("[data-request]");
+let undoLines = null;
+let activeSearch = null;
+let lastResult = null;
+const searchTimeoutMs = 180000;
 const cartKey = "clickless-ai-cart";
 const dollars = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
 const cart = loadCart();
@@ -75,27 +83,70 @@ function changeCart(product, quantity, message, focusAction) {
     cartStatus.textContent = "Enter a valid quantity within the supported total.";
     return false;
   }
-  removedLine = quantity === 0 ? cart.get(product.code) : null;
-  undoRemove.hidden = !removedLine;
+  undoLines = quantity === 0 ? [...cart.values()] : null;
+  undoRemove.hidden = !undoLines;
+  undoRemove.textContent = "Undo removal";
   if (quantity > 0) {
     cart.set(product.code, { code: product.code, name: product.name, cents: product.cents, quantity });
   } else {
     cart.delete(product.code);
   }
+  saveCart(message);
+  renderCart(product.code, focusAction);
+  return true;
+}
+
+function saveCart(message) {
   cartStatus.textContent = message;
   try {
     localStorage.setItem(cartKey, JSON.stringify([...cart.values()]));
   } catch {
     cartStatus.textContent += " Cart changes will last until this page closes.";
   }
-  renderCart(product.code, focusAction);
-  return true;
 }
 
 undoRemove.addEventListener("click", () => {
-  if (!removedLine) return;
-  const line = removedLine;
-  changeCart(line, line.quantity, `Restored ${line.name}.`, "increase");
+  if (!undoLines) return;
+  cart.clear();
+  for (const line of undoLines) cart.set(line.code, line);
+  undoLines = null;
+  undoRemove.hidden = true;
+  saveCart("Restored your cart.");
+  renderCart(undefined, "increase");
+});
+
+clearCart.addEventListener("click", () => {
+  if (!cart.size) return;
+  undoLines = [...cart.values()];
+  cart.clear();
+  undoRemove.hidden = false;
+  undoRemove.textContent = "Undo clear cart";
+  saveCart("Cart cleared. You can undo this change.");
+  renderCart();
+  undoRemove.focus();
+});
+
+// Read the current stored value so a delayed event cannot restore an older cart.
+window.addEventListener("storage", event => {
+  if (event.storageArea !== localStorage || (event.key !== cartKey && event.key !== null)) return;
+  try {
+    const lines = JSON.parse(localStorage.getItem(cartKey) ?? "[]");
+    if (!Array.isArray(lines) || !validCart(lines)) throw new Error("Invalid cart");
+    const focused = cartItems.contains(document.activeElement) || document.activeElement === undoRemove;
+    cart.clear();
+    for (const line of lines) cart.set(line.code, line);
+    undoLines = null;
+    undoRemove.hidden = true;
+    renderCart();
+    if (focused) document.querySelector("#cart-title").focus();
+    cartStatus.textContent = "Cart updated from another tab.";
+  } catch {
+    cartStatus.textContent = "Another tab saved an unreadable cart. Your current cart is unchanged.";
+  }
+});
+
+document.querySelector("#mobile-cart").addEventListener("click", () => {
+  document.querySelector("#cart-title").focus();
 });
 
 function renderCart(focusCode, focusAction) {
@@ -140,6 +191,10 @@ function renderCart(focusCode, focusAction) {
   document.querySelector("#subtotal").textContent = money(subtotal);
   const count = [...cart.values()].reduce((sum, line) => sum + line.quantity, 0);
   document.querySelector("#cart-count").textContent = `${count} ${count === 1 ? "item" : "items"}`;
+  clearCart.disabled = cart.size === 0;
+  const mobileCart = document.querySelector("#mobile-cart");
+  mobileCart.hidden = cart.size === 0;
+  mobileCart.textContent = `View cart · ${count} ${count === 1 ? "item" : "items"} · ${money(subtotal)}`;
   if (focusAction) (nextFocus ?? cartItems.querySelector("button") ?? requestInput).focus();
 }
 
@@ -179,7 +234,12 @@ function renderResults(result) {
     ? "No products satisfy all of these constraints. Edit your request to search again."
     : `${products.length} ${products.length === 1 ? "match" : "matches"} found.`;
   if (status === "matched") {
-    for (const product of products) {
+    const ordered = [...products];
+    if (sortProducts.value === "price-asc") ordered.sort((a, b) => a.price - b.price || a.code.localeCompare(b.code));
+    if (sortProducts.value === "price-desc") ordered.sort((a, b) => b.price - a.price || a.code.localeCompare(b.code));
+    if (sortProducts.value === "name") ordered.sort((a, b) => a.name.localeCompare(b.name) || a.code.localeCompare(b.code));
+    productsList.replaceChildren();
+    for (const product of ordered) {
       const item = element("li");
       const top = element("div", undefined, "product-top");
       const bottom = element("div", undefined, "product-bottom");
@@ -212,14 +272,33 @@ function renderResults(result) {
       productsList.append(item);
     }
   }
+  lastResult = result;
+  document.querySelector("#result-tools").hidden = products.length < 2;
   results.hidden = false;
 }
+
+sortProducts.addEventListener("change", () => {
+  if (lastResult) renderResults(lastResult);
+});
+
+for (const example of exampleButtons) {
+  example.addEventListener("click", () => {
+    if (activeSearch) return;
+    requestInput.value = example.dataset.request;
+    requestInput.focus();
+  });
+}
+
+cancelSearch.addEventListener("click", () => activeSearch?.abort());
+retrySearch.addEventListener("click", () => form.requestSubmit());
 
 form.addEventListener("submit", async event => {
   event.preventDefault();
   if (submit.disabled) return;
   results.hidden = true;
   productsList.replaceChildren();
+  lastResult = null;
+  retrySearch.hidden = true;
   searchStatus.classList.remove("error");
   const request = requestInput.value.trim();
   if (!request || request.length > 500) {
@@ -233,6 +312,15 @@ form.addEventListener("submit", async event => {
   submit.textContent = "Searching…";
   form.setAttribute("aria-busy", "true");
   requestInput.readOnly = true;
+  for (const example of exampleButtons) example.disabled = true;
+  const controller = new AbortController();
+  activeSearch = controller;
+  cancelSearch.hidden = false;
+  let timedOut = false;
+  const deadline = setTimeout(() => {
+    timedOut = true;
+    controller.abort();
+  }, searchTimeoutMs);
   const slowSearch = setTimeout(() => {
     searchStatus.textContent = "Still searching. The first request may take longer while the model loads.";
   }, 15000);
@@ -241,6 +329,7 @@ form.addEventListener("submit", async event => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ request }),
+      signal: controller.signal,
     });
     let result;
     try {
@@ -248,23 +337,39 @@ form.addEventListener("submit", async event => {
     } catch {
       throw new Error("The search service returned an unreadable response. Please try again.");
     }
+    if (controller.signal.aborted) throw new Error("Search cancelled");
     if (!response.ok) {
       searchStatus.classList.add("error");
       searchStatus.textContent = result?.error || "The search service is unavailable. Please try again.";
+      retrySearch.hidden = false;
       return;
     }
     renderResults(result);
   } catch (error) {
-    searchStatus.classList.add("error");
-    searchStatus.textContent = error instanceof TypeError
-      ? "Unable to reach the search service. Check your connection and try again."
-      : error.message;
+    retrySearch.hidden = false;
+    if (controller.signal.aborted) {
+      if (timedOut) searchStatus.classList.add("error");
+      searchStatus.textContent = timedOut
+        ? "Search timed out after 3 minutes. Your cart is unchanged. Please retry shortly."
+        : "Search cancelled. Your cart is unchanged. The server may still be finishing this request.";
+    } else {
+      searchStatus.classList.add("error");
+      searchStatus.textContent = error instanceof TypeError
+        ? "Unable to reach the search service. Check your connection and try again."
+        : error.message;
+    }
   } finally {
     clearTimeout(slowSearch);
+    clearTimeout(deadline);
+    activeSearch = null;
+    const restoreFocus = document.activeElement === cancelSearch;
+    cancelSearch.hidden = true;
     form.setAttribute("aria-busy", "false");
     submit.disabled = false;
     submit.textContent = "Find products";
     requestInput.readOnly = false;
+    for (const example of exampleButtons) example.disabled = false;
+    if (restoreFocus) requestInput.focus();
   }
 });
 

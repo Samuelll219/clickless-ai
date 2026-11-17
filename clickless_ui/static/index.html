@@ -19,23 +19,43 @@
         <textarea id="request" name="request" rows="3" maxlength="500" required
           aria-describedby="request-help" placeholder="Find me 2 organic snacks under $5 each without peanuts."></textarea>
         <p id="request-help" class="meta">Include a category, quantity, dietary preferences, and budget per item.</p>
-        <button class="primary" type="submit">Find products</button>
+        <div class="actions">
+          <button class="primary" type="submit">Find products</button>
+          <button id="cancel-search" type="button" hidden>Cancel search</button>
+        </div>
       </form>
+      <div class="examples" aria-label="Example shopping requests">
+        <span class="meta">Try an example:</span>
+        <button type="button" data-request="Find 2 organic snacks under $5 each without peanuts.">Organic snacks</button>
+        <button type="button" data-request="Find 1 vegan plant milk under $6 each.">Plant milk</button>
+      </div>
       <p id="search-status" class="status" role="status"></p>
+      <button id="retry-search" type="button" hidden>Retry search</button>
       <section id="results" aria-labelledby="results-title" hidden>
         <h2 id="results-title">Matching products</h2>
         <dl id="constraints"></dl>
+        <div id="result-tools" class="actions" hidden>
+          <label for="sort-products">Sort matches</label>
+          <select id="sort-products">
+            <option value="original">Original order</option>
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+            <option value="name">Name: A–Z</option>
+          </select>
+        </div>
         <ul id="products" class="products"></ul>
       </section>
     </section>
-    <aside class="cart" aria-labelledby="cart-title">
-      <div class="cart-heading"><h2 id="cart-title">Your cart</h2><span id="cart-count" class="meta"></span></div>
-      <p id="cart-empty">Your cart is empty.</p>
+    <aside id="cart" class="cart" aria-labelledby="cart-title">
+      <div class="cart-heading"><h2 id="cart-title" tabindex="-1">Your cart</h2><span id="cart-count" class="meta"></span></div>
+      <p id="cart-empty">Your cart is empty. Search above, then choose a match to add.</p>
       <ul id="cart-items"></ul>
       <div class="subtotal"><span>Subtotal</span><strong id="subtotal">$0.00</strong></div>
       <p id="cart-status" class="status" role="status"></p>
       <button id="undo-remove" type="button" hidden>Undo removal</button>
+      <button id="clear-cart" type="button" disabled>Clear cart</button>
     </aside>
   </main>
+  <a id="mobile-cart" class="mobile-cart" href="#cart" hidden>View cart</a>
 </body>
 </html>
