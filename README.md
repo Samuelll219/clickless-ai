@@ -136,7 +136,7 @@ Product IDs are OFF barcodes (`code`, string). Price is a float in USD.
 
 ## Sujay UI / cart — completed
 
-Sujay's UI and cart implementation is complete on the `Sujay-ui` branch. It connects the browser shopping flow to Soumya's [Config C PR #1](https://github.com/Samuelll219/clickless-ai/pull/1).
+Sujay's UI and cart implementation is complete on the `Sujay-ui` branch. Soumya's Config C pipeline is integrated directly into this branch, connecting the browser shopping flow to constraint extraction, validation, and Neo4j retrieval.
 
 The UI work includes:
 
@@ -149,7 +149,6 @@ The UI work includes:
 
 ### Run the shopping UI and cart
 
-Use a checkout that includes Soumya's Config C code.
 From the repository root:
 
 ```bash
@@ -168,12 +167,3 @@ criteria, and choose a matching product to add at the extracted quantity. A
 no-match response leaves the cart as it was. The price filter follows the KG's
 per-unit USD limit. The cart groups items by exact OFF barcode, calculates
 totals in cents, and saves quantities in this browser.
-
-To try the UI before PR #1 merges, use the locally fetched PR branch for the
-LLM package. Run the setup above through the catalog load, then launch with:
-
-```bash
-config_c_dir=$(mktemp -d)
-git archive origin/soumya-extractor-validator clickless_llm | tar -x -C "$config_c_dir"
-PYTHONPATH="$config_c_dir" python -m clickless_ui
-```
