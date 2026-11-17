@@ -22,7 +22,9 @@ tests/            unit tests + Neo4j integration test (Cypher vs reference filte
 ## Run it
 
 ```bash
-pip install -r requirements.txt
+python3.13 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
 
 # 1. Build the catalog (~10 min the first time because of OFF's rate limit; cached afterwards)
 python scripts/build_catalog.py --fetch
@@ -151,6 +153,8 @@ Use a checkout that includes Soumya's Config C code.
 From the repository root:
 
 ```bash
+python3.13 -m venv .venv
+source .venv/bin/activate
 python -m pip install -r requirements.txt
 ollama pull qwen2.5:7b
 # Start Ollama with ollama serve if it isn't already running.
