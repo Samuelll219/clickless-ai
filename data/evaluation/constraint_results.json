@@ -1,0 +1,488 @@
+{
+  "metrics": {
+    "total": 20,
+    "successful_extractions": 20,
+    "extraction_failures": 0,
+    "exact_matches": 19,
+    "exact_match_accuracy": 0.95,
+    "field_accuracy": {
+      "category": 1.0,
+      "dietary_tags": 0.95,
+      "excluded_allergens": 1.0,
+      "max_price": 1.0,
+      "quantity": 1.0
+    }
+  },
+  "predictions": [
+    {
+      "prompt": "Get me 2 organic gluten-free snacks under $15 without peanuts",
+      "expected": {
+        "category": "snacks",
+        "dietary_tags": [
+          "organic",
+          "gluten_free"
+        ],
+        "excluded_allergens": [
+          "peanuts"
+        ],
+        "max_price": 15,
+        "quantity": 2
+      },
+      "predicted": {
+        "category": "snacks",
+        "dietary_tags": [
+          "organic",
+          "gluten_free"
+        ],
+        "excluded_allergens": [
+          "peanuts"
+        ],
+        "max_price": 15,
+        "quantity": 2
+      }
+    },
+    {
+      "prompt": "I want a nut-free vegan snack",
+      "expected": {
+        "category": "snacks",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [
+          "peanuts",
+          "tree_nuts"
+        ],
+        "max_price": null,
+        "quantity": 1
+      },
+      "predicted": {
+        "category": "snacks",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [
+          "peanuts",
+          "tree_nuts"
+        ],
+        "max_price": null,
+        "quantity": 1
+      }
+    },
+    {
+      "prompt": "Get me 3 organic gluten-free snack bars under $10",
+      "expected": {
+        "category": "snack_bars",
+        "dietary_tags": [
+          "organic",
+          "gluten_free"
+        ],
+        "excluded_allergens": [],
+        "max_price": 10,
+        "quantity": 3
+      },
+      "predicted": {
+        "category": "snack_bars",
+        "dietary_tags": [
+          "organic",
+          "gluten_free"
+        ],
+        "excluded_allergens": [],
+        "max_price": 10,
+        "quantity": 3
+      }
+    },
+    {
+      "prompt": "Find me vegan chips under $6 with no milk",
+      "expected": {
+        "category": "chips",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [
+          "milk"
+        ],
+        "max_price": 6,
+        "quantity": 1
+      },
+      "predicted": {
+        "category": "chips",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [
+          "milk"
+        ],
+        "max_price": 6,
+        "quantity": 1
+      }
+    },
+    {
+      "prompt": "I need 2 lactose-free yogurts under $7",
+      "expected": {
+        "category": "yogurt",
+        "dietary_tags": [
+          "lactose_free"
+        ],
+        "excluded_allergens": [],
+        "max_price": 7,
+        "quantity": 2
+      },
+      "predicted": {
+        "category": "yogurt",
+        "dietary_tags": [
+          "lactose_free"
+        ],
+        "excluded_allergens": [],
+        "max_price": 7,
+        "quantity": 2
+      }
+    },
+    {
+      "prompt": "Find an organic vegetarian cheese",
+      "expected": {
+        "category": "cheese",
+        "dietary_tags": [
+          "organic",
+          "vegetarian"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "predicted": {
+        "category": "cheese",
+        "dietary_tags": [
+          "organic",
+          "vegetarian"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      }
+    },
+    {
+      "prompt": "Get me gluten-free crackers without sesame for under $5",
+      "expected": {
+        "category": "crackers",
+        "dietary_tags": [
+          "gluten_free"
+        ],
+        "excluded_allergens": [
+          "sesame"
+        ],
+        "max_price": 5,
+        "quantity": 1
+      },
+      "predicted": {
+        "category": "crackers",
+        "dietary_tags": [
+          "gluten_free"
+        ],
+        "excluded_allergens": [
+          "sesame"
+        ],
+        "max_price": 5,
+        "quantity": 1
+      }
+    },
+    {
+      "prompt": "I want 4 organic cookies with no peanuts or tree nuts",
+      "expected": {
+        "category": "cookies",
+        "dietary_tags": [
+          "organic"
+        ],
+        "excluded_allergens": [
+          "peanuts",
+          "tree_nuts"
+        ],
+        "max_price": null,
+        "quantity": 4
+      },
+      "predicted": {
+        "category": "cookies",
+        "dietary_tags": [
+          "organic"
+        ],
+        "excluded_allergens": [
+          "peanuts",
+          "tree_nuts"
+        ],
+        "max_price": null,
+        "quantity": 4
+      }
+    },
+    {
+      "prompt": "Find me non-GMO breakfast cereal under $6",
+      "expected": {
+        "category": "breakfast_cereal",
+        "dietary_tags": [
+          "non_gmo"
+        ],
+        "excluded_allergens": [],
+        "max_price": 6,
+        "quantity": 1
+      },
+      "predicted": {
+        "category": "breakfast_cereal",
+        "dietary_tags": [
+          "non_gmo"
+        ],
+        "excluded_allergens": [],
+        "max_price": 6,
+        "quantity": 1
+      }
+    },
+    {
+      "prompt": "Get me 2 organic plant milks without soy under $6",
+      "expected": {
+        "category": "plant_milk",
+        "dietary_tags": [
+          "organic"
+        ],
+        "excluded_allergens": [
+          "soy"
+        ],
+        "max_price": 6,
+        "quantity": 2
+      },
+      "predicted": {
+        "category": "plant_milk",
+        "dietary_tags": [
+          "organic"
+        ],
+        "excluded_allergens": [
+          "soy"
+        ],
+        "max_price": 6,
+        "quantity": 2
+      }
+    },
+    {
+      "prompt": "I need kosher pasta under $5",
+      "expected": {
+        "category": "pasta",
+        "dietary_tags": [
+          "kosher"
+        ],
+        "excluded_allergens": [],
+        "max_price": 5,
+        "quantity": 1
+      },
+      "predicted": {
+        "category": "pasta",
+        "dietary_tags": [
+          "kosher"
+        ],
+        "excluded_allergens": [],
+        "max_price": 5,
+        "quantity": 1
+      }
+    },
+    {
+      "prompt": "Find organic rice and grains",
+      "expected": {
+        "category": "rice_grains",
+        "dietary_tags": [
+          "organic"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "predicted": {
+        "category": "rice_grains",
+        "dietary_tags": [
+          "organic"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      }
+    },
+    {
+      "prompt": "Get me vegan soup without celery",
+      "expected": {
+        "category": "soup",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [
+          "celery"
+        ],
+        "max_price": null,
+        "quantity": 1
+      },
+      "predicted": {
+        "category": "soup",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [
+          "celery"
+        ],
+        "max_price": null,
+        "quantity": 1
+      }
+    },
+    {
+      "prompt": "I want 2 fair trade coffees or teas under $12",
+      "expected": {
+        "category": "coffee_tea",
+        "dietary_tags": [
+          "fair_trade"
+        ],
+        "excluded_allergens": [],
+        "max_price": 12,
+        "quantity": 2
+      },
+      "predicted": {
+        "category": "coffee_tea",
+        "dietary_tags": [],
+        "excluded_allergens": [],
+        "max_price": 12,
+        "quantity": 2
+      }
+    },
+    {
+      "prompt": "Find me organic juice under $7",
+      "expected": {
+        "category": "juice",
+        "dietary_tags": [
+          "organic"
+        ],
+        "excluded_allergens": [],
+        "max_price": 7,
+        "quantity": 1
+      },
+      "predicted": {
+        "category": "juice",
+        "dietary_tags": [
+          "organic"
+        ],
+        "excluded_allergens": [],
+        "max_price": 7,
+        "quantity": 1
+      }
+    },
+    {
+      "prompt": "Get me bread with no added sugar",
+      "expected": {
+        "category": "bread",
+        "dietary_tags": [
+          "no_added_sugar"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "predicted": {
+        "category": "bread",
+        "dietary_tags": [
+          "no_added_sugar"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      }
+    },
+    {
+      "prompt": "I need vegan pasta sauce without milk",
+      "expected": {
+        "category": "pasta_sauce",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [
+          "milk"
+        ],
+        "max_price": null,
+        "quantity": 1
+      },
+      "predicted": {
+        "category": "pasta_sauce",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [
+          "milk"
+        ],
+        "max_price": null,
+        "quantity": 1
+      }
+    },
+    {
+      "prompt": "Find me vegetarian pantry items under $8",
+      "expected": {
+        "category": "pantry",
+        "dietary_tags": [
+          "vegetarian"
+        ],
+        "excluded_allergens": [],
+        "max_price": 8,
+        "quantity": 1
+      },
+      "predicted": {
+        "category": "pantry",
+        "dietary_tags": [
+          "vegetarian"
+        ],
+        "excluded_allergens": [],
+        "max_price": 8,
+        "quantity": 1
+      }
+    },
+    {
+      "prompt": "Get me 2 vegan beverages with no soy",
+      "expected": {
+        "category": "beverages",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [
+          "soy"
+        ],
+        "max_price": null,
+        "quantity": 2
+      },
+      "predicted": {
+        "category": "beverages",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [
+          "soy"
+        ],
+        "max_price": null,
+        "quantity": 2
+      }
+    },
+    {
+      "prompt": "Find gluten-free organic bakery products under $8 without eggs",
+      "expected": {
+        "category": "bakery",
+        "dietary_tags": [
+          "gluten_free",
+          "organic"
+        ],
+        "excluded_allergens": [
+          "eggs"
+        ],
+        "max_price": 8,
+        "quantity": 1
+      },
+      "predicted": {
+        "category": "bakery",
+        "dietary_tags": [
+          "gluten_free",
+          "organic"
+        ],
+        "excluded_allergens": [
+          "eggs"
+        ],
+        "max_price": 8,
+        "quantity": 1
+      }
+    }
+  ]
+}
