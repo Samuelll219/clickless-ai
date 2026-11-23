@@ -1,4 +1,7 @@
 neo4j>=5.14
 requests>=2.31
-pandas>=2.0   # only needed to read the OFF CSV dump
+pandas>=2.0   # OFF CSV dump; Instacart loading
 pytest>=8
+scikit-learn>=1.4   # TF-IDF baseline (Config A / Config B candidates)
+mlxtend>=0.23.4     # Apriori / FP-growth / association_rules (num_itemsets passed explicitly)
+kaggle>=1.6         # optional: download the Instacart data (scripts/run_apriori.py)

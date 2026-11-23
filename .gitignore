@@ -2,3 +2,8 @@ data/raw/pages/
 __pycache__/
 .pytest_cache/
 .venv/
+data/instacart/
+.DS_Store
+data/sandbox/
+additional files to claude code/
+docs/research/
