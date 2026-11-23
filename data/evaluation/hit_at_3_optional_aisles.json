@@ -1,0 +1,966 @@
+{
+  "meta": {
+    "split": "user",
+    "seed": 573,
+    "include_optional_aisles": true,
+    "coverage": {
+      "order_lines": 33819106,
+      "mapped_order_lines": 11872780,
+      "mapped_line_share": 0.35106723400671797,
+      "orders_with_products": 3346083,
+      "orders_with_ge1_category": 2844596,
+      "orders_with_ge2_categories": 2152436,
+      "mean_categories_per_order": 3.111713227467099,
+      "users": 202721
+    },
+    "train_orders": 2270052,
+    "test_orders": 574544,
+    "mining": {
+      "n_transactions": 2270052,
+      "n_items": 19,
+      "min_support": 0.0025,
+      "max_len": 3,
+      "min_lift": 1.0,
+      "min_confidence": 0.0,
+      "algorithm": "apriori",
+      "frequent_itemsets_per_level": {
+        "1": 19,
+        "2": 171,
+        "3": 778
+      },
+      "n_rules_all": 5010,
+      "n_rules": 2614
+    },
+    "selection": [
+      {
+        "min_support": 0.0005,
+        "n_rules": 3166,
+        "val_hit@3": 0.16168,
+        "val_hit@3_confidence": 0.43354,
+        "val_most_popular_hit@3": 0.42388,
+        "val_coverage": 1.0
+      },
+      {
+        "min_support": 0.001,
+        "n_rules": 3091,
+        "val_hit@3": 0.16178,
+        "val_hit@3_confidence": 0.43354,
+        "val_most_popular_hit@3": 0.42388,
+        "val_coverage": 1.0
+      },
+      {
+        "min_support": 0.0025,
+        "n_rules": 2615,
+        "val_hit@3": 0.16374,
+        "val_hit@3_confidence": 0.43356,
+        "val_most_popular_hit@3": 0.42388,
+        "val_coverage": 1.0
+      },
+      {
+        "min_support": 0.005,
+        "n_rules": 1780,
+        "val_hit@3": 0.17146,
+        "val_hit@3_confidence": 0.43284,
+        "val_most_popular_hit@3": 0.42388,
+        "val_coverage": 1.0
+      },
+      {
+        "min_support": 0.01,
+        "n_rules": 903,
+        "val_hit@3": 0.19672,
+        "val_hit@3_confidence": 0.4322,
+        "val_most_popular_hit@3": 0.42388,
+        "val_coverage": 1.0
+      },
+      {
+        "min_support": 0.02,
+        "n_rules": 351,
+        "val_hit@3": 0.26228,
+        "val_hit@3_confidence": 0.43178,
+        "val_most_popular_hit@3": 0.42388,
+        "val_coverage": 1.0
+      },
+      {
+        "min_support": 0.05,
+        "n_rules": 59,
+        "val_hit@3": 0.36818,
+        "val_hit@3_confidence": 0.42726,
+        "val_most_popular_hit@3": 0.42388,
+        "val_coverage": 0.89676
+      },
+      {
+        "min_support": 0.1,
+        "n_rules": 12,
+        "val_hit@3": 0.42388,
+        "val_hit@3_confidence": 0.42388,
+        "val_most_popular_hit@3": 0.42388,
+        "val_coverage": 0.6844
+      }
+    ],
+    "rank_by": "confidence"
+  },
+  "min_support": 0.0025,
+  "rank_by": "confidence",
+  "protocols": {
+    "leave_one_out": {
+      "n_queries": 100000,
+      "rule_coverage": 1.0,
+      "k": {
+        "1": {
+          "results": {
+            "apriori_selected": {
+              "n_queries": 100000,
+              "hit@1": 0.18591,
+              "hits": 18591,
+              "ci95": [
+                0.18351086772585787,
+                0.18833326262358516
+              ],
+              "mrr@1": 0.18591
+            },
+            "apriori_selected_rules_only": {
+              "n_queries": 100000,
+              "hit@1": 0.18591,
+              "hits": 18591,
+              "ci95": [
+                0.18351086772585787,
+                0.18833326262358516
+              ],
+              "mrr@1": 0.18591
+            },
+            "apriori_lift": {
+              "n_queries": 100000,
+              "hit@1": 0.05838,
+              "hits": 5838,
+              "ci95": [
+                0.056943717696595564,
+                0.059850210301497495
+              ],
+              "mrr@1": 0.05838
+            },
+            "apriori_confidence": {
+              "n_queries": 100000,
+              "hit@1": 0.18591,
+              "hits": 18591,
+              "ci95": [
+                0.18351086772585787,
+                0.18833326262358516
+              ],
+              "mrr@1": 0.18591
+            },
+            "most_popular": {
+              "n_queries": 100000,
+              "hit@1": 0.17815,
+              "hits": 17815,
+              "ci95": [
+                0.17579079926977415,
+                0.1805339272511856
+              ],
+              "mrr@1": 0.17815
+            },
+            "random": {
+              "n_queries": 100000,
+              "hit@1": 0.06294,
+              "hits": 6294,
+              "ci95": [
+                0.061451520810044645,
+                0.06446205686045613
+              ],
+              "mrr@1": 0.06294
+            }
+          },
+          "mcnemar": {
+            "apriori_selected vs most_popular": {
+              "b": 2555,
+              "c": 1779,
+              "p_value": 3.7353677746908245e-32,
+              "p_holm": 3.7353677746908245e-32
+            },
+            "apriori_selected vs random": {
+              "b": 17396,
+              "c": 5099,
+              "p_value": 0.0,
+              "p_holm": 0.0
+            },
+            "apriori_lift vs apriori_confidence": {
+              "b": 5804,
+              "c": 18557,
+              "p_value": 0.0,
+              "p_holm": 0.0
+            }
+          }
+        },
+        "3": {
+          "results": {
+            "apriori_selected": {
+              "n_queries": 100000,
+              "hit@3": 0.4405,
+              "hits": 44050,
+              "ci95": [
+                0.4374253891735998,
+                0.4435791819868696
+              ],
+              "mrr@3": 0.2938033333332868
+            },
+            "apriori_selected_rules_only": {
+              "n_queries": 100000,
+              "hit@3": 0.4405,
+              "hits": 44050,
+              "ci95": [
+                0.4374253891735998,
+                0.4435791819868696
+              ],
+              "mrr@3": 0.2938033333332868
+            },
+            "apriori_lift": {
+              "n_queries": 100000,
+              "hit@3": 0.16396,
+              "hits": 16396,
+              "ci95": [
+                0.16167819147766174,
+                0.16626762520745034
+              ],
+              "mrr@3": 0.10182500000000069
+            },
+            "apriori_confidence": {
+              "n_queries": 100000,
+              "hit@3": 0.4405,
+              "hits": 44050,
+              "ci95": [
+                0.4374253891735998,
+                0.4435791819868696
+              ],
+              "mrr@3": 0.2938033333332868
+            },
+            "most_popular": {
+              "n_queries": 100000,
+              "hit@3": 0.43318,
+              "hits": 43318,
+              "ci95": [
+                0.43011144747312896,
+                0.4362536860553175
+              ],
+              "mrr@3": 0.28573999999995486
+            },
+            "random": {
+              "n_queries": 100000,
+              "hit@3": 0.18946,
+              "hits": 18946,
+              "ci95": [
+                0.18704313311797802,
+                0.1919007244983614
+              ],
+              "mrr@3": 0.11629000000000597
+            }
+          },
+          "mcnemar": {
+            "apriori_selected vs most_popular": {
+              "b": 3132,
+              "c": 2400,
+              "p_value": 7.3856310233749e-23,
+              "p_holm": 7.3856310233749e-23
+            },
+            "apriori_selected vs random": {
+              "b": 35683,
+              "c": 10579,
+              "p_value": 0.0,
+              "p_holm": 0.0
+            },
+            "apriori_lift vs apriori_confidence": {
+              "b": 13075,
+              "c": 40729,
+              "p_value": 0.0,
+              "p_holm": 0.0
+            }
+          }
+        },
+        "5": {
+          "results": {
+            "apriori_selected": {
+              "n_queries": 100000,
+              "hit@5": 0.6047,
+              "hits": 60470,
+              "ci95": [
+                0.601665762565841,
+                0.6077261937282572
+              ],
+              "mrr@5": 0.3311213333333158
+            },
+            "apriori_selected_rules_only": {
+              "n_queries": 100000,
+              "hit@5": 0.6047,
+              "hits": 60470,
+              "ci95": [
+                0.601665762565841,
+                0.6077261937282572
+              ],
+              "mrr@5": 0.3311213333333158
+            },
+            "apriori_lift": {
+              "n_queries": 100000,
+              "hit@5": 0.28861,
+              "hits": 28861,
+              "ci95": [
+                0.2858097707842309,
+                0.29142646951176304
+              ],
+              "mrr@5": 0.1301120000000187
+            },
+            "apriori_confidence": {
+              "n_queries": 100000,
+              "hit@5": 0.6047,
+              "hits": 60470,
+              "ci95": [
+                0.601665762565841,
+                0.6077261937282572
+              ],
+              "mrr@5": 0.3311213333333158
+            },
+            "most_popular": {
+              "n_queries": 100000,
+              "hit@5": 0.60402,
+              "hits": 60402,
+              "ci95": [
+                0.6009848892558033,
+                0.6070471192801289
+              ],
+              "mrr@5": 0.32439249999998376
+            },
+            "random": {
+              "n_queries": 100000,
+              "hit@5": 0.31394,
+              "hits": 31394,
+              "ci95": [
+                0.311070772377566,
+                0.31682352191011387
+              ],
+              "mrr@5": 0.1439511666666939
+            }
+          },
+          "mcnemar": {
+            "apriori_selected vs most_popular": {
+              "b": 6807,
+              "c": 6739,
+              "p_value": 0.564843738346189,
+              "p_holm": 0.564843738346189
+            },
+            "apriori_selected vs random": {
+              "b": 41192,
+              "c": 12116,
+              "p_value": 0.0,
+              "p_holm": 0.0
+            },
+            "apriori_lift vs apriori_confidence": {
+              "b": 14771,
+              "c": 46380,
+              "p_value": 0.0,
+              "p_holm": 0.0
+            }
+          }
+        }
+      }
+    },
+    "first_item": {
+      "n_queries": 100000,
+      "rule_coverage": 1.0,
+      "k": {
+        "1": {
+          "results": {
+            "apriori_selected": {
+              "n_queries": 100000,
+              "hit@1": 0.35176,
+              "hits": 35176,
+              "ci95": [
+                0.34880610337269513,
+                0.3547252853471031
+              ],
+              "mrr@1": 0.35176
+            },
+            "apriori_selected_rules_only": {
+              "n_queries": 100000,
+              "hit@1": 0.35176,
+              "hits": 35176,
+              "ci95": [
+                0.34880610337269513,
+                0.3547252853471031
+              ],
+              "mrr@1": 0.35176
+            },
+            "apriori_lift": {
+              "n_queries": 100000,
+              "hit@1": 0.16023,
+              "hits": 16023,
+              "ci95": [
+                0.1579695304477746,
+                0.1625165727991619
+              ],
+              "mrr@1": 0.16023
+            },
+            "apriori_confidence": {
+              "n_queries": 100000,
+              "hit@1": 0.35176,
+              "hits": 35176,
+              "ci95": [
+                0.34880610337269513,
+                0.3547252853471031
+              ],
+              "mrr@1": 0.35176
+            },
+            "most_popular": {
+              "n_queries": 100000,
+              "hit@1": 0.3527,
+              "hits": 35270,
+              "ci95": [
+                0.34974426502263484,
+                0.35566705148051053
+              ],
+              "mrr@1": 0.3527
+            },
+            "random": {
+              "n_queries": 100000,
+              "hit@1": 0.1583,
+              "hits": 15830,
+              "ci95": [
+                0.1560507424763937,
+                0.1605755090451597
+              ],
+              "mrr@1": 0.1583
+            }
+          },
+          "mcnemar": {
+            "apriori_selected vs most_popular": {
+              "b": 4725,
+              "c": 4819,
+              "p_value": 0.3411187394312624,
+              "p_holm": 0.3411187394312624
+            },
+            "apriori_selected vs random": {
+              "b": 27728,
+              "c": 8382,
+              "p_value": 0.0,
+              "p_holm": 0.0
+            },
+            "apriori_lift vs apriori_confidence": {
+              "b": 9634,
+              "c": 28787,
+              "p_value": 0.0,
+              "p_holm": 0.0
+            }
+          }
+        },
+        "3": {
+          "results": {
+            "apriori_selected": {
+              "n_queries": 100000,
+              "hit@3": 0.64702,
+              "hits": 64702,
+              "ci95": [
+                0.6440524248641842,
+                0.6499762801440138
+              ],
+              "mrr@3": 0.4802650000000489
+            },
+            "apriori_selected_rules_only": {
+              "n_queries": 100000,
+              "hit@3": 0.64702,
+              "hits": 64702,
+              "ci95": [
+                0.6440524248641842,
+                0.6499762801440138
+              ],
+              "mrr@3": 0.4802650000000489
+            },
+            "apriori_lift": {
+              "n_queries": 100000,
+              "hit@3": 0.37142,
+              "hits": 37142,
+              "ci95": [
+                0.3684302395496473,
+                0.3744196387665402
+              ],
+              "mrr@3": 0.24978166666664248
+            },
+            "apriori_confidence": {
+              "n_queries": 100000,
+              "hit@3": 0.64702,
+              "hits": 64702,
+              "ci95": [
+                0.6440524248641842,
+                0.6499762801440138
+              ],
+              "mrr@3": 0.4802650000000489
+            },
+            "most_popular": {
+              "n_queries": 100000,
+              "hit@3": 0.64851,
+              "hits": 64851,
+              "ci95": [
+                0.6455452242699015,
+                0.6514633662672192
+              ],
+              "mrr@3": 0.48020166666672054
+            },
+            "random": {
+              "n_queries": 100000,
+              "hit@3": 0.39102,
+              "hits": 39102,
+              "ci95": [
+                0.3879997727493272,
+                0.39404859977282336
+              ],
+              "mrr@3": 0.2561983333333036
+            }
+          },
+          "mcnemar": {
+            "apriori_selected vs most_popular": {
+              "b": 1685,
+              "c": 1834,
+              "p_value": 0.012588517419775243,
+              "p_holm": 0.012588517419775243
+            },
+            "apriori_selected vs random": {
+              "b": 35314,
+              "c": 9714,
+              "p_value": 0.0,
+              "p_holm": 0.0
+            },
+            "apriori_lift vs apriori_confidence": {
+              "b": 10968,
+              "c": 38528,
+              "p_value": 0.0,
+              "p_holm": 0.0
+            }
+          }
+        },
+        "5": {
+          "results": {
+            "apriori_selected": {
+              "n_queries": 100000,
+              "hit@5": 0.77728,
+              "hits": 77728,
+              "ci95": [
+                0.7746905835397033,
+                0.7798481140842464
+              ],
+              "mrr@5": 0.5099125000000218
+            },
+            "apriori_selected_rules_only": {
+              "n_queries": 100000,
+              "hit@5": 0.77728,
+              "hits": 77728,
+              "ci95": [
+                0.7746905835397033,
+                0.7798481140842464
+              ],
+              "mrr@5": 0.5099125000000218
+            },
+            "apriori_lift": {
+              "n_queries": 100000,
+              "hit@5": 0.59118,
+              "hits": 59118,
+              "ci95": [
+                0.5881295429609554,
+                0.5942234520237235
+              ],
+              "mrr@5": 0.3008281666666663
+            },
+            "apriori_confidence": {
+              "n_queries": 100000,
+              "hit@5": 0.77728,
+              "hits": 77728,
+              "ci95": [
+                0.7746905835397033,
+                0.7798481140842464
+              ],
+              "mrr@5": 0.5099125000000218
+            },
+            "most_popular": {
+              "n_queries": 100000,
+              "hit@5": 0.77776,
+              "hits": 77776,
+              "ci95": [
+                0.7751725500703355,
+                0.7803261106770258
+              ],
+              "mrr@5": 0.5095061666666938
+            },
+            "random": {
+              "n_queries": 100000,
+              "hit@5": 0.55351,
+              "hits": 55351,
+              "ci95": [
+                0.5504268256455941,
+                0.5565890633830323
+              ],
+              "mrr@5": 0.2916724999999933
+            }
+          },
+          "mcnemar": {
+            "apriori_selected vs most_popular": {
+              "b": 5425,
+              "c": 5473,
+              "p_value": 0.6525540406617131,
+              "p_holm": 0.6525540406617131
+            },
+            "apriori_selected vs random": {
+              "b": 30831,
+              "c": 8454,
+              "p_value": 0.0,
+              "p_holm": 0.0
+            },
+            "apriori_lift vs apriori_confidence": {
+              "b": 8910,
+              "c": 27520,
+              "p_value": 0.0,
+              "p_holm": 0.0
+            }
+          }
+        }
+      }
+    }
+  },
+  "top_rules_heldout": [
+    {
+      "antecedents": [
+        "crackers",
+        "pasta_sauce"
+      ],
+      "consequent": "cheese",
+      "antecedent_support": 0.012626583003384945,
+      "consequent_support": 0.3437687771029034,
+      "support": 0.008027128893963663,
+      "confidence": 0.6357324774099011,
+      "lift": 1.8493025537906884,
+      "heldout_support": 0.008112520538026679,
+      "heldout_confidence": 0.6339771490750816,
+      "heldout_lift": 1.8434431079259366,
+      "heldout_antecedent_count": 7352
+    },
+    {
+      "antecedents": [
+        "crackers",
+        "pasta"
+      ],
+      "consequent": "cheese",
+      "antecedent_support": 0.017141457552514217,
+      "consequent_support": 0.3437687771029034,
+      "support": 0.010591387333858431,
+      "confidence": 0.617881373355263,
+      "lift": 1.7973749057794945,
+      "heldout_support": 0.010589267314600796,
+      "heldout_confidence": 0.6253469010175763,
+      "heldout_lift": 1.8183485578707652,
+      "heldout_antecedent_count": 9729
+    },
+    {
+      "antecedents": [
+        "bread",
+        "pasta_sauce"
+      ],
+      "consequent": "cheese",
+      "antecedent_support": 0.03079929446550123,
+      "consequent_support": 0.3437687771029034,
+      "support": 0.01877225719939455,
+      "confidence": 0.6095028319697923,
+      "lift": 1.7730022985401734,
+      "heldout_support": 0.01907077612854716,
+      "heldout_confidence": 0.610587907495124,
+      "heldout_lift": 1.775433186348966,
+      "heldout_antecedent_count": 17945
+    },
+    {
+      "antecedents": [
+        "nuts_seeds",
+        "pasta_sauce"
+      ],
+      "consequent": "cheese",
+      "antecedent_support": 0.007807310140913072,
+      "consequent_support": 0.3437687771029034,
+      "support": 0.004690200929317919,
+      "confidence": 0.6007447948992835,
+      "lift": 1.747525764154716,
+      "heldout_support": 0.00458798629869949,
+      "heldout_confidence": 0.5878679750223015,
+      "heldout_lift": 1.709369444160985,
+      "heldout_antecedent_count": 4484
+    },
+    {
+      "antecedents": [
+        "milk",
+        "pasta_sauce"
+      ],
+      "consequent": "cheese",
+      "antecedent_support": 0.02386949726261777,
+      "consequent_support": 0.3437687771029034,
+      "support": 0.0143133285052501,
+      "confidence": 0.599649349450955,
+      "lift": 1.7443391878240782,
+      "heldout_support": 0.01431570079924253,
+      "heldout_confidence": 0.5980948225712623,
+      "heldout_lift": 1.7391064964466163,
+      "heldout_antecedent_count": 13752
+    },
+    {
+      "antecedents": [
+        "pasta_sauce",
+        "yogurt"
+      ],
+      "consequent": "cheese",
+      "antecedent_support": 0.027058410996752498,
+      "consequent_support": 0.3437687771029034,
+      "support": 0.016209760833672534,
+      "confidence": 0.5990655118520448,
+      "lift": 1.7426408439435475,
+      "heldout_support": 0.016197192904285833,
+      "heldout_confidence": 0.5961945031712473,
+      "heldout_lift": 1.733580854543077,
+      "heldout_antecedent_count": 15609
+    },
+    {
+      "antecedents": [
+        "chips",
+        "pasta_sauce"
+      ],
+      "consequent": "cheese",
+      "antecedent_support": 0.018100025902490338,
+      "consequent_support": 0.3437687771029034,
+      "support": 0.010819135420686398,
+      "confidence": 0.5977414330218068,
+      "lift": 1.7387891886495543,
+      "heldout_support": 0.01102265448773288,
+      "heldout_confidence": 0.6105273305697484,
+      "heldout_lift": 1.775257044171372,
+      "heldout_antecedent_count": 10373
+    },
+    {
+      "antecedents": [
+        "cookies",
+        "pasta_sauce"
+      ],
+      "consequent": "cheese",
+      "antecedent_support": 0.005939070999254643,
+      "consequent_support": 0.3437687771029034,
+      "support": 0.0035333992349073943,
+      "confidence": 0.5949414033526184,
+      "lift": 1.730644092713892,
+      "heldout_support": 0.003385293380489571,
+      "heldout_confidence": 0.5948012232415902,
+      "heldout_lift": 1.729529553502519,
+      "heldout_antecedent_count": 3270
+    },
+    {
+      "antecedents": [
+        "bread",
+        "pasta"
+      ],
+      "consequent": "cheese",
+      "antecedent_support": 0.04028057507052702,
+      "consequent_support": 0.3437687771029034,
+      "support": 0.023957600971255284,
+      "confidence": 0.5947680967639628,
+      "lift": 1.7301399556304835,
+      "heldout_support": 0.02357869893341502,
+      "heldout_confidence": 0.5931260945709282,
+      "heldout_lift": 1.7246587085401635,
+      "heldout_antecedent_count": 22840
+    },
+    {
+      "antecedents": [
+        "milk",
+        "pasta"
+      ],
+      "consequent": "cheese",
+      "antecedent_support": 0.03201512564469889,
+      "consequent_support": 0.3437687771029034,
+      "support": 0.018933927504744385,
+      "confidence": 0.5914056910121636,
+      "lift": 1.7203589459060524,
+      "heldout_support": 0.01865131304129884,
+      "heldout_confidence": 0.587306806971391,
+      "heldout_lift": 1.7077377112549201,
+      "heldout_antecedent_count": 18246
+    },
+    {
+      "antecedents": [
+        "pasta_sauce",
+        "snack_bars"
+      ],
+      "consequent": "cheese",
+      "antecedent_support": 0.010235007832419698,
+      "consequent_support": 0.3437687771029034,
+      "support": 0.006050081672137907,
+      "confidence": 0.591116467246277,
+      "lift": 1.7195176136352046,
+      "heldout_support": 0.006036091230610711,
+      "heldout_confidence": 0.5826612903225806,
+      "heldout_lift": 1.694229739143467,
+      "heldout_antecedent_count": 5952
+    },
+    {
+      "antecedents": [
+        "nut_butters",
+        "pasta_sauce"
+      ],
+      "consequent": "cheese",
+      "antecedent_support": 0.008745614637902568,
+      "consequent_support": 0.3437687771029034,
+      "support": 0.005169044585762793,
+      "confidence": 0.5910441746839268,
+      "lift": 1.7193073194864472,
+      "heldout_support": 0.005108399008605085,
+      "heldout_confidence": 0.5715676728334956,
+      "heldout_lift": 1.6619723419611618,
+      "heldout_antecedent_count": 5135
+    },
+    {
+      "antecedents": [
+        "chips",
+        "pasta"
+      ],
+      "consequent": "cheese",
+      "antecedent_support": 0.02309110099680536,
+      "consequent_support": 0.3437687771029034,
+      "support": 0.013625238540791135,
+      "confidence": 0.5900644816666031,
+      "lift": 1.7164574591076776,
+      "heldout_support": 0.013696078977415132,
+      "heldout_confidence": 0.599360194988194,
+      "heldout_lift": 1.7427858752134306,
+      "heldout_antecedent_count": 13129
+    },
+    {
+      "antecedents": [
+        "pasta",
+        "yogurt"
+      ],
+      "consequent": "cheese",
+      "antecedent_support": 0.035295226717273434,
+      "consequent_support": 0.3437687771029034,
+      "support": 0.02074842338413393,
+      "confidence": 0.5878535233768503,
+      "lift": 1.7100259317642532,
+      "heldout_support": 0.020092455930268177,
+      "heldout_confidence": 0.5906369915579432,
+      "heldout_lift": 1.7174210347519216,
+      "heldout_antecedent_count": 19545
+    },
+    {
+      "antecedents": [
+        "pasta",
+        "snack_bars"
+      ],
+      "consequent": "cheese",
+      "antecedent_support": 0.01284199657100366,
+      "consequent_support": 0.3437687771029034,
+      "support": 0.00750819805008872,
+      "confidence": 0.5846597145993413,
+      "lift": 1.7007353591752454,
+      "heldout_support": 0.007449385947812526,
+      "heldout_confidence": 0.5882352941176471,
+      "heldout_lift": 1.7104375139734576,
+      "heldout_antecedent_count": 7276
+    },
+    {
+      "antecedents": [
+        "nut_butters",
+        "pasta"
+      ],
+      "consequent": "cheese",
+      "antecedent_support": 0.011012963579688924,
+      "consequent_support": 0.3437687771029034,
+      "support": 0.0064333328047110816,
+      "confidence": 0.58416,
+      "lift": 1.6992817233809985,
+      "heldout_support": 0.0063441616307889385,
+      "heldout_confidence": 0.5721236854496939,
+      "heldout_lift": 1.6635890841840417,
+      "heldout_antecedent_count": 6371
+    },
+    {
+      "antecedents": [
+        "cookies",
+        "pasta"
+      ],
+      "consequent": "cheese",
+      "antecedent_support": 0.007992768447595033,
+      "consequent_support": 0.3437687771029034,
+      "support": 0.004658483594208415,
+      "confidence": 0.5828373015873016,
+      "lift": 1.6954340836277744,
+      "heldout_support": 0.00442611880030076,
+      "heldout_confidence": 0.5851357570179475,
+      "heldout_lift": 1.701424854270284,
+      "heldout_antecedent_count": 4346
+    },
+    {
+      "antecedents": [
+        "nuts_seeds",
+        "pasta"
+      ],
+      "consequent": "cheese",
+      "antecedent_support": 0.01037509272915334,
+      "consequent_support": 0.3437687771029034,
+      "support": 0.006020126411201153,
+      "confidence": 0.5802479619565217,
+      "lift": 1.6879018706891782,
+      "heldout_support": 0.005731501851903423,
+      "heldout_confidence": 0.5783280646294345,
+      "heldout_lift": 1.6816298291139469,
+      "heldout_antecedent_count": 5694
+    },
+    {
+      "antecedents": [
+        "breakfast_cereal",
+        "pasta_sauce"
+      ],
+      "consequent": "cheese",
+      "antecedent_support": 0.016983311395509883,
+      "consequent_support": 0.3437687771029034,
+      "support": 0.009851756699846524,
+      "confidence": 0.580084558918891,
+      "lift": 1.6874265423623656,
+      "heldout_support": 0.010063633072488792,
+      "heldout_confidence": 0.5817486668678942,
+      "heldout_lift": 1.69157606397532,
+      "heldout_antecedent_count": 9939
+    },
+    {
+      "antecedents": [
+        "pasta_sauce",
+        "soup"
+      ],
+      "consequent": "cheese",
+      "antecedent_support": 0.011466697679172107,
+      "consequent_support": 0.3437687771029034,
+      "support": 0.006634209260404608,
+      "confidence": 0.5785631963119479,
+      "lift": 1.6830010019751194,
+      "heldout_support": 0.006754922164359909,
+      "heldout_confidence": 0.5791672884644083,
+      "heldout_lift": 1.6840700769948787,
+      "heldout_antecedent_count": 6701
+    }
+  ],
+  "top_rules_text": [
+    "crackers, pasta_sauce -> cheese [sup = 0.008, conf = 0.636, lift = 1.85]",
+    "crackers, pasta -> cheese [sup = 0.011, conf = 0.618, lift = 1.80]",
+    "bread, pasta_sauce -> cheese [sup = 0.019, conf = 0.610, lift = 1.77]",
+    "nuts_seeds, pasta_sauce -> cheese [sup = 0.005, conf = 0.601, lift = 1.75]",
+    "milk, pasta_sauce -> cheese [sup = 0.014, conf = 0.600, lift = 1.74]",
+    "pasta_sauce, yogurt -> cheese [sup = 0.016, conf = 0.599, lift = 1.74]",
+    "chips, pasta_sauce -> cheese [sup = 0.011, conf = 0.598, lift = 1.74]",
+    "cookies, pasta_sauce -> cheese [sup = 0.004, conf = 0.595, lift = 1.73]",
+    "bread, pasta -> cheese [sup = 0.024, conf = 0.595, lift = 1.73]",
+    "milk, pasta -> cheese [sup = 0.019, conf = 0.591, lift = 1.72]",
+    "pasta_sauce, snack_bars -> cheese [sup = 0.006, conf = 0.591, lift = 1.72]",
+    "nut_butters, pasta_sauce -> cheese [sup = 0.005, conf = 0.591, lift = 1.72]",
+    "chips, pasta -> cheese [sup = 0.014, conf = 0.590, lift = 1.72]",
+    "pasta, yogurt -> cheese [sup = 0.021, conf = 0.588, lift = 1.71]",
+    "pasta, snack_bars -> cheese [sup = 0.008, conf = 0.585, lift = 1.70]",
+    "nut_butters, pasta -> cheese [sup = 0.006, conf = 0.584, lift = 1.70]",
+    "cookies, pasta -> cheese [sup = 0.005, conf = 0.583, lift = 1.70]",
+    "nuts_seeds, pasta -> cheese [sup = 0.006, conf = 0.580, lift = 1.69]",
+    "breakfast_cereal, pasta_sauce -> cheese [sup = 0.010, conf = 0.580, lift = 1.69]",
+    "pasta_sauce, soup -> cheese [sup = 0.007, conf = 0.579, lift = 1.68]"
+  ]
+}
