@@ -122,7 +122,9 @@ Each result has `code, name, brand, price, category, dietary_tags, allergens`
 (enough to explain *why* it matched).
 Note: "nut-free" should be extracted as `["peanuts", "tree_nuts"]`.
 
-**Vikas (Apriori, TF-IDF, test prompts).**
+**Vikas (Apriori, TF-IDF, test prompts).** Implemented in `clickless_mining/` and
+`clickless_eval/`; see [`clickless_mining/README.md`](clickless_mining/README.md)
+(80-prompt test set: `data/evaluation/test_prompts.json`; A/B/C runner: `scripts/run_benchmark.py`).
 Map Instacart aisles to the **leaf** names in `vocab.CATEGORY_NAMES`.
 `data/catalog.json` / `catalog.csv` contains `ingredients_text` and tags for the
 TF-IDF index. For ground truth, `catalog.acceptable_set(catalog, constraints)`
@@ -215,3 +217,29 @@ criteria, and choose a matching product to add at the extracted quantity. A
 no-match response leaves the cart as it was. The price filter follows the KG's
 per-unit USD limit. The cart groups items by exact OFF barcode, calculates
 totals in cents, and saves quantities in this browser.
+
+## Integration completed on `vikas-mining-eval` (add-ons, sandbox store, click model)
+
+Built on top of Sujay's UI (his `app.js` is unchanged; the additions live in
+`clickless_ui/static/extras.js`, `clickless_ui/store.py` and new server routes):
+
+| Piece (proposal Fig. 1) | Where |
+|---|---|
+| (5) Add-on recommender in the UI | `POST /api/addons {category, constraints}`: up to 3 add-ons from the mined rules (`data/addon_rules.json`), each the cheapest product meeting the user's tags and allergen exclusions, shown with its rule `X -> Y [sup, conf, lift]` |
+| (6) Approval | "Add to cart" approves a match; "Approve & place order" confirms the cart |
+| (7) Cart REST API | `GET/PUT /api/cart`: the server re-prices every line from the catalog and rejects unknown barcodes or bad quantities |
+| (8) Sandbox store + interaction logs | `data/sandbox/cart.json`, `data/sandbox/interactions.jsonl` (gitignored); `POST /api/log`. `clickless_ui.store.agent_clicks` turns the log into Clicks_Agent = submissions + approvals + corrections |
+| Click model (Eqs. 5–6) | `scripts/click_reduction.py`: manual flow = keyword search (TF-IDF) + category/price filters + product-page views up to the first acceptable product + add-to-cart |
+| No-Neo4j mode | `python -m clickless_ui --offline-kg` (or `CLICKLESS_KG=offline`) serves Config C from the catalog with the same semantics as the Cypher template |
+
+Also fixed:
+- **Extractor:** "plant-based milk" / "oat milk" etc. now map to `plant_milk` (they mapped to `milk`), and "no gluten" now means an excluded allergen. This was found by error analysis on the test set, so the frozen pre-fix run is kept as the primary result: `benchmark_results_v1_frozen.json`.
+- **Grounding guard** (`clickless_llm/grounding.py`, applied in `extract_and_validate`): drops dietary tags the request never mentions and fixes milk vs plant_milk from the request words. It never adds a constraint.
+- **Verified on Neo4j:** `scripts/verify_kg_equivalence.py` shows Cypher and the offline filter are identical on all 80 gold sets and on 160 Config C queries.
+- **Config B** now also returns the requested quantity (`select_from_candidates(..., return_quantity=True)`), so its TSR can check quantity.
+
+Run the full demo without Docker:
+```bash
+ollama serve &            # qwen2.5:7b pulled
+python -m clickless_ui --offline-kg
+```
