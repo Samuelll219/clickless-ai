@@ -1,0 +1,7064 @@
+{
+  "dataset": "data/evaluation/test_prompts.json",
+  "model": "qwen2.5:7b",
+  "kg": "neo4j",
+  "tag": "v3",
+  "configs": {
+    "A": {
+      "summary": {
+        "n_prompts": 80,
+        "n_feasible": 70,
+        "n_infeasible": 10,
+        "css": 0.7664285714285715,
+        "tsr": 0.5285714285714286,
+        "tsr_successes": 37,
+        "ira": 0.0,
+        "infeasible_confusion": {
+          "tp": 0,
+          "fn": 10,
+          "fp": 0,
+          "tn": 70
+        },
+        "infeasible_precision": 0.0,
+        "infeasible_recall": 0.0,
+        "infeasible_f1": 0.0,
+        "over_refusal_rate": 0.0,
+        "tsr_ci95": [
+          0.41321887380944555,
+          0.6409512368655101
+        ],
+        "ira_ci95": [
+          0.0,
+          0.2775328030260577
+        ],
+        "css_ci95": [
+          0.6997619047619048,
+          0.8304761904761905
+        ]
+      },
+      "by_stratum": {
+        "1": {
+          "n_prompts": 29,
+          "n_feasible": 23,
+          "n_infeasible": 6,
+          "css": 0.717391304347826,
+          "tsr": 0.5217391304347826,
+          "tsr_successes": 12,
+          "ira": 0.0,
+          "infeasible_confusion": {
+            "tp": 0,
+            "fn": 6,
+            "fp": 0,
+            "tn": 23
+          },
+          "infeasible_precision": 0.0,
+          "infeasible_recall": 0.0,
+          "infeasible_f1": 0.0,
+          "over_refusal_rate": 0.0,
+          "tsr_ci95": [
+            0.3296273720444183,
+            0.7076284270692741
+          ],
+          "ira_ci95": [
+            0.0,
+            0.39033429165637346
+          ],
+          "css_ci95": [
+            0.5869565217391305,
+            0.8478260869565217
+          ]
+        },
+        "2": {
+          "n_prompts": 27,
+          "n_feasible": 24,
+          "n_infeasible": 3,
+          "css": 0.7916666666666666,
+          "tsr": 0.5416666666666666,
+          "tsr_successes": 13,
+          "ira": 0.0,
+          "infeasible_confusion": {
+            "tp": 0,
+            "fn": 3,
+            "fp": 0,
+            "tn": 24
+          },
+          "infeasible_precision": 0.0,
+          "infeasible_recall": 0.0,
+          "infeasible_f1": 0.0,
+          "over_refusal_rate": 0.0,
+          "tsr_ci95": [
+            0.35074865225073715,
+            0.7210866638699854
+          ],
+          "ira_ci95": [
+            0.0,
+            0.5614970356393196
+          ],
+          "css_ci95": [
+            0.6805555555555555,
+            0.8888888888888888
+          ]
+        },
+        "3+": {
+          "n_prompts": 24,
+          "n_feasible": 23,
+          "n_infeasible": 1,
+          "css": 0.7891304347826086,
+          "tsr": 0.5217391304347826,
+          "tsr_successes": 12,
+          "ira": 0.0,
+          "infeasible_confusion": {
+            "tp": 0,
+            "fn": 1,
+            "fp": 0,
+            "tn": 23
+          },
+          "infeasible_precision": 0.0,
+          "infeasible_recall": 0.0,
+          "infeasible_f1": 0.0,
+          "over_refusal_rate": 0.0,
+          "tsr_ci95": [
+            0.3296273720444183,
+            0.7076284270692741
+          ],
+          "ira_ci95": [
+            0.0,
+            0.7934506882081973
+          ],
+          "css_ci95": [
+            0.6847826086956522,
+            0.8869565217391304
+          ]
+        }
+      },
+      "by_category_level": {
+        "group": {
+          "n_prompts": 7,
+          "n_feasible": 6,
+          "n_infeasible": 1,
+          "css": 0.5388888888888889,
+          "tsr": 0.3333333333333333,
+          "tsr_successes": 2,
+          "ira": 0.0,
+          "infeasible_confusion": {
+            "tp": 0,
+            "fn": 1,
+            "fp": 0,
+            "tn": 6
+          },
+          "infeasible_precision": 0.0,
+          "infeasible_recall": 0.0,
+          "infeasible_f1": 0.0,
+          "over_refusal_rate": 0.0,
+          "tsr_ci95": [
+            0.09677141021353453,
+            0.7000066870052566
+          ],
+          "ira_ci95": [
+            0.0,
+            0.7934506882081973
+          ],
+          "css_ci95": [
+            0.2611111111111111,
+            0.8333333333333334
+          ]
+        },
+        "leaf": {
+          "n_prompts": 73,
+          "n_feasible": 64,
+          "n_infeasible": 9,
+          "css": 0.7877604166666666,
+          "tsr": 0.546875,
+          "tsr_successes": 35,
+          "ira": 0.0,
+          "infeasible_confusion": {
+            "tp": 0,
+            "fn": 9,
+            "fp": 0,
+            "tn": 64
+          },
+          "infeasible_precision": 0.0,
+          "infeasible_recall": 0.0,
+          "infeasible_f1": 0.0,
+          "over_refusal_rate": 0.0,
+          "tsr_ci95": [
+            0.42573597127892454,
+            0.6627055230364962
+          ],
+          "ira_ci95": [
+            0.0,
+            0.299145051727044
+          ],
+          "css_ci95": [
+            0.7239583333333334,
+            0.8489583333333334
+          ]
+        }
+      },
+      "failure_stages": {
+        "retrieval": 33,
+        "retrieval (always returns a product)": 10
+      },
+      "median_seconds": null,
+      "results": [
+        {
+          "id": "T01",
+          "feasible": true,
+          "expected": {
+            "category": "chips",
+            "dietary_tags": [
+              "gluten_free"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "3497911123350",
+            "0096619656493",
+            "0810091780947",
+            "0096619615162",
+            "00614207",
+            "0071146002456",
+            "0851769007003",
+            "0193968409326",
+            "0708163120589",
+            "0028400705769",
+            "0028400090858",
+            "0028400763035",
+            "3245550078704",
+            "0815099020309",
+            "0015665624058",
+            "0888849006656"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0071146002456",
+          "quantity": null,
+          "raw": {
+            "code": "0071146002456"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T02",
+          "feasible": true,
+          "expected": {
+            "category": "cookies",
+            "dietary_tags": [
+              "vegetarian"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 2
+          },
+          "acceptable": [
+            "7622210021502",
+            "0819898010745",
+            "0856069005193",
+            "8901719117183",
+            "0810091780909",
+            "0044000028282",
+            "0612322000202",
+            "6111259341197",
+            "0021788506102",
+            "7622210625243",
+            "0061232201047",
+            "0810091781074",
+            "0851769007966",
+            "0825625600011",
+            "7622202225512",
+            "8901063014145"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0819898010745",
+          "quantity": null,
+          "raw": {
+            "code": "0819898010745"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T03",
+          "feasible": true,
+          "expected": {
+            "category": "nuts_seeds",
+            "dietary_tags": [
+              "kosher"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0096619928910",
+            "0096619066254",
+            "0691779205514",
+            "0096619332731",
+            "0029000073456",
+            "0096619196470",
+            "0096619107698",
+            "0096619142453",
+            "0897922002041",
+            "0810032300463",
+            "0096619440498",
+            "0014113734066"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0096619332731",
+          "quantity": null,
+          "raw": {
+            "code": "0096619332731"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T04",
+          "feasible": true,
+          "expected": {
+            "category": "juice",
+            "dietary_tags": [
+              "no_added_sugar"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0082592660152",
+            "0048500205716",
+            "0898999011288",
+            "0082592194152",
+            "0025000100000",
+            "3123340008288",
+            "0082592720153",
+            "0025000136634",
+            "0096619036981",
+            "0025000136788"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0048500205716",
+          "quantity": null,
+          "raw": {
+            "code": "0048500205716"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T05",
+          "feasible": true,
+          "expected": {
+            "category": "bread",
+            "dietary_tags": [
+              "organic"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0013764027282",
+            "0013764027053",
+            "0013764027121",
+            "0013764027756",
+            "0073472001202",
+            "0073472001233",
+            "0013764028012",
+            "0013764027039",
+            "0013764027138",
+            "0013764028234",
+            "0013764027220"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0013764027121",
+          "quantity": null,
+          "raw": {
+            "code": "0013764027121"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T06",
+          "feasible": true,
+          "expected": {
+            "category": "yogurt",
+            "dietary_tags": [],
+            "excluded_allergens": [],
+            "max_price": 3,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0078742016856",
+            "0894700010144",
+            "0894700010267",
+            "0017077102322",
+            "6111242100206",
+            "8402001036606"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "00038317",
+          "quantity": null,
+          "raw": {
+            "code": "00038317"
+          },
+          "css": 0.5,
+          "success": false,
+          "violated": [
+            "price"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T07",
+          "feasible": true,
+          "expected": {
+            "category": "pasta",
+            "dietary_tags": [],
+            "excluded_allergens": [],
+            "max_price": 3,
+            "quantity": 3
+          },
+          "acceptable": [
+            "8076809523509",
+            "8076802085899",
+            "3038350014603",
+            "0078742209982",
+            "0076808280081",
+            "00671729",
+            "0076808501063",
+            "0076808005851"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0070234215105",
+          "quantity": null,
+          "raw": {
+            "code": "0070234215105"
+          },
+          "css": 0.0,
+          "success": false,
+          "violated": [
+            "category",
+            "price"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T08",
+          "feasible": true,
+          "expected": {
+            "category": "coffee_tea",
+            "dietary_tags": [],
+            "excluded_allergens": [],
+            "max_price": 7,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0028000743079",
+            "0049000073546",
+            "0012000173196",
+            "0715374544042",
+            "0025500304199",
+            "0012000286193",
+            "0028000462987",
+            "3261342002108",
+            "0012000173219"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0028000743079",
+          "quantity": null,
+          "raw": {
+            "code": "0028000743079"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T09",
+          "feasible": true,
+          "expected": {
+            "category": "cheese",
+            "dietary_tags": [
+              "kosher"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0859977005064",
+            "3859888858336",
+            "0043192316900",
+            "0859977005149",
+            "0073420516208"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0096619362776",
+          "quantity": null,
+          "raw": {
+            "code": "0096619362776"
+          },
+          "css": 0.5,
+          "success": false,
+          "violated": [
+            "tag:kosher"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T10",
+          "feasible": true,
+          "expected": {
+            "category": "snack_bars",
+            "dietary_tags": [],
+            "excluded_allergens": [
+              "peanuts"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0096619215607",
+            "0687456215587",
+            "0016000264601",
+            "0687456211091",
+            "0687456213019",
+            "0851100003015",
+            "0853555006542",
+            "0047495013054",
+            "0722252194145",
+            "0687456221045",
+            "0857549004248",
+            "0018627115830",
+            "0687456223551",
+            "0722252194985",
+            "0047495610048",
+            "0857484006543",
+            "0722252194138"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0602652670527",
+          "quantity": null,
+          "raw": {
+            "code": "0602652670527"
+          },
+          "css": 0.5,
+          "success": false,
+          "violated": [
+            "allergen:peanuts"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T11",
+          "feasible": true,
+          "expected": {
+            "category": "crackers",
+            "dietary_tags": [],
+            "excluded_allergens": [
+              "gluten"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0041570052785",
+            "0044000045463",
+            "0048564067008",
+            "0856069005209",
+            "0044000044718"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0044000051709",
+          "quantity": null,
+          "raw": {
+            "code": "0044000051709"
+          },
+          "css": 0.5,
+          "success": false,
+          "violated": [
+            "allergen:gluten"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T12",
+          "feasible": true,
+          "expected": {
+            "category": "chocolate_candy",
+            "dietary_tags": [],
+            "excluded_allergens": [
+              "milk"
+            ],
+            "max_price": null,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0037466016450",
+            "0857484006611",
+            "0747599607219",
+            "5901588018195",
+            "0071879700049",
+            "0850000547568",
+            "20005832",
+            "0797258004750",
+            "0850180006053",
+            "0716270001660",
+            "0070970474088",
+            "0850068582013"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "03424005",
+          "quantity": null,
+          "raw": {
+            "code": "03424005"
+          },
+          "css": 0.5,
+          "success": false,
+          "violated": [
+            "allergen:milk"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T13",
+          "feasible": true,
+          "expected": {
+            "category": "rice_grains",
+            "dietary_tags": [
+              "non_gmo"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0807176714027",
+            "0017400106959",
+            "0074401760412",
+            "0017400118457",
+            "0748404450044",
+            "0017400140311",
+            "0017400140045",
+            "0017400106676",
+            "0017400140380",
+            "0745042112013",
+            "0073416004306",
+            "0748404287947",
+            "0096619533602"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0017400118457",
+          "quantity": null,
+          "raw": {
+            "code": "0017400118457"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T14",
+          "feasible": true,
+          "expected": {
+            "category": "pasta_sauce",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "8032817240319",
+            "0747479001052",
+            "00101110",
+            "0747479000017",
+            "00797535",
+            "0070234215105"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0070234215105",
+          "quantity": null,
+          "raw": {
+            "code": "0070234215105"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T15",
+          "feasible": true,
+          "expected": {
+            "category": "soup",
+            "dietary_tags": [
+              "gluten_free"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 4
+          },
+          "acceptable": [
+            "0052603054256",
+            "0041196010220",
+            "8410748301000",
+            "0052603283670",
+            "0042272005109",
+            "0052603056076",
+            "0851702007008",
+            "0042272005826",
+            "0096619095032",
+            "0196633908056",
+            "0052603041843",
+            "0041196010138",
+            "0041196914153",
+            "0052603041201",
+            "8410748501004"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0041383155482",
+          "quantity": null,
+          "raw": {
+            "code": "0041383155482"
+          },
+          "css": 0.5,
+          "success": false,
+          "violated": [
+            "category"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T16",
+          "feasible": true,
+          "expected": {
+            "category": "breakfast_cereal",
+            "dietary_tags": [
+              "non_gmo"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0030000010402",
+            "0810589032312",
+            "0058449770565",
+            "0016000435094",
+            "0021908133171",
+            "0018627115991",
+            "0030000011805",
+            "0030000010204",
+            "0884912004710",
+            "0018627116011",
+            "0675625371189",
+            "0855140002175",
+            "0850017468993",
+            "0039978049520",
+            "0058449221012",
+            "0058449770213",
+            "0687456221052",
+            "0021908120232"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0018627116011",
+          "quantity": null,
+          "raw": {
+            "code": "0018627116011"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T17",
+          "feasible": true,
+          "expected": {
+            "category": "milk",
+            "dietary_tags": [
+              "lactose_free"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0856312002757",
+            "0856312002771",
+            "0811620022194",
+            "0041383090738",
+            "0041383090363",
+            "0811620020169"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0041383090363",
+          "quantity": null,
+          "raw": {
+            "code": "0041383090363"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T18",
+          "feasible": true,
+          "expected": {
+            "category": "nut_butters",
+            "dietary_tags": [],
+            "excluded_allergens": [
+              "peanuts"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "8032523532456",
+            "4099100008043",
+            "0096619676811",
+            "0894697002184"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0051500017005",
+          "quantity": null,
+          "raw": {
+            "code": "0051500017005"
+          },
+          "css": 0.5,
+          "success": false,
+          "violated": [
+            "allergen:peanuts"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T19",
+          "feasible": true,
+          "expected": {
+            "category": "plant_milk",
+            "dietary_tags": [],
+            "excluded_allergens": [
+              "tree_nuts"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0025293600232",
+            "0096619237432",
+            "0813636023912",
+            "0744473912353",
+            "4067796002003",
+            "7394376620157",
+            "4067796194807",
+            "0744473912056",
+            "0626027811025"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0813636023912",
+          "quantity": null,
+          "raw": {
+            "code": "0813636023912"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T20",
+          "feasible": true,
+          "expected": {
+            "category": "snacks",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0037466016450",
+            "0857484006611",
+            "0044000051709",
+            "7300400481588",
+            "0033617340610",
+            "0096619656493",
+            "0810091780947",
+            "0687456215587",
+            "0044000051723",
+            "0687456211091",
+            "0856069005193",
+            "0096619615162",
+            "5901588018195",
+            "0810091780909",
+            "0044000028282",
+            "0612322000202",
+            "0028400589291",
+            "0850036699187",
+            "0851769007003",
+            "0044000050986",
+            "0853555006542",
+            "0708163120589",
+            "0071879700049",
+            "0078742300665",
+            "0021788506102",
+            "0061232201047",
+            "0810091781074",
+            "0028400763035",
+            "0047495013054",
+            "3245550078704",
+            "0096619066254",
+            "0815099020309",
+            "0096619885725",
+            "0851769007966",
+            "0029000076501",
+            "0691779205514",
+            "0687456221045",
+            "0096619332731",
+            "0857549004248",
+            "0096619928927",
+            "0850180006053",
+            "0018627115830",
+            "0687456223551",
+            "0096619196470",
+            "0096619107698",
+            "0047495610048",
+            "00542562",
+            "0857484006543",
+            "0096619142453",
+            "0897922002041",
+            "0810032300463",
+            "0096619222490",
+            "0708747151930",
+            "3168930007340",
+            "0014113734066",
+            "0039978008442"
+          ],
+          "stratum": "1",
+          "category_level": "group",
+          "product": "0857484006543",
+          "quantity": null,
+          "raw": {
+            "code": "0857484006543"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T21",
+          "feasible": true,
+          "expected": {
+            "category": "beverages",
+            "dietary_tags": [],
+            "excluded_allergens": [],
+            "max_price": 4,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0898999010007",
+            "0813636023356",
+            "0861029000118",
+            "4061459332896",
+            "0025000061530",
+            "0852909003305",
+            "0082592660152",
+            "0048500205716",
+            "0025293600232",
+            "0096619274857",
+            "0041570110195",
+            "0041570056707"
+          ],
+          "stratum": "1",
+          "category_level": "group",
+          "product": "0036632042842",
+          "quantity": null,
+          "raw": {
+            "code": "0036632042842"
+          },
+          "css": 0.0,
+          "success": false,
+          "violated": [
+            "category",
+            "price"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T22",
+          "feasible": true,
+          "expected": {
+            "category": "dairy",
+            "dietary_tags": [
+              "organic"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0093966513004",
+            "0742365264450",
+            "0859977005064",
+            "6111242100817",
+            "0855088005689",
+            "0052159000011",
+            "0093966515008",
+            "0043192315507",
+            "0196633884466",
+            "0855088005467",
+            "0043192316900",
+            "0096619483556",
+            "0093966009545"
+          ],
+          "stratum": "1",
+          "category_level": "group",
+          "product": "0731216103987",
+          "quantity": null,
+          "raw": {
+            "code": "0731216103987"
+          },
+          "css": 0.5,
+          "success": false,
+          "violated": [
+            "category"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T23",
+          "feasible": true,
+          "expected": {
+            "category": "coffee_tea",
+            "dietary_tags": [
+              "organic"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "3261342002108",
+            "0032917002198",
+            "0892241000686",
+            "0810232020178"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0028000743079",
+          "quantity": null,
+          "raw": {
+            "code": "0028000743079"
+          },
+          "css": 0.5,
+          "success": false,
+          "violated": [
+            "tag:organic"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T24",
+          "feasible": true,
+          "expected": {
+            "category": "chips",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": 4,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0096619656493",
+            "0810091780947"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0850036699187",
+          "quantity": null,
+          "raw": {
+            "code": "0850036699187"
+          },
+          "css": 0.6666666666666666,
+          "success": false,
+          "violated": [
+            "price"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T25",
+          "feasible": true,
+          "expected": {
+            "category": "cookies",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [
+              "soy"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0856069005193",
+            "0810091780909",
+            "0612322000202",
+            "0061232201047",
+            "0810091781074",
+            "0851769007966"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0819898010745",
+          "quantity": null,
+          "raw": {
+            "code": "0819898010745"
+          },
+          "css": 0.3333333333333333,
+          "success": false,
+          "violated": [
+            "tag:vegan",
+            "allergen:soy"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T26",
+          "feasible": true,
+          "expected": {
+            "category": "yogurt",
+            "dietary_tags": [
+              "lactose_free"
+            ],
+            "excluded_allergens": [],
+            "max_price": 6,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0818290017734",
+            "0818290015198",
+            "0818290015167"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0818290015198",
+          "quantity": null,
+          "raw": {
+            "code": "0818290015198"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T27",
+          "feasible": true,
+          "expected": {
+            "category": "cheese",
+            "dietary_tags": [
+              "gluten_free",
+              "vegetarian"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "4099100013436",
+            "6111242106949",
+            "0078742032788"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0096619362776",
+          "quantity": null,
+          "raw": {
+            "code": "0096619362776"
+          },
+          "css": 0.6666666666666666,
+          "success": false,
+          "violated": [
+            "tag:vegetarian"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T28",
+          "feasible": true,
+          "expected": {
+            "category": "nut_butters",
+            "dietary_tags": [
+              "organic"
+            ],
+            "excluded_allergens": [],
+            "max_price": 8,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0051500053300",
+            "0096619555505"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0051500053300",
+          "quantity": null,
+          "raw": {
+            "code": "0051500053300"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T29",
+          "feasible": true,
+          "expected": {
+            "category": "breakfast_cereal",
+            "dietary_tags": [
+              "organic",
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0058449770565",
+            "0096619194261",
+            "0675625371189",
+            "0855140002175",
+            "0039978049520",
+            "0687456221052"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0855140002175",
+          "quantity": null,
+          "raw": {
+            "code": "0855140002175"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T30",
+          "feasible": true,
+          "expected": {
+            "category": "snack_bars",
+            "dietary_tags": [
+              "gluten_free"
+            ],
+            "excluded_allergens": [
+              "soy"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0687456215587",
+            "0687456211091",
+            "0687456213019",
+            "0853555006542",
+            "0687456221045",
+            "0857549004248",
+            "0687456223551",
+            "0857484006543"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0857484006543",
+          "quantity": null,
+          "raw": {
+            "code": "0857484006543"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T31",
+          "feasible": true,
+          "expected": {
+            "category": "crackers",
+            "dietary_tags": [
+              "non_gmo"
+            ],
+            "excluded_allergens": [],
+            "max_price": 4,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0044000051709",
+            "0041570052785",
+            "0033617340610",
+            "0044000050993",
+            "0044000045463",
+            "0066721007438"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0044000051723",
+          "quantity": null,
+          "raw": {
+            "code": "0044000051723"
+          },
+          "css": 0.6666666666666666,
+          "success": false,
+          "violated": [
+            "price"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T32",
+          "feasible": true,
+          "expected": {
+            "category": "chocolate_candy",
+            "dietary_tags": [
+              "fair_trade"
+            ],
+            "excluded_allergens": [],
+            "max_price": 6,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0857484006611"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0857484006611",
+          "quantity": null,
+          "raw": {
+            "code": "0857484006611"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T33",
+          "feasible": true,
+          "expected": {
+            "category": "nuts_seeds",
+            "dietary_tags": [
+              "organic"
+            ],
+            "excluded_allergens": [],
+            "max_price": 10,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0078742300665",
+            "0096619066254",
+            "0691779205514",
+            "0096619928927",
+            "00542562"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0078742300665",
+          "quantity": null,
+          "raw": {
+            "code": "0078742300665"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T34",
+          "feasible": true,
+          "expected": {
+            "category": "bread",
+            "dietary_tags": [
+              "non_gmo"
+            ],
+            "excluded_allergens": [
+              "sesame"
+            ],
+            "max_price": null,
+            "quantity": 3
+          },
+          "acceptable": [
+            "0013764027053",
+            "0013764027121",
+            "0060885000670",
+            "0072250037129",
+            "0013764027756",
+            "0073472001202",
+            "0013764028012",
+            "0013764027039",
+            "0013764027220",
+            "0072250020756"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0073132031112",
+          "quantity": null,
+          "raw": {
+            "code": "0073132031112"
+          },
+          "css": 0.6666666666666666,
+          "success": false,
+          "violated": [
+            "allergen:sesame"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T35",
+          "feasible": true,
+          "expected": {
+            "category": "rice_grains",
+            "dietary_tags": [
+              "gluten_free",
+              "non_gmo"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0807176714027",
+            "0017400106959",
+            "0074401760412",
+            "0017400118457",
+            "0017400140045",
+            "0017400140380",
+            "0073416004306",
+            "0096619533602"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0017400118457",
+          "quantity": null,
+          "raw": {
+            "code": "0017400118457"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T36",
+          "feasible": true,
+          "expected": {
+            "category": "pasta",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": 2.5,
+            "quantity": 1
+          },
+          "acceptable": [
+            "8076809523509",
+            "8076802085899",
+            "3038350014603",
+            "0076808280081",
+            "00671729"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0058449770565",
+          "quantity": null,
+          "raw": {
+            "code": "0058449770565"
+          },
+          "css": 0.3333333333333333,
+          "success": false,
+          "violated": [
+            "category",
+            "price"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T37",
+          "feasible": true,
+          "expected": {
+            "category": "pasta_sauce",
+            "dietary_tags": [],
+            "excluded_allergens": [
+              "milk"
+            ],
+            "max_price": 6,
+            "quantity": 1
+          },
+          "acceptable": [
+            "8032817240319",
+            "0036200430972",
+            "0096619072101",
+            "0747479001052",
+            "0051000025487",
+            "0036200431733",
+            "0036200223024",
+            "0051000269775",
+            "00452267",
+            "0051000027948",
+            "0747479000604"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0070234215105",
+          "quantity": null,
+          "raw": {
+            "code": "0070234215105"
+          },
+          "css": 0.6666666666666666,
+          "success": false,
+          "violated": [
+            "price"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T38",
+          "feasible": true,
+          "expected": {
+            "category": "soup",
+            "dietary_tags": [
+              "organic",
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0042272005109",
+            "0042272005826"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0042272005826",
+          "quantity": null,
+          "raw": {
+            "code": "0042272005826"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T39",
+          "feasible": true,
+          "expected": {
+            "category": "juice",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": 5,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0898999010007",
+            "0025000061530",
+            "0048500205716",
+            "0898999011288",
+            "0898999000503"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0014800000344",
+          "quantity": null,
+          "raw": {
+            "code": "0014800000344"
+          },
+          "css": 0.6666666666666666,
+          "success": false,
+          "violated": [
+            "price"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T40",
+          "feasible": true,
+          "expected": {
+            "category": "coffee_tea",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": 8,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0028000743079",
+            "0049000073546",
+            "0715374544042",
+            "0025500304199",
+            "0028000462987",
+            "3261342002108",
+            "0012000173219",
+            "0025500304014"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0028000743079",
+          "quantity": null,
+          "raw": {
+            "code": "0028000743079"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T41",
+          "feasible": true,
+          "expected": {
+            "category": "plant_milk",
+            "dietary_tags": [
+              "kosher"
+            ],
+            "excluded_allergens": [
+              "soy"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0813636023356",
+            "0852909003305",
+            "0096619274857",
+            "0096619237432",
+            "0813636023912",
+            "0041570055311",
+            "0096619533008",
+            "0041570054130",
+            "0626027811025"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0855188003004",
+          "quantity": null,
+          "raw": {
+            "code": "0855188003004"
+          },
+          "css": 0.3333333333333333,
+          "success": false,
+          "violated": [
+            "category",
+            "tag:kosher"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T42",
+          "feasible": true,
+          "expected": {
+            "category": "milk",
+            "dietary_tags": [
+              "organic"
+            ],
+            "excluded_allergens": [],
+            "max_price": 5,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0093966513004",
+            "0742365264450",
+            "6111242100817",
+            "0855088005689"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0742365264450",
+          "quantity": null,
+          "raw": {
+            "code": "0742365264450"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T43",
+          "feasible": true,
+          "expected": {
+            "category": "pantry",
+            "dietary_tags": [
+              "kosher"
+            ],
+            "excluded_allergens": [],
+            "max_price": 4,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0078742209982",
+            "8032817240319",
+            "0857183005007",
+            "0096619072101",
+            "0017400106959",
+            "0076808533583",
+            "0850791002352"
+          ],
+          "stratum": "2",
+          "category_level": "group",
+          "product": "0078742209982",
+          "quantity": null,
+          "raw": {
+            "code": "0078742209982"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T44",
+          "feasible": true,
+          "expected": {
+            "category": "snacks",
+            "dietary_tags": [],
+            "excluded_allergens": [
+              "peanuts",
+              "tree_nuts"
+            ],
+            "max_price": null,
+            "quantity": 3
+          },
+          "acceptable": [
+            "0037466016450",
+            "0857484006611",
+            "5060198820052",
+            "0044000051709",
+            "7300400481588",
+            "0033617340610",
+            "3497911123350",
+            "0044000050993",
+            "0096619656493",
+            "0044000045463",
+            "0066721007438",
+            "7622210021502",
+            "0819898010745",
+            "03424005",
+            "0747599607219",
+            "0810091780947",
+            "5010029219494",
+            "0687456215587",
+            "0016000264601",
+            "0044000051723",
+            "0687456211091",
+            "8901719117183",
+            "0068437389754",
+            "0096619615162",
+            "0687456213019",
+            "5901588018195",
+            "0044000028282",
+            "0612322000202",
+            "0028400589291",
+            "0014100074724",
+            "0851100003015",
+            "0048564067008",
+            "00614207",
+            "0071146002456",
+            "0850036699187",
+            "0851769007003",
+            "0044000050986",
+            "0193968409326",
+            "0044000031114",
+            "0853555006542",
+            "0708163120589",
+            "0071879700049",
+            "0078742300665",
+            "6111259341197",
+            "0021788506102",
+            "0044000000578",
+            "0028400705769",
+            "7622210625243",
+            "0061232201047",
+            "0028400090858",
+            "0028400763035",
+            "0047495013054",
+            "3245550078704",
+            "0810291001088",
+            "0038000138416",
+            "0044000004637",
+            "0059290573220",
+            "0850000547568",
+            "0096619066254",
+            "0044000045753",
+            "0066721028426",
+            "0044000051013",
+            "0815099020309",
+            "0015665624058",
+            "0722252194145",
+            "00931847",
+            "0049508250302",
+            "0028400247245",
+            "8901491101844",
+            "0888849006656",
+            "0691779205514",
+            "0825625600011",
+            "0687456221045",
+            "7622202225512",
+            "8901063014145",
+            "0857549004248",
+            "20005832",
+            "0797258004750",
+            "0850180006053",
+            "0716270001660",
+            "0070970474088",
+            "0018627115830",
+            "0687456223551",
+            "0722252194985",
+            "0047495610048",
+            "00542562",
+            "0857484006543",
+            "0722252194138",
+            "0897922002041",
+            "0810032300463",
+            "0039978008442"
+          ],
+          "stratum": "2",
+          "category_level": "group",
+          "product": "0051500017005",
+          "quantity": null,
+          "raw": {
+            "code": "0051500017005"
+          },
+          "css": 0.3333333333333333,
+          "success": false,
+          "violated": [
+            "category",
+            "allergen:peanuts"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T45",
+          "feasible": true,
+          "expected": {
+            "category": "plant_milk",
+            "dietary_tags": [
+              "no_added_sugar",
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0096619274857",
+            "0041570056707",
+            "4067796002003",
+            "4067796194807",
+            "0744473912056"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0041570056707",
+          "quantity": null,
+          "raw": {
+            "code": "0041570056707"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T46",
+          "feasible": true,
+          "expected": {
+            "category": "chips",
+            "dietary_tags": [
+              "kosher"
+            ],
+            "excluded_allergens": [
+              "milk"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0096619656493",
+            "0850036699187",
+            "0028400090858",
+            "0038000138416",
+            "0815099020309",
+            "0028400247245"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0028400090858",
+          "quantity": null,
+          "raw": {
+            "code": "0028400090858"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T47",
+          "feasible": true,
+          "expected": {
+            "category": "snack_bars",
+            "dietary_tags": [
+              "organic",
+              "non_gmo"
+            ],
+            "excluded_allergens": [],
+            "max_price": 7,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0687456215587",
+            "0687456211091",
+            "0687456213019",
+            "0853555006542",
+            "0687456221045",
+            "0857549004248"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0687456213019",
+          "quantity": null,
+          "raw": {
+            "code": "0687456213019"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T48",
+          "feasible": true,
+          "expected": {
+            "category": "cookies",
+            "dietary_tags": [
+              "vegetarian"
+            ],
+            "excluded_allergens": [
+              "peanuts",
+              "tree_nuts"
+            ],
+            "max_price": null,
+            "quantity": 2
+          },
+          "acceptable": [
+            "7622210021502",
+            "0819898010745",
+            "8901719117183",
+            "0044000028282",
+            "0612322000202",
+            "6111259341197",
+            "0021788506102",
+            "7622210625243",
+            "0061232201047",
+            "0825625600011",
+            "7622202225512",
+            "8901063014145"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0096619885725",
+          "quantity": null,
+          "raw": {
+            "code": "0096619885725"
+          },
+          "css": 0.25,
+          "success": false,
+          "violated": [
+            "category",
+            "allergen:peanuts",
+            "allergen:tree_nuts"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T49",
+          "feasible": true,
+          "expected": {
+            "category": "crackers",
+            "dietary_tags": [
+              "gluten_free"
+            ],
+            "excluded_allergens": [
+              "sesame"
+            ],
+            "max_price": 5.5,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0041570052785",
+            "0044000045463",
+            "0048564067008",
+            "0856069005209"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0048564067008",
+          "quantity": null,
+          "raw": {
+            "code": "0048564067008"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T50",
+          "feasible": true,
+          "expected": {
+            "category": "breakfast_cereal",
+            "dietary_tags": [
+              "organic",
+              "non_gmo"
+            ],
+            "excluded_allergens": [],
+            "max_price": 7,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0058449770565",
+            "0021908133171",
+            "0018627115991",
+            "0675625371189",
+            "0855140002175",
+            "0039978049520",
+            "0058449221012",
+            "0058449770213",
+            "0687456221052",
+            "0021908120232"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0058449770565",
+          "quantity": null,
+          "raw": {
+            "code": "0058449770565"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T51",
+          "feasible": true,
+          "expected": {
+            "category": "chips",
+            "dietary_tags": [
+              "gluten_free",
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": 5,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0096619656493",
+            "0810091780947",
+            "0096619615162",
+            "0851769007003",
+            "0708163120589"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0851769007003",
+          "quantity": null,
+          "raw": {
+            "code": "0851769007003"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T52",
+          "feasible": true,
+          "expected": {
+            "category": "plant_milk",
+            "dietary_tags": [
+              "organic",
+              "vegan"
+            ],
+            "excluded_allergens": [
+              "soy"
+            ],
+            "max_price": null,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0813636023356",
+            "0861029000118",
+            "0813636023912",
+            "0744473912353",
+            "4067796002003",
+            "4067796194807",
+            "0744473912056"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0813636023356",
+          "quantity": null,
+          "raw": {
+            "code": "0813636023356"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T53",
+          "feasible": true,
+          "expected": {
+            "category": "yogurt",
+            "dietary_tags": [
+              "gluten_free",
+              "vegetarian"
+            ],
+            "excluded_allergens": [],
+            "max_price": 6,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0078742016856"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0078742016856",
+          "quantity": null,
+          "raw": {
+            "code": "0078742016856"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T54",
+          "feasible": true,
+          "expected": {
+            "category": "cheese",
+            "dietary_tags": [
+              "kosher",
+              "gluten_free"
+            ],
+            "excluded_allergens": [],
+            "max_price": 9,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0859977005064",
+            "0859977005149"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0073420516208",
+          "quantity": null,
+          "raw": {
+            "code": "0073420516208"
+          },
+          "css": 0.5,
+          "success": false,
+          "violated": [
+            "tag:gluten_free",
+            "price"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T55",
+          "feasible": true,
+          "expected": {
+            "category": "nut_butters",
+            "dietary_tags": [
+              "vegan",
+              "non_gmo"
+            ],
+            "excluded_allergens": [
+              "tree_nuts"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0856260006005",
+            "0071018010183",
+            "0850791002352",
+            "0051500068243",
+            "0051500017012",
+            "0051500245408"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0058449770565",
+          "quantity": null,
+          "raw": {
+            "code": "0058449770565"
+          },
+          "css": 0.5,
+          "success": false,
+          "violated": [
+            "category",
+            "allergen:tree_nuts"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T56",
+          "feasible": true,
+          "expected": {
+            "category": "nuts_seeds",
+            "dietary_tags": [
+              "vegan",
+              "kosher"
+            ],
+            "excluded_allergens": [],
+            "max_price": 12,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0096619066254",
+            "0691779205514",
+            "0096619332731",
+            "0096619196470",
+            "0096619107698",
+            "0096619142453",
+            "0897922002041",
+            "0810032300463"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0096619332731",
+          "quantity": null,
+          "raw": {
+            "code": "0096619332731"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T57",
+          "feasible": true,
+          "expected": {
+            "category": "bread",
+            "dietary_tags": [
+              "organic",
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": 6.5,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0073472001202",
+            "0073472001233"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0013764027220",
+          "quantity": null,
+          "raw": {
+            "code": "0013764027220"
+          },
+          "css": 0.5,
+          "success": false,
+          "violated": [
+            "tag:vegan",
+            "price"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T58",
+          "feasible": true,
+          "expected": {
+            "category": "pasta",
+            "dietary_tags": [
+              "vegan",
+              "non_gmo"
+            ],
+            "excluded_allergens": [],
+            "max_price": 4,
+            "quantity": 4
+          },
+          "acceptable": [
+            "0076808280081",
+            "0076808005851",
+            "0857183005007",
+            "0076808533583"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0076808280081",
+          "quantity": null,
+          "raw": {
+            "code": "0076808280081"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T59",
+          "feasible": true,
+          "expected": {
+            "category": "pasta_sauce",
+            "dietary_tags": [
+              "vegan",
+              "gluten_free"
+            ],
+            "excluded_allergens": [
+              "milk"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "8032817240319"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0070234215105",
+          "quantity": null,
+          "raw": {
+            "code": "0070234215105"
+          },
+          "css": 0.75,
+          "success": false,
+          "violated": [
+            "tag:gluten_free"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T60",
+          "feasible": true,
+          "expected": {
+            "category": "soup",
+            "dietary_tags": [
+              "gluten_free",
+              "organic"
+            ],
+            "excluded_allergens": [],
+            "max_price": 5,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0052603054256",
+            "0052603283670",
+            "0042272005109",
+            "0052603056076",
+            "0042272005826"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0042272005826",
+          "quantity": null,
+          "raw": {
+            "code": "0042272005826"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T61",
+          "feasible": true,
+          "expected": {
+            "category": "juice",
+            "dietary_tags": [
+              "vegan",
+              "no_added_sugar"
+            ],
+            "excluded_allergens": [],
+            "max_price": 6,
+            "quantity": 3
+          },
+          "acceptable": [
+            "0048500205716",
+            "0898999011288",
+            "0025000100000"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0048500205716",
+          "quantity": null,
+          "raw": {
+            "code": "0048500205716"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T62",
+          "feasible": true,
+          "expected": {
+            "category": "coffee_tea",
+            "dietary_tags": [
+              "vegan",
+              "organic"
+            ],
+            "excluded_allergens": [],
+            "max_price": 12,
+            "quantity": 1
+          },
+          "acceptable": [
+            "3261342002108"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0028000743079",
+          "quantity": null,
+          "raw": {
+            "code": "0028000743079"
+          },
+          "css": 0.75,
+          "success": false,
+          "violated": [
+            "tag:organic"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T63",
+          "feasible": true,
+          "expected": {
+            "category": "rice_grains",
+            "dietary_tags": [
+              "organic",
+              "vegan",
+              "gluten_free"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0195893170920",
+            "0096619533602"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "00530361",
+          "quantity": null,
+          "raw": {
+            "code": "00530361"
+          },
+          "css": 0.75,
+          "success": false,
+          "violated": [
+            "tag:gluten_free"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T64",
+          "feasible": true,
+          "expected": {
+            "category": "chocolate_candy",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [
+              "soy"
+            ],
+            "max_price": 6,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0037466016450",
+            "0857484006611"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "03424005",
+          "quantity": null,
+          "raw": {
+            "code": "03424005"
+          },
+          "css": 0.5,
+          "success": false,
+          "violated": [
+            "tag:vegan",
+            "allergen:soy"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T65",
+          "feasible": true,
+          "expected": {
+            "category": "milk",
+            "dietary_tags": [
+              "lactose_free",
+              "gluten_free"
+            ],
+            "excluded_allergens": [],
+            "max_price": 6,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0811620022194",
+            "0041383090738",
+            "0041383090363"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0041383090363",
+          "quantity": null,
+          "raw": {
+            "code": "0041383090363"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T66",
+          "feasible": true,
+          "expected": {
+            "category": "pasta",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [
+              "gluten"
+            ],
+            "max_price": null,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0857183005007"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "8076800195019",
+          "quantity": null,
+          "raw": {
+            "code": "8076800195019"
+          },
+          "css": 0.6666666666666666,
+          "success": false,
+          "violated": [
+            "allergen:gluten"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T67",
+          "feasible": true,
+          "expected": {
+            "category": "soup",
+            "dietary_tags": [
+              "non_gmo",
+              "gluten_free"
+            ],
+            "excluded_allergens": [
+              "celery"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0042272005109"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0041196010220",
+          "quantity": null,
+          "raw": {
+            "code": "0041196010220"
+          },
+          "css": 0.5,
+          "success": false,
+          "violated": [
+            "tag:non_gmo",
+            "allergen:celery"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T68",
+          "feasible": true,
+          "expected": {
+            "category": "snacks",
+            "dietary_tags": [
+              "vegan",
+              "kosher"
+            ],
+            "excluded_allergens": [
+              "soy"
+            ],
+            "max_price": 8,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0044000051709",
+            "0096619656493",
+            "0687456215587",
+            "0850036699187",
+            "0044000050986",
+            "0047495013054",
+            "0096619066254",
+            "0815099020309",
+            "0691779205514",
+            "0096619332731",
+            "0850180006053"
+          ],
+          "stratum": "3+",
+          "category_level": "group",
+          "product": "0058449770565",
+          "quantity": null,
+          "raw": {
+            "code": "0058449770565"
+          },
+          "css": 0.4,
+          "success": false,
+          "violated": [
+            "category",
+            "tag:kosher",
+            "allergen:soy"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T69",
+          "feasible": true,
+          "expected": {
+            "category": "breakfast_cereal",
+            "dietary_tags": [
+              "no_added_sugar"
+            ],
+            "excluded_allergens": [
+              "gluten"
+            ],
+            "max_price": 7,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0021908133171"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0021908120232",
+          "quantity": null,
+          "raw": {
+            "code": "0021908120232"
+          },
+          "css": 0.75,
+          "success": false,
+          "violated": [
+            "allergen:gluten"
+          ],
+          "failure_stage": "retrieval"
+        },
+        {
+          "id": "T70",
+          "feasible": true,
+          "expected": {
+            "category": "snack_bars",
+            "dietary_tags": [
+              "fair_trade"
+            ],
+            "excluded_allergens": [
+              "soy"
+            ],
+            "max_price": 10,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0857484006543"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0857484006543",
+          "quantity": null,
+          "raw": {
+            "code": "0857484006543"
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T71",
+          "feasible": false,
+          "expected": {
+            "category": "cheese",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0096619362776",
+          "quantity": null,
+          "raw": {
+            "code": "0096619362776"
+          },
+          "css": null,
+          "success": false,
+          "violated": [
+            "tag:vegan"
+          ],
+          "failure_stage": "retrieval (always returns a product)"
+        },
+        {
+          "id": "T72",
+          "feasible": false,
+          "expected": {
+            "category": "yogurt",
+            "dietary_tags": [],
+            "excluded_allergens": [
+              "milk"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0850000547568",
+          "quantity": null,
+          "raw": {
+            "code": "0850000547568"
+          },
+          "css": null,
+          "success": false,
+          "violated": [
+            "category"
+          ],
+          "failure_stage": "retrieval (always returns a product)"
+        },
+        {
+          "id": "T73",
+          "feasible": false,
+          "expected": {
+            "category": "bread",
+            "dietary_tags": [
+              "gluten_free"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0060885000670",
+          "quantity": null,
+          "raw": {
+            "code": "0060885000670"
+          },
+          "css": null,
+          "success": false,
+          "violated": [
+            "tag:gluten_free"
+          ],
+          "failure_stage": "retrieval (always returns a product)"
+        },
+        {
+          "id": "T74",
+          "feasible": false,
+          "expected": {
+            "category": "coffee_tea",
+            "dietary_tags": [],
+            "excluded_allergens": [],
+            "max_price": 4,
+            "quantity": 1
+          },
+          "acceptable": [],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0028000743079",
+          "quantity": null,
+          "raw": {
+            "code": "0028000743079"
+          },
+          "css": null,
+          "success": false,
+          "violated": [
+            "price"
+          ],
+          "failure_stage": "retrieval (always returns a product)"
+        },
+        {
+          "id": "T75",
+          "feasible": false,
+          "expected": {
+            "category": "nuts_seeds",
+            "dietary_tags": [],
+            "excluded_allergens": [],
+            "max_price": 4,
+            "quantity": 2
+          },
+          "acceptable": [],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0096619885725",
+          "quantity": null,
+          "raw": {
+            "code": "0096619885725"
+          },
+          "css": null,
+          "success": false,
+          "violated": [
+            "price"
+          ],
+          "failure_stage": "retrieval (always returns a product)"
+        },
+        {
+          "id": "T76",
+          "feasible": false,
+          "expected": {
+            "category": "crackers",
+            "dietary_tags": [
+              "gluten_free",
+              "organic"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0049508250302",
+          "quantity": null,
+          "raw": {
+            "code": "0049508250302"
+          },
+          "css": null,
+          "success": false,
+          "violated": [
+            "tag:gluten_free"
+          ],
+          "failure_stage": "retrieval (always returns a product)"
+        },
+        {
+          "id": "T77",
+          "feasible": false,
+          "expected": {
+            "category": "milk",
+            "dietary_tags": [
+              "organic",
+              "lactose_free"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0041383090363",
+          "quantity": null,
+          "raw": {
+            "code": "0041383090363"
+          },
+          "css": null,
+          "success": false,
+          "violated": [
+            "tag:organic"
+          ],
+          "failure_stage": "retrieval (always returns a product)"
+        },
+        {
+          "id": "T78",
+          "feasible": false,
+          "expected": {
+            "category": "cookies",
+            "dietary_tags": [
+              "kosher"
+            ],
+            "excluded_allergens": [
+              "eggs"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0014100074724",
+          "quantity": null,
+          "raw": {
+            "code": "0014100074724"
+          },
+          "css": null,
+          "success": false,
+          "violated": [
+            "allergen:eggs"
+          ],
+          "failure_stage": "retrieval (always returns a product)"
+        },
+        {
+          "id": "T79",
+          "feasible": false,
+          "expected": {
+            "category": "cookies",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [
+              "soy"
+            ],
+            "max_price": 4,
+            "quantity": 1
+          },
+          "acceptable": [],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0856260006005",
+          "quantity": null,
+          "raw": {
+            "code": "0856260006005"
+          },
+          "css": null,
+          "success": false,
+          "violated": [
+            "category"
+          ],
+          "failure_stage": "retrieval (always returns a product)"
+        },
+        {
+          "id": "T80",
+          "feasible": false,
+          "expected": {
+            "category": "dairy",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [],
+          "stratum": "1",
+          "category_level": "group",
+          "product": "0898999000503",
+          "quantity": null,
+          "raw": {
+            "code": "0898999000503"
+          },
+          "css": null,
+          "success": false,
+          "violated": [
+            "category"
+          ],
+          "failure_stage": "retrieval (always returns a product)"
+        }
+      ]
+    },
+    "C": {
+      "summary": {
+        "n_prompts": 80,
+        "n_feasible": 70,
+        "n_infeasible": 10,
+        "css": 0.9857142857142858,
+        "tsr": 0.9857142857142858,
+        "tsr_successes": 69,
+        "ira": 1.0,
+        "infeasible_confusion": {
+          "tp": 10,
+          "fn": 0,
+          "fp": 1,
+          "tn": 69
+        },
+        "infeasible_precision": 0.9090909090909091,
+        "infeasible_recall": 1.0,
+        "infeasible_f1": 0.9523809523809523,
+        "over_refusal_rate": 0.014285714285714285,
+        "tsr_ci95": [
+          0.9234181279042126,
+          0.9974737535700353
+        ],
+        "ira_ci95": [
+          0.7224671969739421,
+          0.9999999999999999
+        ],
+        "css_ci95": [
+          0.9571428571428572,
+          1.0
+        ],
+        "tsr_with_quantity": 0.9857142857142858,
+        "constraint_extraction": {
+          "exact_match": 0.9375,
+          "field_accuracy": {
+            "category": 0.975,
+            "dietary_tags": 0.975,
+            "excluded_allergens": 0.9625,
+            "max_price": 1.0,
+            "quantity": 1.0
+          }
+        }
+      },
+      "by_stratum": {
+        "1": {
+          "n_prompts": 29,
+          "n_feasible": 23,
+          "n_infeasible": 6,
+          "css": 1.0,
+          "tsr": 1.0,
+          "tsr_successes": 23,
+          "ira": 1.0,
+          "infeasible_confusion": {
+            "tp": 6,
+            "fn": 0,
+            "fp": 0,
+            "tn": 23
+          },
+          "infeasible_precision": 1.0,
+          "infeasible_recall": 1.0,
+          "infeasible_f1": 1.0,
+          "over_refusal_rate": 0.0,
+          "tsr_ci95": [
+            0.8568833796149266,
+            1.0
+          ],
+          "ira_ci95": [
+            0.6096657083436265,
+            1.0
+          ],
+          "css_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "2": {
+          "n_prompts": 27,
+          "n_feasible": 24,
+          "n_infeasible": 3,
+          "css": 1.0,
+          "tsr": 1.0,
+          "tsr_successes": 24,
+          "ira": 1.0,
+          "infeasible_confusion": {
+            "tp": 3,
+            "fn": 0,
+            "fp": 0,
+            "tn": 24
+          },
+          "infeasible_precision": 1.0,
+          "infeasible_recall": 1.0,
+          "infeasible_f1": 1.0,
+          "over_refusal_rate": 0.0,
+          "tsr_ci95": [
+            0.862023793448672,
+            0.9999999999999999
+          ],
+          "ira_ci95": [
+            0.43850296436068037,
+            1.0
+          ],
+          "css_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "3+": {
+          "n_prompts": 24,
+          "n_feasible": 23,
+          "n_infeasible": 1,
+          "css": 0.9565217391304348,
+          "tsr": 0.9565217391304348,
+          "tsr_successes": 22,
+          "ira": 1.0,
+          "infeasible_confusion": {
+            "tp": 1,
+            "fn": 0,
+            "fp": 1,
+            "tn": 22
+          },
+          "infeasible_precision": 0.5,
+          "infeasible_recall": 1.0,
+          "infeasible_f1": 0.6666666666666666,
+          "over_refusal_rate": 0.043478260869565216,
+          "tsr_ci95": [
+            0.7900884474454931,
+            0.9922833339420488
+          ],
+          "ira_ci95": [
+            0.2065493117918027,
+            1.0
+          ],
+          "css_ci95": [
+            0.8695652173913043,
+            1.0
+          ]
+        }
+      },
+      "by_category_level": {
+        "group": {
+          "n_prompts": 7,
+          "n_feasible": 6,
+          "n_infeasible": 1,
+          "css": 1.0,
+          "tsr": 1.0,
+          "tsr_successes": 6,
+          "ira": 1.0,
+          "infeasible_confusion": {
+            "tp": 1,
+            "fn": 0,
+            "fp": 0,
+            "tn": 6
+          },
+          "infeasible_precision": 1.0,
+          "infeasible_recall": 1.0,
+          "infeasible_f1": 1.0,
+          "over_refusal_rate": 0.0,
+          "tsr_ci95": [
+            0.6096657083436265,
+            1.0
+          ],
+          "ira_ci95": [
+            0.2065493117918027,
+            1.0
+          ],
+          "css_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "leaf": {
+          "n_prompts": 73,
+          "n_feasible": 64,
+          "n_infeasible": 9,
+          "css": 0.984375,
+          "tsr": 0.984375,
+          "tsr_successes": 63,
+          "ira": 1.0,
+          "infeasible_confusion": {
+            "tp": 9,
+            "fn": 0,
+            "fp": 1,
+            "tn": 63
+          },
+          "infeasible_precision": 0.9,
+          "infeasible_recall": 1.0,
+          "infeasible_f1": 0.9473684210526316,
+          "over_refusal_rate": 0.015625,
+          "tsr_ci95": [
+            0.9166589831521346,
+            0.9972364581072146
+          ],
+          "ira_ci95": [
+            0.700854948272956,
+            1.0
+          ],
+          "css_ci95": [
+            0.953125,
+            1.0
+          ]
+        }
+      },
+      "failure_stages": {
+        "extraction": 1
+      },
+      "median_seconds": 2.93,
+      "results": [
+        {
+          "id": "T01",
+          "feasible": true,
+          "expected": {
+            "category": "chips",
+            "dietary_tags": [
+              "gluten_free"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "3497911123350",
+            "0096619656493",
+            "0810091780947",
+            "0096619615162",
+            "00614207",
+            "0071146002456",
+            "0851769007003",
+            "0193968409326",
+            "0708163120589",
+            "0028400705769",
+            "0028400090858",
+            "0028400763035",
+            "3245550078704",
+            "0815099020309",
+            "0015665624058",
+            "0888849006656"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "3497911123350",
+          "quantity": 1,
+          "raw": {
+            "code": "3497911123350",
+            "constraints": {
+              "category": "chips",
+              "dietary_tags": [
+                "gluten_free"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.46
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T02",
+          "feasible": true,
+          "expected": {
+            "category": "cookies",
+            "dietary_tags": [
+              "vegetarian"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 2
+          },
+          "acceptable": [
+            "7622210021502",
+            "0819898010745",
+            "0856069005193",
+            "8901719117183",
+            "0810091780909",
+            "0044000028282",
+            "0612322000202",
+            "6111259341197",
+            "0021788506102",
+            "7622210625243",
+            "0061232201047",
+            "0810091781074",
+            "0851769007966",
+            "0825625600011",
+            "7622202225512",
+            "8901063014145"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "7622210021502",
+          "quantity": 2,
+          "raw": {
+            "code": "7622210021502",
+            "constraints": {
+              "category": "cookies",
+              "dietary_tags": [
+                "vegetarian"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 2
+            },
+            "quantity": 2,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.26
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T03",
+          "feasible": true,
+          "expected": {
+            "category": "nuts_seeds",
+            "dietary_tags": [
+              "kosher"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0096619928910",
+            "0096619066254",
+            "0691779205514",
+            "0096619332731",
+            "0029000073456",
+            "0096619196470",
+            "0096619107698",
+            "0096619142453",
+            "0897922002041",
+            "0810032300463",
+            "0096619440498",
+            "0014113734066"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0096619928910",
+          "quantity": 1,
+          "raw": {
+            "code": "0096619928910",
+            "constraints": {
+              "category": "nuts_seeds",
+              "dietary_tags": [
+                "kosher"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.4
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T04",
+          "feasible": true,
+          "expected": {
+            "category": "juice",
+            "dietary_tags": [
+              "no_added_sugar"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0082592660152",
+            "0048500205716",
+            "0898999011288",
+            "0082592194152",
+            "0025000100000",
+            "3123340008288",
+            "0082592720153",
+            "0025000136634",
+            "0096619036981",
+            "0025000136788"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0082592660152",
+          "quantity": 1,
+          "raw": {
+            "code": "0082592660152",
+            "constraints": {
+              "category": "juice",
+              "dietary_tags": [
+                "no_added_sugar"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.39
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T05",
+          "feasible": true,
+          "expected": {
+            "category": "bread",
+            "dietary_tags": [
+              "organic"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0013764027282",
+            "0013764027053",
+            "0013764027121",
+            "0013764027756",
+            "0073472001202",
+            "0073472001233",
+            "0013764028012",
+            "0013764027039",
+            "0013764027138",
+            "0013764028234",
+            "0013764027220"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0013764027282",
+          "quantity": 2,
+          "raw": {
+            "code": "0013764027282",
+            "constraints": {
+              "category": "bread",
+              "dietary_tags": [
+                "organic"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 2
+            },
+            "quantity": 2,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.25
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T06",
+          "feasible": true,
+          "expected": {
+            "category": "yogurt",
+            "dietary_tags": [],
+            "excluded_allergens": [],
+            "max_price": 3,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0078742016856",
+            "0894700010144",
+            "0894700010267",
+            "0017077102322",
+            "6111242100206",
+            "8402001036606"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0078742016856",
+          "quantity": 1,
+          "raw": {
+            "code": "0078742016856",
+            "constraints": {
+              "category": "yogurt",
+              "dietary_tags": [],
+              "excluded_allergens": [],
+              "max_price": 3,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.28
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T07",
+          "feasible": true,
+          "expected": {
+            "category": "pasta",
+            "dietary_tags": [],
+            "excluded_allergens": [],
+            "max_price": 3,
+            "quantity": 3
+          },
+          "acceptable": [
+            "8076809523509",
+            "8076802085899",
+            "3038350014603",
+            "0078742209982",
+            "0076808280081",
+            "00671729",
+            "0076808501063",
+            "0076808005851"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "8076809523509",
+          "quantity": 3,
+          "raw": {
+            "code": "8076809523509",
+            "constraints": {
+              "category": "pasta",
+              "dietary_tags": [],
+              "excluded_allergens": [],
+              "max_price": 3,
+              "quantity": 3
+            },
+            "quantity": 3,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.25
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T08",
+          "feasible": true,
+          "expected": {
+            "category": "coffee_tea",
+            "dietary_tags": [],
+            "excluded_allergens": [],
+            "max_price": 7,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0028000743079",
+            "0049000073546",
+            "0012000173196",
+            "0715374544042",
+            "0025500304199",
+            "0012000286193",
+            "0028000462987",
+            "3261342002108",
+            "0012000173219"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0028000743079",
+          "quantity": 1,
+          "raw": {
+            "code": "0028000743079",
+            "constraints": {
+              "category": "coffee_tea",
+              "dietary_tags": [],
+              "excluded_allergens": [],
+              "max_price": 7,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.24
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T09",
+          "feasible": true,
+          "expected": {
+            "category": "cheese",
+            "dietary_tags": [
+              "kosher"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0859977005064",
+            "3859888858336",
+            "0043192316900",
+            "0859977005149",
+            "0073420516208"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0859977005064",
+          "quantity": 1,
+          "raw": {
+            "code": "0859977005064",
+            "constraints": {
+              "category": "cheese",
+              "dietary_tags": [
+                "kosher"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.31
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T10",
+          "feasible": true,
+          "expected": {
+            "category": "snack_bars",
+            "dietary_tags": [],
+            "excluded_allergens": [
+              "peanuts"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0096619215607",
+            "0687456215587",
+            "0016000264601",
+            "0687456211091",
+            "0687456213019",
+            "0851100003015",
+            "0853555006542",
+            "0047495013054",
+            "0722252194145",
+            "0687456221045",
+            "0857549004248",
+            "0018627115830",
+            "0687456223551",
+            "0722252194985",
+            "0047495610048",
+            "0857484006543",
+            "0722252194138"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0096619215607",
+          "quantity": 1,
+          "raw": {
+            "code": "0096619215607",
+            "constraints": {
+              "category": "snack_bars",
+              "dietary_tags": [],
+              "excluded_allergens": [
+                "peanuts"
+              ],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.42
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T11",
+          "feasible": true,
+          "expected": {
+            "category": "crackers",
+            "dietary_tags": [],
+            "excluded_allergens": [
+              "gluten"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0041570052785",
+            "0044000045463",
+            "0048564067008",
+            "0856069005209",
+            "0044000044718"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0041570052785",
+          "quantity": 1,
+          "raw": {
+            "code": "0041570052785",
+            "constraints": {
+              "category": "crackers",
+              "dietary_tags": [],
+              "excluded_allergens": [
+                "gluten"
+              ],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.51
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T12",
+          "feasible": true,
+          "expected": {
+            "category": "chocolate_candy",
+            "dietary_tags": [],
+            "excluded_allergens": [
+              "milk"
+            ],
+            "max_price": null,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0037466016450",
+            "0857484006611",
+            "0747599607219",
+            "5901588018195",
+            "0071879700049",
+            "0850000547568",
+            "20005832",
+            "0797258004750",
+            "0850180006053",
+            "0716270001660",
+            "0070970474088",
+            "0850068582013"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0037466016450",
+          "quantity": 2,
+          "raw": {
+            "code": "0037466016450",
+            "constraints": {
+              "category": "chocolate_candy",
+              "dietary_tags": [],
+              "excluded_allergens": [
+                "milk"
+              ],
+              "max_price": null,
+              "quantity": 2
+            },
+            "quantity": 2,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.42
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T13",
+          "feasible": true,
+          "expected": {
+            "category": "rice_grains",
+            "dietary_tags": [
+              "non_gmo"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0807176714027",
+            "0017400106959",
+            "0074401760412",
+            "0017400118457",
+            "0748404450044",
+            "0017400140311",
+            "0017400140045",
+            "0017400106676",
+            "0017400140380",
+            "0745042112013",
+            "0073416004306",
+            "0748404287947",
+            "0096619533602"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0807176714027",
+          "quantity": 1,
+          "raw": {
+            "code": "0807176714027",
+            "constraints": {
+              "category": "rice_grains",
+              "dietary_tags": [
+                "non_gmo"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.44
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T14",
+          "feasible": true,
+          "expected": {
+            "category": "pasta_sauce",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "8032817240319",
+            "0747479001052",
+            "00101110",
+            "0747479000017",
+            "00797535",
+            "0070234215105"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "8032817240319",
+          "quantity": 1,
+          "raw": {
+            "code": "8032817240319",
+            "constraints": {
+              "category": "pasta_sauce",
+              "dietary_tags": [
+                "vegan"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.45
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T15",
+          "feasible": true,
+          "expected": {
+            "category": "soup",
+            "dietary_tags": [
+              "gluten_free"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 4
+          },
+          "acceptable": [
+            "0052603054256",
+            "0041196010220",
+            "8410748301000",
+            "0052603283670",
+            "0042272005109",
+            "0052603056076",
+            "0851702007008",
+            "0042272005826",
+            "0096619095032",
+            "0196633908056",
+            "0052603041843",
+            "0041196010138",
+            "0041196914153",
+            "0052603041201",
+            "8410748501004"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0052603054256",
+          "quantity": 4,
+          "raw": {
+            "code": "0052603054256",
+            "constraints": {
+              "category": "soup",
+              "dietary_tags": [
+                "gluten_free"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 4
+            },
+            "quantity": 4,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.31
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T16",
+          "feasible": true,
+          "expected": {
+            "category": "breakfast_cereal",
+            "dietary_tags": [
+              "non_gmo"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0030000010402",
+            "0810589032312",
+            "0058449770565",
+            "0016000435094",
+            "0021908133171",
+            "0018627115991",
+            "0030000011805",
+            "0030000010204",
+            "0884912004710",
+            "0018627116011",
+            "0675625371189",
+            "0855140002175",
+            "0850017468993",
+            "0039978049520",
+            "0058449221012",
+            "0058449770213",
+            "0687456221052",
+            "0021908120232"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0030000010402",
+          "quantity": 1,
+          "raw": {
+            "code": "0030000010402",
+            "constraints": {
+              "category": "breakfast_cereal",
+              "dietary_tags": [
+                "non_gmo"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.47
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T17",
+          "feasible": true,
+          "expected": {
+            "category": "milk",
+            "dietary_tags": [
+              "lactose_free"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0856312002757",
+            "0856312002771",
+            "0811620022194",
+            "0041383090738",
+            "0041383090363",
+            "0811620020169"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0856312002757",
+          "quantity": 1,
+          "raw": {
+            "code": "0856312002757",
+            "constraints": {
+              "category": "milk",
+              "dietary_tags": [
+                "lactose_free"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.42
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T18",
+          "feasible": true,
+          "expected": {
+            "category": "nut_butters",
+            "dietary_tags": [],
+            "excluded_allergens": [
+              "peanuts"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "8032523532456",
+            "4099100008043",
+            "0096619676811",
+            "0894697002184"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "8032523532456",
+          "quantity": 1,
+          "raw": {
+            "code": "8032523532456",
+            "constraints": {
+              "category": "nut_butters",
+              "dietary_tags": [],
+              "excluded_allergens": [
+                "peanuts"
+              ],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.47
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T19",
+          "feasible": true,
+          "expected": {
+            "category": "plant_milk",
+            "dietary_tags": [],
+            "excluded_allergens": [
+              "tree_nuts"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0025293600232",
+            "0096619237432",
+            "0813636023912",
+            "0744473912353",
+            "4067796002003",
+            "7394376620157",
+            "4067796194807",
+            "0744473912056",
+            "0626027811025"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "0025293600232",
+          "quantity": 1,
+          "raw": {
+            "code": "0025293600232",
+            "constraints": {
+              "category": "plant_milk",
+              "dietary_tags": [],
+              "excluded_allergens": [
+                "tree_nuts"
+              ],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.4
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T20",
+          "feasible": true,
+          "expected": {
+            "category": "snacks",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0037466016450",
+            "0857484006611",
+            "0044000051709",
+            "7300400481588",
+            "0033617340610",
+            "0096619656493",
+            "0810091780947",
+            "0687456215587",
+            "0044000051723",
+            "0687456211091",
+            "0856069005193",
+            "0096619615162",
+            "5901588018195",
+            "0810091780909",
+            "0044000028282",
+            "0612322000202",
+            "0028400589291",
+            "0850036699187",
+            "0851769007003",
+            "0044000050986",
+            "0853555006542",
+            "0708163120589",
+            "0071879700049",
+            "0078742300665",
+            "0021788506102",
+            "0061232201047",
+            "0810091781074",
+            "0028400763035",
+            "0047495013054",
+            "3245550078704",
+            "0096619066254",
+            "0815099020309",
+            "0096619885725",
+            "0851769007966",
+            "0029000076501",
+            "0691779205514",
+            "0687456221045",
+            "0096619332731",
+            "0857549004248",
+            "0096619928927",
+            "0850180006053",
+            "0018627115830",
+            "0687456223551",
+            "0096619196470",
+            "0096619107698",
+            "0047495610048",
+            "00542562",
+            "0857484006543",
+            "0096619142453",
+            "0897922002041",
+            "0810032300463",
+            "0096619222490",
+            "0708747151930",
+            "3168930007340",
+            "0014113734066",
+            "0039978008442"
+          ],
+          "stratum": "1",
+          "category_level": "group",
+          "product": "0037466016450",
+          "quantity": 1,
+          "raw": {
+            "code": "0037466016450",
+            "constraints": {
+              "category": "snacks",
+              "dietary_tags": [
+                "vegan"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.35
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T21",
+          "feasible": true,
+          "expected": {
+            "category": "beverages",
+            "dietary_tags": [],
+            "excluded_allergens": [],
+            "max_price": 4,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0898999010007",
+            "0813636023356",
+            "0861029000118",
+            "4061459332896",
+            "0025000061530",
+            "0852909003305",
+            "0082592660152",
+            "0048500205716",
+            "0025293600232",
+            "0096619274857",
+            "0041570110195",
+            "0041570056707"
+          ],
+          "stratum": "1",
+          "category_level": "group",
+          "product": "0813636023356",
+          "quantity": 2,
+          "raw": {
+            "code": "0813636023356",
+            "constraints": {
+              "category": "plant_milk",
+              "dietary_tags": [],
+              "excluded_allergens": [],
+              "max_price": 4,
+              "quantity": 2
+            },
+            "quantity": 2,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.34
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T22",
+          "feasible": true,
+          "expected": {
+            "category": "dairy",
+            "dietary_tags": [
+              "organic"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0093966513004",
+            "0742365264450",
+            "0859977005064",
+            "6111242100817",
+            "0855088005689",
+            "0052159000011",
+            "0093966515008",
+            "0043192315507",
+            "0196633884466",
+            "0855088005467",
+            "0043192316900",
+            "0096619483556",
+            "0093966009545"
+          ],
+          "stratum": "1",
+          "category_level": "group",
+          "product": "0093966513004",
+          "quantity": 1,
+          "raw": {
+            "code": "0093966513004",
+            "constraints": {
+              "category": "milk",
+              "dietary_tags": [
+                "organic"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.3
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T23",
+          "feasible": true,
+          "expected": {
+            "category": "coffee_tea",
+            "dietary_tags": [
+              "organic"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "3261342002108",
+            "0032917002198",
+            "0892241000686",
+            "0810232020178"
+          ],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": "3261342002108",
+          "quantity": 1,
+          "raw": {
+            "code": "3261342002108",
+            "constraints": {
+              "category": "coffee_tea",
+              "dietary_tags": [
+                "organic"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.33
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T24",
+          "feasible": true,
+          "expected": {
+            "category": "chips",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": 4,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0096619656493",
+            "0810091780947"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0096619656493",
+          "quantity": 1,
+          "raw": {
+            "code": "0096619656493",
+            "constraints": {
+              "category": "chips",
+              "dietary_tags": [
+                "vegan"
+              ],
+              "excluded_allergens": [],
+              "max_price": 4,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.47
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T25",
+          "feasible": true,
+          "expected": {
+            "category": "cookies",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [
+              "soy"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0856069005193",
+            "0810091780909",
+            "0612322000202",
+            "0061232201047",
+            "0810091781074",
+            "0851769007966"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0856069005193",
+          "quantity": 1,
+          "raw": {
+            "code": "0856069005193",
+            "constraints": {
+              "category": "cookies",
+              "dietary_tags": [
+                "vegan"
+              ],
+              "excluded_allergens": [
+                "soy"
+              ],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.44
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T26",
+          "feasible": true,
+          "expected": {
+            "category": "yogurt",
+            "dietary_tags": [
+              "lactose_free"
+            ],
+            "excluded_allergens": [],
+            "max_price": 6,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0818290017734",
+            "0818290015198",
+            "0818290015167"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0818290017734",
+          "quantity": 2,
+          "raw": {
+            "code": "0818290017734",
+            "constraints": {
+              "category": "yogurt",
+              "dietary_tags": [
+                "lactose_free"
+              ],
+              "excluded_allergens": [],
+              "max_price": 6,
+              "quantity": 2
+            },
+            "quantity": 2,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.63
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T27",
+          "feasible": true,
+          "expected": {
+            "category": "cheese",
+            "dietary_tags": [
+              "gluten_free",
+              "vegetarian"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "4099100013436",
+            "6111242106949",
+            "0078742032788"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "4099100013436",
+          "quantity": 1,
+          "raw": {
+            "code": "4099100013436",
+            "constraints": {
+              "category": "cheese",
+              "dietary_tags": [
+                "gluten_free",
+                "vegetarian"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.63
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T28",
+          "feasible": true,
+          "expected": {
+            "category": "nut_butters",
+            "dietary_tags": [
+              "organic"
+            ],
+            "excluded_allergens": [],
+            "max_price": 8,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0051500053300",
+            "0096619555505"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0051500053300",
+          "quantity": 1,
+          "raw": {
+            "code": "0051500053300",
+            "constraints": {
+              "category": "nut_butters",
+              "dietary_tags": [
+                "organic"
+              ],
+              "excluded_allergens": [],
+              "max_price": 8,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.56
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T29",
+          "feasible": true,
+          "expected": {
+            "category": "breakfast_cereal",
+            "dietary_tags": [
+              "organic",
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0058449770565",
+            "0096619194261",
+            "0675625371189",
+            "0855140002175",
+            "0039978049520",
+            "0687456221052"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0058449770565",
+          "quantity": 2,
+          "raw": {
+            "code": "0058449770565",
+            "constraints": {
+              "category": "breakfast_cereal",
+              "dietary_tags": [
+                "organic",
+                "vegan"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 2
+            },
+            "quantity": 2,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.71
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T30",
+          "feasible": true,
+          "expected": {
+            "category": "snack_bars",
+            "dietary_tags": [
+              "gluten_free"
+            ],
+            "excluded_allergens": [
+              "soy"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0687456215587",
+            "0687456211091",
+            "0687456213019",
+            "0853555006542",
+            "0687456221045",
+            "0857549004248",
+            "0687456223551",
+            "0857484006543"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0687456215587",
+          "quantity": 1,
+          "raw": {
+            "code": "0687456215587",
+            "constraints": {
+              "category": "snack_bars",
+              "dietary_tags": [
+                "gluten_free"
+              ],
+              "excluded_allergens": [
+                "soy"
+              ],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.85
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T31",
+          "feasible": true,
+          "expected": {
+            "category": "crackers",
+            "dietary_tags": [
+              "non_gmo"
+            ],
+            "excluded_allergens": [],
+            "max_price": 4,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0044000051709",
+            "0041570052785",
+            "0033617340610",
+            "0044000050993",
+            "0044000045463",
+            "0066721007438"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0044000051709",
+          "quantity": 1,
+          "raw": {
+            "code": "0044000051709",
+            "constraints": {
+              "category": "crackers",
+              "dietary_tags": [
+                "non_gmo"
+              ],
+              "excluded_allergens": [],
+              "max_price": 4,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.59
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T32",
+          "feasible": true,
+          "expected": {
+            "category": "chocolate_candy",
+            "dietary_tags": [
+              "fair_trade"
+            ],
+            "excluded_allergens": [],
+            "max_price": 6,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0857484006611"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0857484006611",
+          "quantity": 1,
+          "raw": {
+            "code": "0857484006611",
+            "constraints": {
+              "category": "chocolate_candy",
+              "dietary_tags": [
+                "fair_trade"
+              ],
+              "excluded_allergens": [],
+              "max_price": 6,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.76
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T33",
+          "feasible": true,
+          "expected": {
+            "category": "nuts_seeds",
+            "dietary_tags": [
+              "organic"
+            ],
+            "excluded_allergens": [],
+            "max_price": 10,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0078742300665",
+            "0096619066254",
+            "0691779205514",
+            "0096619928927",
+            "00542562"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0078742300665",
+          "quantity": 2,
+          "raw": {
+            "code": "0078742300665",
+            "constraints": {
+              "category": "nuts_seeds",
+              "dietary_tags": [
+                "organic"
+              ],
+              "excluded_allergens": [],
+              "max_price": 10,
+              "quantity": 2
+            },
+            "quantity": 2,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.67
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T34",
+          "feasible": true,
+          "expected": {
+            "category": "bread",
+            "dietary_tags": [
+              "non_gmo"
+            ],
+            "excluded_allergens": [
+              "sesame"
+            ],
+            "max_price": null,
+            "quantity": 3
+          },
+          "acceptable": [
+            "0013764027053",
+            "0013764027121",
+            "0060885000670",
+            "0072250037129",
+            "0013764027756",
+            "0073472001202",
+            "0013764028012",
+            "0013764027039",
+            "0013764027220",
+            "0072250020756"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0013764027053",
+          "quantity": 3,
+          "raw": {
+            "code": "0013764027053",
+            "constraints": {
+              "category": "bread",
+              "dietary_tags": [
+                "non_gmo"
+              ],
+              "excluded_allergens": [
+                "sesame"
+              ],
+              "max_price": null,
+              "quantity": 3
+            },
+            "quantity": 3,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.1
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T35",
+          "feasible": true,
+          "expected": {
+            "category": "rice_grains",
+            "dietary_tags": [
+              "gluten_free",
+              "non_gmo"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0807176714027",
+            "0017400106959",
+            "0074401760412",
+            "0017400118457",
+            "0017400140045",
+            "0017400140380",
+            "0073416004306",
+            "0096619533602"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0807176714027",
+          "quantity": 1,
+          "raw": {
+            "code": "0807176714027",
+            "constraints": {
+              "category": "rice_grains",
+              "dietary_tags": [
+                "gluten_free",
+                "non_gmo"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.33
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T36",
+          "feasible": true,
+          "expected": {
+            "category": "pasta",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": 2.5,
+            "quantity": 1
+          },
+          "acceptable": [
+            "8076809523509",
+            "8076802085899",
+            "3038350014603",
+            "0076808280081",
+            "00671729"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "8076809523509",
+          "quantity": 1,
+          "raw": {
+            "code": "8076809523509",
+            "constraints": {
+              "category": "pasta",
+              "dietary_tags": [
+                "vegan"
+              ],
+              "excluded_allergens": [],
+              "max_price": 2.5,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.93
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T37",
+          "feasible": true,
+          "expected": {
+            "category": "pasta_sauce",
+            "dietary_tags": [],
+            "excluded_allergens": [
+              "milk"
+            ],
+            "max_price": 6,
+            "quantity": 1
+          },
+          "acceptable": [
+            "8032817240319",
+            "0036200430972",
+            "0096619072101",
+            "0747479001052",
+            "0051000025487",
+            "0036200431733",
+            "0036200223024",
+            "0051000269775",
+            "00452267",
+            "0051000027948",
+            "0747479000604"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "8032817240319",
+          "quantity": 1,
+          "raw": {
+            "code": "8032817240319",
+            "constraints": {
+              "category": "pasta_sauce",
+              "dietary_tags": [],
+              "excluded_allergens": [
+                "milk"
+              ],
+              "max_price": 6,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.15
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T38",
+          "feasible": true,
+          "expected": {
+            "category": "soup",
+            "dietary_tags": [
+              "organic",
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0042272005109",
+            "0042272005826"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0042272005109",
+          "quantity": 2,
+          "raw": {
+            "code": "0042272005109",
+            "constraints": {
+              "category": "soup",
+              "dietary_tags": [
+                "organic",
+                "vegan"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 2
+            },
+            "quantity": 2,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.68
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T39",
+          "feasible": true,
+          "expected": {
+            "category": "juice",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": 5,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0898999010007",
+            "0025000061530",
+            "0048500205716",
+            "0898999011288",
+            "0898999000503"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0898999010007",
+          "quantity": 1,
+          "raw": {
+            "code": "0898999010007",
+            "constraints": {
+              "category": "juice",
+              "dietary_tags": [
+                "vegan"
+              ],
+              "excluded_allergens": [],
+              "max_price": 5,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.93
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T40",
+          "feasible": true,
+          "expected": {
+            "category": "coffee_tea",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": 8,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0028000743079",
+            "0049000073546",
+            "0715374544042",
+            "0025500304199",
+            "0028000462987",
+            "3261342002108",
+            "0012000173219",
+            "0025500304014"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0028000743079",
+          "quantity": 1,
+          "raw": {
+            "code": "0028000743079",
+            "constraints": {
+              "category": "coffee_tea",
+              "dietary_tags": [
+                "vegan"
+              ],
+              "excluded_allergens": [],
+              "max_price": 8,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.99
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T41",
+          "feasible": true,
+          "expected": {
+            "category": "plant_milk",
+            "dietary_tags": [
+              "kosher"
+            ],
+            "excluded_allergens": [
+              "soy"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0813636023356",
+            "0852909003305",
+            "0096619274857",
+            "0096619237432",
+            "0813636023912",
+            "0041570055311",
+            "0096619533008",
+            "0041570054130",
+            "0626027811025"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0813636023356",
+          "quantity": 1,
+          "raw": {
+            "code": "0813636023356",
+            "constraints": {
+              "category": "plant_milk",
+              "dietary_tags": [
+                "kosher"
+              ],
+              "excluded_allergens": [
+                "soy"
+              ],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.27
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T42",
+          "feasible": true,
+          "expected": {
+            "category": "milk",
+            "dietary_tags": [
+              "organic"
+            ],
+            "excluded_allergens": [],
+            "max_price": 5,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0093966513004",
+            "0742365264450",
+            "6111242100817",
+            "0855088005689"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0093966513004",
+          "quantity": 1,
+          "raw": {
+            "code": "0093966513004",
+            "constraints": {
+              "category": "milk",
+              "dietary_tags": [
+                "organic"
+              ],
+              "excluded_allergens": [],
+              "max_price": 5,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 2.89
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T43",
+          "feasible": true,
+          "expected": {
+            "category": "pantry",
+            "dietary_tags": [
+              "kosher"
+            ],
+            "excluded_allergens": [],
+            "max_price": 4,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0078742209982",
+            "8032817240319",
+            "0857183005007",
+            "0096619072101",
+            "0017400106959",
+            "0076808533583",
+            "0850791002352"
+          ],
+          "stratum": "2",
+          "category_level": "group",
+          "product": "0078742209982",
+          "quantity": 1,
+          "raw": {
+            "code": "0078742209982",
+            "constraints": {
+              "category": "pantry",
+              "dietary_tags": [
+                "kosher"
+              ],
+              "excluded_allergens": [],
+              "max_price": 4,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.04
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T44",
+          "feasible": true,
+          "expected": {
+            "category": "snacks",
+            "dietary_tags": [],
+            "excluded_allergens": [
+              "peanuts",
+              "tree_nuts"
+            ],
+            "max_price": null,
+            "quantity": 3
+          },
+          "acceptable": [
+            "0037466016450",
+            "0857484006611",
+            "5060198820052",
+            "0044000051709",
+            "7300400481588",
+            "0033617340610",
+            "3497911123350",
+            "0044000050993",
+            "0096619656493",
+            "0044000045463",
+            "0066721007438",
+            "7622210021502",
+            "0819898010745",
+            "03424005",
+            "0747599607219",
+            "0810091780947",
+            "5010029219494",
+            "0687456215587",
+            "0016000264601",
+            "0044000051723",
+            "0687456211091",
+            "8901719117183",
+            "0068437389754",
+            "0096619615162",
+            "0687456213019",
+            "5901588018195",
+            "0044000028282",
+            "0612322000202",
+            "0028400589291",
+            "0014100074724",
+            "0851100003015",
+            "0048564067008",
+            "00614207",
+            "0071146002456",
+            "0850036699187",
+            "0851769007003",
+            "0044000050986",
+            "0193968409326",
+            "0044000031114",
+            "0853555006542",
+            "0708163120589",
+            "0071879700049",
+            "0078742300665",
+            "6111259341197",
+            "0021788506102",
+            "0044000000578",
+            "0028400705769",
+            "7622210625243",
+            "0061232201047",
+            "0028400090858",
+            "0028400763035",
+            "0047495013054",
+            "3245550078704",
+            "0810291001088",
+            "0038000138416",
+            "0044000004637",
+            "0059290573220",
+            "0850000547568",
+            "0096619066254",
+            "0044000045753",
+            "0066721028426",
+            "0044000051013",
+            "0815099020309",
+            "0015665624058",
+            "0722252194145",
+            "00931847",
+            "0049508250302",
+            "0028400247245",
+            "8901491101844",
+            "0888849006656",
+            "0691779205514",
+            "0825625600011",
+            "0687456221045",
+            "7622202225512",
+            "8901063014145",
+            "0857549004248",
+            "20005832",
+            "0797258004750",
+            "0850180006053",
+            "0716270001660",
+            "0070970474088",
+            "0018627115830",
+            "0687456223551",
+            "0722252194985",
+            "0047495610048",
+            "00542562",
+            "0857484006543",
+            "0722252194138",
+            "0897922002041",
+            "0810032300463",
+            "0039978008442"
+          ],
+          "stratum": "2",
+          "category_level": "group",
+          "product": "0037466016450",
+          "quantity": 3,
+          "raw": {
+            "code": "0037466016450",
+            "constraints": {
+              "category": "snacks",
+              "dietary_tags": [],
+              "excluded_allergens": [
+                "peanuts",
+                "tree_nuts"
+              ],
+              "max_price": null,
+              "quantity": 3
+            },
+            "quantity": 3,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.13
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T45",
+          "feasible": true,
+          "expected": {
+            "category": "plant_milk",
+            "dietary_tags": [
+              "no_added_sugar",
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0096619274857",
+            "0041570056707",
+            "4067796002003",
+            "4067796194807",
+            "0744473912056"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0096619274857",
+          "quantity": 1,
+          "raw": {
+            "code": "0096619274857",
+            "constraints": {
+              "category": "plant_milk",
+              "dietary_tags": [
+                "vegan",
+                "no_added_sugar"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.38
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T46",
+          "feasible": true,
+          "expected": {
+            "category": "chips",
+            "dietary_tags": [
+              "kosher"
+            ],
+            "excluded_allergens": [
+              "milk"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0096619656493",
+            "0850036699187",
+            "0028400090858",
+            "0038000138416",
+            "0815099020309",
+            "0028400247245"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0096619656493",
+          "quantity": 1,
+          "raw": {
+            "code": "0096619656493",
+            "constraints": {
+              "category": "chips",
+              "dietary_tags": [
+                "kosher"
+              ],
+              "excluded_allergens": [
+                "milk"
+              ],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.14
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T47",
+          "feasible": true,
+          "expected": {
+            "category": "snack_bars",
+            "dietary_tags": [
+              "organic",
+              "non_gmo"
+            ],
+            "excluded_allergens": [],
+            "max_price": 7,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0687456215587",
+            "0687456211091",
+            "0687456213019",
+            "0853555006542",
+            "0687456221045",
+            "0857549004248"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0687456215587",
+          "quantity": 2,
+          "raw": {
+            "code": "0687456215587",
+            "constraints": {
+              "category": "snack_bars",
+              "dietary_tags": [
+                "organic",
+                "non_gmo"
+              ],
+              "excluded_allergens": [],
+              "max_price": 7,
+              "quantity": 2
+            },
+            "quantity": 2,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.38
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T48",
+          "feasible": true,
+          "expected": {
+            "category": "cookies",
+            "dietary_tags": [
+              "vegetarian"
+            ],
+            "excluded_allergens": [
+              "peanuts",
+              "tree_nuts"
+            ],
+            "max_price": null,
+            "quantity": 2
+          },
+          "acceptable": [
+            "7622210021502",
+            "0819898010745",
+            "8901719117183",
+            "0044000028282",
+            "0612322000202",
+            "6111259341197",
+            "0021788506102",
+            "7622210625243",
+            "0061232201047",
+            "0825625600011",
+            "7622202225512",
+            "8901063014145"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "7622210021502",
+          "quantity": 2,
+          "raw": {
+            "code": "7622210021502",
+            "constraints": {
+              "category": "cookies",
+              "dietary_tags": [
+                "vegetarian"
+              ],
+              "excluded_allergens": [
+                "tree_nuts"
+              ],
+              "max_price": null,
+              "quantity": 2
+            },
+            "quantity": 2,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.19
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T49",
+          "feasible": true,
+          "expected": {
+            "category": "crackers",
+            "dietary_tags": [
+              "gluten_free"
+            ],
+            "excluded_allergens": [
+              "sesame"
+            ],
+            "max_price": 5.5,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0041570052785",
+            "0044000045463",
+            "0048564067008",
+            "0856069005209"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0041570052785",
+          "quantity": 1,
+          "raw": {
+            "code": "0041570052785",
+            "constraints": {
+              "category": "crackers",
+              "dietary_tags": [
+                "gluten_free"
+              ],
+              "excluded_allergens": [
+                "sesame"
+              ],
+              "max_price": 5.5,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.7
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T50",
+          "feasible": true,
+          "expected": {
+            "category": "breakfast_cereal",
+            "dietary_tags": [
+              "organic",
+              "non_gmo"
+            ],
+            "excluded_allergens": [],
+            "max_price": 7,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0058449770565",
+            "0021908133171",
+            "0018627115991",
+            "0675625371189",
+            "0855140002175",
+            "0039978049520",
+            "0058449221012",
+            "0058449770213",
+            "0687456221052",
+            "0021908120232"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0058449770565",
+          "quantity": 1,
+          "raw": {
+            "code": "0058449770565",
+            "constraints": {
+              "category": "breakfast_cereal",
+              "dietary_tags": [
+                "organic",
+                "non_gmo"
+              ],
+              "excluded_allergens": [],
+              "max_price": 7,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.39
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T51",
+          "feasible": true,
+          "expected": {
+            "category": "chips",
+            "dietary_tags": [
+              "gluten_free",
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": 5,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0096619656493",
+            "0810091780947",
+            "0096619615162",
+            "0851769007003",
+            "0708163120589"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0096619656493",
+          "quantity": 1,
+          "raw": {
+            "code": "0096619656493",
+            "constraints": {
+              "category": "chips",
+              "dietary_tags": [
+                "gluten_free",
+                "vegan"
+              ],
+              "excluded_allergens": [],
+              "max_price": 5,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.45
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T52",
+          "feasible": true,
+          "expected": {
+            "category": "plant_milk",
+            "dietary_tags": [
+              "organic",
+              "vegan"
+            ],
+            "excluded_allergens": [
+              "soy"
+            ],
+            "max_price": null,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0813636023356",
+            "0861029000118",
+            "0813636023912",
+            "0744473912353",
+            "4067796002003",
+            "4067796194807",
+            "0744473912056"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0813636023356",
+          "quantity": 2,
+          "raw": {
+            "code": "0813636023356",
+            "constraints": {
+              "category": "plant_milk",
+              "dietary_tags": [
+                "organic",
+                "vegan"
+              ],
+              "excluded_allergens": [
+                "soy"
+              ],
+              "max_price": null,
+              "quantity": 2
+            },
+            "quantity": 2,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.44
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T53",
+          "feasible": true,
+          "expected": {
+            "category": "yogurt",
+            "dietary_tags": [
+              "gluten_free",
+              "vegetarian"
+            ],
+            "excluded_allergens": [],
+            "max_price": 6,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0078742016856"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0078742016856",
+          "quantity": 1,
+          "raw": {
+            "code": "0078742016856",
+            "constraints": {
+              "category": "yogurt",
+              "dietary_tags": [
+                "gluten_free",
+                "vegetarian"
+              ],
+              "excluded_allergens": [],
+              "max_price": 6,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.35
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T54",
+          "feasible": true,
+          "expected": {
+            "category": "cheese",
+            "dietary_tags": [
+              "kosher",
+              "gluten_free"
+            ],
+            "excluded_allergens": [],
+            "max_price": 9,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0859977005064",
+            "0859977005149"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0859977005064",
+          "quantity": 1,
+          "raw": {
+            "code": "0859977005064",
+            "constraints": {
+              "category": "cheese",
+              "dietary_tags": [
+                "gluten_free",
+                "kosher"
+              ],
+              "excluded_allergens": [],
+              "max_price": 9,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.38
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T55",
+          "feasible": true,
+          "expected": {
+            "category": "nut_butters",
+            "dietary_tags": [
+              "vegan",
+              "non_gmo"
+            ],
+            "excluded_allergens": [
+              "tree_nuts"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0856260006005",
+            "0071018010183",
+            "0850791002352",
+            "0051500068243",
+            "0051500017012",
+            "0051500245408"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0856260006005",
+          "quantity": 1,
+          "raw": {
+            "code": "0856260006005",
+            "constraints": {
+              "category": "nut_butters",
+              "dietary_tags": [
+                "vegan",
+                "non_gmo"
+              ],
+              "excluded_allergens": [
+                "tree_nuts"
+              ],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.87
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T56",
+          "feasible": true,
+          "expected": {
+            "category": "nuts_seeds",
+            "dietary_tags": [
+              "vegan",
+              "kosher"
+            ],
+            "excluded_allergens": [],
+            "max_price": 12,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0096619066254",
+            "0691779205514",
+            "0096619332731",
+            "0096619196470",
+            "0096619107698",
+            "0096619142453",
+            "0897922002041",
+            "0810032300463"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0096619066254",
+          "quantity": 2,
+          "raw": {
+            "code": "0096619066254",
+            "constraints": {
+              "category": "nuts_seeds",
+              "dietary_tags": [
+                "vegan",
+                "kosher"
+              ],
+              "excluded_allergens": [],
+              "max_price": 12,
+              "quantity": 2
+            },
+            "quantity": 2,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.5
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T57",
+          "feasible": true,
+          "expected": {
+            "category": "bread",
+            "dietary_tags": [
+              "organic",
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": 6.5,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0073472001202",
+            "0073472001233"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0073472001202",
+          "quantity": 1,
+          "raw": {
+            "code": "0073472001202",
+            "constraints": {
+              "category": "bread",
+              "dietary_tags": [
+                "organic",
+                "vegan"
+              ],
+              "excluded_allergens": [],
+              "max_price": 6.5,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.39
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T58",
+          "feasible": true,
+          "expected": {
+            "category": "pasta",
+            "dietary_tags": [
+              "vegan",
+              "non_gmo"
+            ],
+            "excluded_allergens": [],
+            "max_price": 4,
+            "quantity": 4
+          },
+          "acceptable": [
+            "0076808280081",
+            "0076808005851",
+            "0857183005007",
+            "0076808533583"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0076808280081",
+          "quantity": 4,
+          "raw": {
+            "code": "0076808280081",
+            "constraints": {
+              "category": "pasta",
+              "dietary_tags": [
+                "vegan",
+                "non_gmo"
+              ],
+              "excluded_allergens": [],
+              "max_price": 4,
+              "quantity": 4
+            },
+            "quantity": 4,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.56
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T59",
+          "feasible": true,
+          "expected": {
+            "category": "pasta_sauce",
+            "dietary_tags": [
+              "vegan",
+              "gluten_free"
+            ],
+            "excluded_allergens": [
+              "milk"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "8032817240319"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "8032817240319",
+          "quantity": 1,
+          "raw": {
+            "code": "8032817240319",
+            "constraints": {
+              "category": "pasta_sauce",
+              "dietary_tags": [
+                "gluten_free",
+                "vegan"
+              ],
+              "excluded_allergens": [
+                "milk"
+              ],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.42
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T60",
+          "feasible": true,
+          "expected": {
+            "category": "soup",
+            "dietary_tags": [
+              "gluten_free",
+              "organic"
+            ],
+            "excluded_allergens": [],
+            "max_price": 5,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0052603054256",
+            "0052603283670",
+            "0042272005109",
+            "0052603056076",
+            "0042272005826"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0052603054256",
+          "quantity": 1,
+          "raw": {
+            "code": "0052603054256",
+            "constraints": {
+              "category": "soup",
+              "dietary_tags": [
+                "gluten_free",
+                "organic"
+              ],
+              "excluded_allergens": [],
+              "max_price": 5,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.24
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T61",
+          "feasible": true,
+          "expected": {
+            "category": "juice",
+            "dietary_tags": [
+              "vegan",
+              "no_added_sugar"
+            ],
+            "excluded_allergens": [],
+            "max_price": 6,
+            "quantity": 3
+          },
+          "acceptable": [
+            "0048500205716",
+            "0898999011288",
+            "0025000100000"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0048500205716",
+          "quantity": 3,
+          "raw": {
+            "code": "0048500205716",
+            "constraints": {
+              "category": "juice",
+              "dietary_tags": [
+                "vegan",
+                "no_added_sugar"
+              ],
+              "excluded_allergens": [],
+              "max_price": 6,
+              "quantity": 3
+            },
+            "quantity": 3,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.43
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T62",
+          "feasible": true,
+          "expected": {
+            "category": "coffee_tea",
+            "dietary_tags": [
+              "vegan",
+              "organic"
+            ],
+            "excluded_allergens": [],
+            "max_price": 12,
+            "quantity": 1
+          },
+          "acceptable": [
+            "3261342002108"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "3261342002108",
+          "quantity": 1,
+          "raw": {
+            "code": "3261342002108",
+            "constraints": {
+              "category": "coffee_tea",
+              "dietary_tags": [
+                "organic",
+                "vegan"
+              ],
+              "excluded_allergens": [],
+              "max_price": 12,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.25
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T63",
+          "feasible": true,
+          "expected": {
+            "category": "rice_grains",
+            "dietary_tags": [
+              "organic",
+              "vegan",
+              "gluten_free"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0195893170920",
+            "0096619533602"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0195893170920",
+          "quantity": 1,
+          "raw": {
+            "code": "0195893170920",
+            "constraints": {
+              "category": "rice_grains",
+              "dietary_tags": [
+                "organic",
+                "vegan",
+                "gluten_free"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.54
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T64",
+          "feasible": true,
+          "expected": {
+            "category": "chocolate_candy",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [
+              "soy"
+            ],
+            "max_price": 6,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0037466016450",
+            "0857484006611"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0037466016450",
+          "quantity": 1,
+          "raw": {
+            "code": "0037466016450",
+            "constraints": {
+              "category": "chocolate_candy",
+              "dietary_tags": [
+                "vegan"
+              ],
+              "excluded_allergens": [
+                "soy"
+              ],
+              "max_price": 6,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.52
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T65",
+          "feasible": true,
+          "expected": {
+            "category": "milk",
+            "dietary_tags": [
+              "lactose_free",
+              "gluten_free"
+            ],
+            "excluded_allergens": [],
+            "max_price": 6,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0811620022194",
+            "0041383090738",
+            "0041383090363"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0811620022194",
+          "quantity": 1,
+          "raw": {
+            "code": "0811620022194",
+            "constraints": {
+              "category": "milk",
+              "dietary_tags": [
+                "lactose_free",
+                "gluten_free"
+              ],
+              "excluded_allergens": [],
+              "max_price": 6,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.71
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T66",
+          "feasible": true,
+          "expected": {
+            "category": "pasta",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [
+              "gluten"
+            ],
+            "max_price": null,
+            "quantity": 2
+          },
+          "acceptable": [
+            "0857183005007"
+          ],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": "0857183005007",
+          "quantity": 2,
+          "raw": {
+            "code": "0857183005007",
+            "constraints": {
+              "category": "pasta",
+              "dietary_tags": [
+                "vegan",
+                "gluten_free"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 2
+            },
+            "quantity": 2,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.19
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T67",
+          "feasible": true,
+          "expected": {
+            "category": "soup",
+            "dietary_tags": [
+              "non_gmo",
+              "gluten_free"
+            ],
+            "excluded_allergens": [
+              "celery"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0042272005109"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0042272005109",
+          "quantity": 1,
+          "raw": {
+            "code": "0042272005109",
+            "constraints": {
+              "category": "soup",
+              "dietary_tags": [
+                "non_gmo",
+                "gluten_free"
+              ],
+              "excluded_allergens": [
+                "celery"
+              ],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 4.02
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T68",
+          "feasible": true,
+          "expected": {
+            "category": "snacks",
+            "dietary_tags": [
+              "vegan",
+              "kosher"
+            ],
+            "excluded_allergens": [
+              "soy"
+            ],
+            "max_price": 8,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0044000051709",
+            "0096619656493",
+            "0687456215587",
+            "0850036699187",
+            "0044000050986",
+            "0047495013054",
+            "0096619066254",
+            "0815099020309",
+            "0691779205514",
+            "0096619332731",
+            "0850180006053"
+          ],
+          "stratum": "3+",
+          "category_level": "group",
+          "product": "0044000051709",
+          "quantity": 1,
+          "raw": {
+            "code": "0044000051709",
+            "constraints": {
+              "category": "snacks",
+              "dietary_tags": [
+                "vegan",
+                "kosher"
+              ],
+              "excluded_allergens": [
+                "soy"
+              ],
+              "max_price": 8,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.38
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T69",
+          "feasible": true,
+          "expected": {
+            "category": "breakfast_cereal",
+            "dietary_tags": [
+              "no_added_sugar"
+            ],
+            "excluded_allergens": [
+              "gluten"
+            ],
+            "max_price": 7,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0021908133171"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": null,
+          "quantity": 1,
+          "raw": {
+            "code": null,
+            "constraints": {
+              "category": "breakfast_cereal",
+              "dietary_tags": [
+                "gluten_free",
+                "no_added_sugar"
+              ],
+              "excluded_allergens": [],
+              "max_price": 7,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "no_match",
+            "error": null,
+            "seconds": 3.61
+          },
+          "css": 0.0,
+          "success": false,
+          "violated": [],
+          "failure_stage": "extraction"
+        },
+        {
+          "id": "T70",
+          "feasible": true,
+          "expected": {
+            "category": "snack_bars",
+            "dietary_tags": [
+              "fair_trade"
+            ],
+            "excluded_allergens": [
+              "soy"
+            ],
+            "max_price": 10,
+            "quantity": 1
+          },
+          "acceptable": [
+            "0857484006543"
+          ],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": "0857484006543",
+          "quantity": 1,
+          "raw": {
+            "code": "0857484006543",
+            "constraints": {
+              "category": "snack_bars",
+              "dietary_tags": [
+                "fair_trade"
+              ],
+              "excluded_allergens": [
+                "soy"
+              ],
+              "max_price": 10,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "matched",
+            "error": null,
+            "seconds": 3.3
+          },
+          "css": 1.0,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T71",
+          "feasible": false,
+          "expected": {
+            "category": "cheese",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": null,
+          "quantity": 1,
+          "raw": {
+            "code": null,
+            "constraints": {
+              "category": "cheese",
+              "dietary_tags": [
+                "vegan"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "no_match",
+            "error": null,
+            "seconds": 2.86
+          },
+          "css": null,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T72",
+          "feasible": false,
+          "expected": {
+            "category": "yogurt",
+            "dietary_tags": [],
+            "excluded_allergens": [
+              "milk"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": null,
+          "quantity": 1,
+          "raw": {
+            "code": null,
+            "constraints": {
+              "category": "yogurt",
+              "dietary_tags": [],
+              "excluded_allergens": [
+                "milk"
+              ],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "no_match",
+            "error": null,
+            "seconds": 3.44
+          },
+          "css": null,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T73",
+          "feasible": false,
+          "expected": {
+            "category": "bread",
+            "dietary_tags": [
+              "gluten_free"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": null,
+          "quantity": 1,
+          "raw": {
+            "code": null,
+            "constraints": {
+              "category": "bread",
+              "dietary_tags": [
+                "gluten_free"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "no_match",
+            "error": null,
+            "seconds": 2.92
+          },
+          "css": null,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T74",
+          "feasible": false,
+          "expected": {
+            "category": "coffee_tea",
+            "dietary_tags": [],
+            "excluded_allergens": [],
+            "max_price": 4,
+            "quantity": 1
+          },
+          "acceptable": [],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": null,
+          "quantity": 1,
+          "raw": {
+            "code": null,
+            "constraints": {
+              "category": "coffee_tea",
+              "dietary_tags": [],
+              "excluded_allergens": [],
+              "max_price": 4,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "no_match",
+            "error": null,
+            "seconds": 2.8
+          },
+          "css": null,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T75",
+          "feasible": false,
+          "expected": {
+            "category": "nuts_seeds",
+            "dietary_tags": [],
+            "excluded_allergens": [],
+            "max_price": 4,
+            "quantity": 2
+          },
+          "acceptable": [],
+          "stratum": "1",
+          "category_level": "leaf",
+          "product": null,
+          "quantity": 2,
+          "raw": {
+            "code": null,
+            "constraints": {
+              "category": "nuts_seeds",
+              "dietary_tags": [],
+              "excluded_allergens": [],
+              "max_price": 4,
+              "quantity": 2
+            },
+            "quantity": 2,
+            "status": "no_match",
+            "error": null,
+            "seconds": 2.94
+          },
+          "css": null,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T76",
+          "feasible": false,
+          "expected": {
+            "category": "crackers",
+            "dietary_tags": [
+              "gluten_free",
+              "organic"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": null,
+          "quantity": 1,
+          "raw": {
+            "code": null,
+            "constraints": {
+              "category": "crackers",
+              "dietary_tags": [
+                "gluten_free",
+                "organic"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "no_match",
+            "error": null,
+            "seconds": 3.4
+          },
+          "css": null,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T77",
+          "feasible": false,
+          "expected": {
+            "category": "milk",
+            "dietary_tags": [
+              "organic",
+              "lactose_free"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": null,
+          "quantity": 1,
+          "raw": {
+            "code": null,
+            "constraints": {
+              "category": "milk",
+              "dietary_tags": [
+                "organic",
+                "lactose_free"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "no_match",
+            "error": null,
+            "seconds": 4.26
+          },
+          "css": null,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T78",
+          "feasible": false,
+          "expected": {
+            "category": "cookies",
+            "dietary_tags": [
+              "kosher"
+            ],
+            "excluded_allergens": [
+              "eggs"
+            ],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [],
+          "stratum": "2",
+          "category_level": "leaf",
+          "product": null,
+          "quantity": 1,
+          "raw": {
+            "code": null,
+            "constraints": {
+              "category": "cookies",
+              "dietary_tags": [
+                "kosher"
+              ],
+              "excluded_allergens": [
+                "eggs"
+              ],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "no_match",
+            "error": null,
+            "seconds": 2.94
+          },
+          "css": null,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T79",
+          "feasible": false,
+          "expected": {
+            "category": "cookies",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [
+              "soy"
+            ],
+            "max_price": 4,
+            "quantity": 1
+          },
+          "acceptable": [],
+          "stratum": "3+",
+          "category_level": "leaf",
+          "product": null,
+          "quantity": 1,
+          "raw": {
+            "code": null,
+            "constraints": {
+              "category": "cookies",
+              "dietary_tags": [
+                "vegan"
+              ],
+              "excluded_allergens": [
+                "soy"
+              ],
+              "max_price": 4,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "no_match",
+            "error": null,
+            "seconds": 3.32
+          },
+          "css": null,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        },
+        {
+          "id": "T80",
+          "feasible": false,
+          "expected": {
+            "category": "dairy",
+            "dietary_tags": [
+              "vegan"
+            ],
+            "excluded_allergens": [],
+            "max_price": null,
+            "quantity": 1
+          },
+          "acceptable": [],
+          "stratum": "1",
+          "category_level": "group",
+          "product": null,
+          "quantity": 1,
+          "raw": {
+            "code": null,
+            "constraints": {
+              "category": "dairy",
+              "dietary_tags": [
+                "vegan"
+              ],
+              "excluded_allergens": [],
+              "max_price": null,
+              "quantity": 1
+            },
+            "quantity": 1,
+            "status": "no_match",
+            "error": null,
+            "seconds": 2.93
+          },
+          "css": null,
+          "success": true,
+          "violated": [],
+          "failure_stage": null
+        }
+      ]
+    }
+  },
+  "comparisons": {
+    "A vs C": {
+      "tsr_mcnemar": {
+        "b": 0,
+        "c": 32,
+        "p_value": 4.656612873077393e-10,
+        "p_holm": 4.656612873077393e-10
+      },
+      "css_paired_bootstrap": {
+        "mean_diff": 0.2192857142857143,
+        "ci95": [
+          0.15023809523809525,
+          0.29095238095238096
+        ],
+        "p_value": 0.0,
+        "p_holm": 0.0
+      }
+    }
+  },
+  "addons_on_config_c": {
+    "matched_prompts": 69,
+    "prompts_with_3_addons": 69,
+    "addon_constraint_compliance": 1.0
+  }
+}

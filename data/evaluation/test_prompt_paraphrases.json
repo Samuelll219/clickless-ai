@@ -1,0 +1,769 @@
+{
+  "T01": {
+    "text": "I need to get some gluten-free chips, can you grab a bag of those for me?",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: added 'potato' (narrows category)",
+    "original": "I need to get some gluten-free potato chips, can you grab a bag of those for me?",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T02": {
+    "text": "Can I add 2 packs of vegetarian cookies to my order?",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: 'veg' ambiguous (vegan vs vegetarian)",
+    "original": "Can I add 2 packs of veg cookies to my order?",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T03": {
+    "text": "I need to add some kosher nuts or seeds, anything kosher-certified works.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: narrowed to almonds",
+    "original": "I need to add some kosher-certified almonds.",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T04": {
+    "text": "I need a juice that's labeled no added sugar, please.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: added '100%'",
+    "original": "I need a 100% juice that's labeled no-added-sugar, please.",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T05": {
+    "text": "Can I get 2 loaves of organic bread, please?",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: added 'USDA-certified', 'whole wheat'",
+    "original": "Can I get 2 loaves of USDA-certified organic whole wheat bread, please?",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T06": {
+    "text": "Can I get some yogurt, please? It needs to be under $3.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: added 'organic'",
+    "original": "Can I get some organic yogurt, please? It needs to be under $3.",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T07": {
+    "text": "I need to add three packs of pasta that are under $3 each.",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T08": {
+    "text": "I need a coffee or tea that's under $7, please.",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T09": {
+    "text": "Need to add a kosher cheese to my shopping list.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: added vague price preference",
+    "original": "Need to add a kosher cheese to my shopping list. Can you suggest a kosher option that's within the usual price range?",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T10": {
+    "text": "I need snack bars that don't contain peanuts, can you add those to my cart?",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: added 'organic, vegan'",
+    "original": "I need organic, vegan snack bars that don't contain peanuts, can you add those to my cart?",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T11": {
+    "text": "Can I add some crackers to my order? They can't have any gluten in them.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: turned allergen exclusion into 'gluten-free' label",
+    "original": "Can I add a gluten-free cracker option to my order?",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T12": {
+    "text": "I need 2 packs of chocolate with no milk in them.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: added 'dark', 'bars', '$5' cap",
+    "original": "I need 2 packs of dark chocolate bars, no milk added, under $5.",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T13": {
+    "text": "Hey, can you please add some non-GMO rice or grains to my cart? Thanks.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: split into two products (brown rice + quinoa); spec changed organic->non_gmo to avoid duplicating dev prompt #12",
+    "original": "Hey, can you please add some organic brown rice to my cart? And I'd like to get some organic quinoa as well, thanks.",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T14": {
+    "text": "I need a vegan pasta sauce.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: added organic, non-GMO, $3.50, size",
+    "original": "I need a vegan pasta sauce, organic and non-GMO, under $3.50 for a 25oz jar.",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T15": {
+    "text": "I need to grab some gluten-free soups - can you add 4 packs of those to my cart, please?",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T16": {
+    "text": "Can I get a non-GMO breakfast cereal, thanks!",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T17": {
+    "text": "Can I get a carton of lactose-free milk, please?",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: added size and '2%'",
+    "original": "Can I get a 2-gallon container of lactose-free 2% milk, please?",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T18": {
+    "text": "I need a jar of nut butter that's free from peanuts.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: narrowed to almond butter, added 'other common allergens'",
+    "original": "I need a jar of almond butter that's free from peanuts and other common allergens.",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T19": {
+    "text": "I need a plant-based milk that's free from tree nuts, is there an option that fits?",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: 'non-dairy' could be read as an extra milk exclusion",
+    "verified_by": [
+      "claude-review"
+    ],
+    "original": "I need a non-dairy milk alternative that's free from tree nuts, is there a plant-based milk option available that fits this criteria?"
+  },
+  "T20": {
+    "text": "I need some vegan snack options, please.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: added gluten-free and $3 cap",
+    "original": "I need gluten-free vegan snack options under $3, please.",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T21": {
+    "text": "Can I grab two packs of something to drink for under $4?",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: changed to organic sparkling water, $3.50",
+    "original": "Can I grab two packs of organic sparkling water for $3.50 or less?",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T22": {
+    "text": "I need some organic dairy products, please.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: invented multiple milk products and attributes",
+    "original": "I need organic whole milk, 2% organic milk, and 4% organic milk, all non-homogenized, in half-gallon sizes, please.",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T23": {
+    "text": "I need organic coffee or tea, either one is fine.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: dropped tea, added $10 cap and size",
+    "original": "I need organic coffee that's under $10 and a half pound in size.",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T24": {
+    "text": "Hey, can you add a bag of vegan chips to my order? They need to be under $4.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: added 'potato'",
+    "original": "Hey, can you add a bag of vegan potato chips to my order? They need to be under $4.",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T25": {
+    "text": "I need vegan cookies that don't contain soy, can you please add those to my list?",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T26": {
+    "text": "Can you add 2 packs of lactose-free yogurt under $6 to my cart please?",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: 'preferably' weakened the price cap",
+    "original": "Can you add 2 packs of lactose-free yogurt, preferably under $6, to my cart please?",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T27": {
+    "text": "I need to pick up gluten-free vegetarian cheese. Can you find a good brand that fits my requirements?",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T28": {
+    "text": "I need some organic nut butter that's under $8, can you add that to my cart?",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: added 'preferably creamy'",
+    "original": "I need some organic nut butter that's under $8, preferably creamy, can you add that to my cart?",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T29": {
+    "text": "I need 2 packs of organic, vegan cereal - can you add those to my cart?",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T30": {
+    "text": "Need to add some gluten-free snack bars to my cart that don't contain soy.",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T31": {
+    "text": "Can you add some non-GMO crackers to my shopping list? I need them to be under $4 each, thanks!",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T32": {
+    "text": "Need to grab some fair-trade chocolate, can you add one that's under $6 to my cart?",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: narrowed to bars",
+    "verified_by": [
+      "claude-review"
+    ],
+    "original": "Need to grab a fair-trade chocolate bar, can you add one that's under $6 to my cart?"
+  },
+  "T33": {
+    "text": "I need organic nuts or seeds, 2 packs, under $10 please.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: narrowed to almonds",
+    "original": "I need organic almonds, 2 packs, under $10 please.",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T34": {
+    "text": "Can I get 3 loaves of non-GMO bread that don't contain sesame seeds, please?",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T35": {
+    "text": "I need some gluten-free non-GMO rice or grains.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: added '2 lbs of brown rice', vague price",
+    "original": "I need some gluten-free non-GMO rice or grains, preferably something relatively inexpensive, can I get 2 lbs of brown rice, that's a good option.",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T36": {
+    "text": "I need to find a vegan pasta that's under $2.50. Can you add that to my cart?",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T37": {
+    "text": "Need a pasta sauce that's milk-free, for under $6.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: added gluten-free",
+    "original": "Need a pasta sauce that's milk-free, can I add a gluten-free option for under $6?",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T38": {
+    "text": "Can I add two packs of organic, vegan soup to my cart, please?",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T39": {
+    "text": "Hey, can you add a bottle of vegan juice that's under $5 to my cart, please?",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: narrowed to orange juice",
+    "original": "Hey, can you add a bottle of vegan orange juice that's under $5 to my cart, please?",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T40": {
+    "text": "I need some vegan coffee or tea, can you add one under $8 to my cart?",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: dropped the $8 cap ('affordable')",
+    "original": "I need some affordable vegan coffee or tea options - can you add a few to my cart?",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T41": {
+    "text": "I need to add a kosher-certified plant-based milk alternative that's free from soy to my cart, can you find one for me?",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T42": {
+    "text": "Can I get organic milk for $5 or less, please?",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: changed cap to $3.99, added '2%'",
+    "original": "Can I get the organic 2% milk for $3.99 or less, please?",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T43": {
+    "text": "Can I get some kosher pantry staples that are under $4, thanks!",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: changed category to spices and oils",
+    "original": "Can I get some kosher spices and oils that are under $4, thanks!",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T44": {
+    "text": "I need to add 3 packs of nut-free snacks to my order.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: added crunchy, gluten-free, $5 cap",
+    "original": "I need to add 3 packs of nut-free snacks to my order, preferably something crunchy, gluten-free and under $5.",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T45": {
+    "text": "I need a vegan plant-based milk with no added sugar. Can you add one of those to my cart please?",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: added size and 'non-dairy'",
+    "original": "I need a 1L non-dairy milk that's vegan, no added sugar, and plant-based. Can you add one of those to my cart please?",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T46": {
+    "text": "Can I add kosher certified chips to my list that don't contain milk?",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: added 'potato'",
+    "verified_by": [
+      "claude-review"
+    ],
+    "original": "Can I add kosher certified potato chips to my list that don't contain milk?"
+  },
+  "T47": {
+    "text": "Can you add two packs of organic non-GMO snack bars to my cart for under $7?",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T48": {
+    "text": "Need 2 packs of vegetarian cookies, no nuts, can you grab those for me?",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: 'veggie' ambiguous",
+    "original": "Need 2 packs of veggie cookies, no nuts, can you grab those for me?",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T49": {
+    "text": "Hey, I need a pack of gluten-free crackers, please make sure they're sesame-free, and the price shouldn't be more than $5.50.",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T50": {
+    "text": "I need to add some organic, non-GMO breakfast cereal to my order, something that's under $7, please.",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T51": {
+    "text": "Hey, I need some gluten-free, vegan chips that are under $5. Can you grab those for me?",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T52": {
+    "text": "I need 2 cartons of organic vegan plant-based milk that's soy-free, please.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: dropped 'vegan', added 'non-dairy'",
+    "original": "I need 2 cartons of organic, non-dairy, soy-free plant-based milk, please.",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T53": {
+    "text": "Hey, I need a gluten-free, vegetarian yogurt that's under $6. Can you add that to my cart?",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T54": {
+    "text": "Can you add a kosher-certified, gluten-free cheese option for under $9, please?",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T55": {
+    "text": "I'm looking for a vegan non-GMO nut butter that doesn't contain tree nuts, can you add that to my cart please?",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T56": {
+    "text": "Hey, I need 2 packs of nuts or seeds that are vegan and kosher, can you add those to my cart for under $12?",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T57": {
+    "text": "Can you please add some organic vegan bread to my shopping list for under $6.50?",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T58": {
+    "text": "Hey, can you grab 4 packs of vegan non-GMO pasta, please? It has to be under $4 per pack, thanks!",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: 'would be great' weakened the price cap",
+    "original": "Hey, can you grab 4 packs of vegan non-GMO pasta, please? Something under $4 per pack would be great, thanks!",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T59": {
+    "text": "Need a gluten-free pasta sauce that's vegan and doesn't contain any milk, please.",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T60": {
+    "text": "Hey, I need a gluten-free, organic soup that's under $5. Can you add one to my cart?",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T61": {
+    "text": "I need 3 packs of vegan juice that's no added sugar, can you add that to my cart for under $6?",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T62": {
+    "text": "I need a pack of organic vegan coffee or tea that's less than $12.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: dropped tea",
+    "original": "I need a pack of organic vegan coffee that's less than $12.",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T63": {
+    "text": "I need some organic vegan gluten-free rice or grains, can you add a bag to my cart?",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: narrowed to rice",
+    "original": "I need some organic vegan gluten-free rice options, can you add a few bags to my cart?",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T64": {
+    "text": "Hey, can you grab some vegan chocolate without soy? I'm looking for something under $6.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: narrowed to bars",
+    "original": "Hey, can you grab a vegan chocolate bar without soy? I'm looking for something under $6.",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T65": {
+    "text": "I need lactose-free milk that's also gluten-free, can you add it to my cart for under $6?",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T66": {
+    "text": "Need 2 packs of vegan pasta with no gluten in it, please.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: dropped vegan as product property; allergen became 'gluten-free'",
+    "original": "Need to grab some gluten-free pasta for the vegan dish I'm making, can I add 2 packs of those please?",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T67": {
+    "text": "I need to add a non-GMO, gluten-free soup to my order, please make sure it doesn't contain any celery.",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T68": {
+    "text": "I need vegan kosher snacks that don't contain soy, can you please add some options to my cart that are under $8?",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T69": {
+    "text": "Can I add a breakfast cereal with no gluten and no added sugar to my cart, something $7 or less?",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: allergen became 'gluten-free'; 'around' blurred cap",
+    "original": "Can I add a breakfast cereal that's gluten-free and has no added sugar to my cart, something around $7 or less?",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T70": {
+    "text": "I need fair-trade snack bars that are soy-free, please add them to my cart if they're under $10 each.",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T71": {
+    "text": "I'm looking for a vegan cheese, can you please add that to my cart?",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: narrowed to mozzarella 'alternative'",
+    "original": "I'm looking for a vegan mozzarella cheese alternative that's free from animal by-products, can you please add that to my cart?",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T72": {
+    "text": "I need a yogurt that doesn't have any milk in it.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: invented coconut/almond, organic, $4, 3 cups",
+    "original": "I need a non-dairy yogurt, preferably made from coconut or almond milk, and can I get the organic brand, it's around $4 a cup, I need 3 cups.",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T73": {
+    "text": "I need a loaf of gluten-free bread.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: added $4 cap",
+    "original": "I need a loaf of gluten-free bread that's within the $4 price limit.",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T74": {
+    "text": "Hey, can you add a coffee or tea for under $4, thanks?",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: added gluten-free and fair trade",
+    "original": "Hey, can you add a pack of gluten-free, fair trade coffee beans for under $4, thanks?",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T75": {
+    "text": "Hey, can I get 2 packs of nuts or seeds? They need to be under $4 each, thanks!",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: narrowed to almonds/pumpkin seeds; 'total' changed price semantics",
+    "original": "Hey, can I get 2 packs of almonds or pumpkin seeds, they need to be under $4 total, thanks!",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T76": {
+    "text": "I need the gluten-free organic crackers, can you add them to my order?",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T77": {
+    "text": "Need to add some organic lactose-free milk, thanks.",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T78": {
+    "text": "I need kosher cookies without eggs, please.",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T79": {
+    "text": "I'm looking for vegan cookies without soy that fit within my $4 budget, can you suggest some options?",
+    "model": "llama3.1:8b",
+    "edited": false,
+    "note": "",
+    "verified_by": [
+      "claude-review"
+    ]
+  },
+  "T80": {
+    "text": "I need something vegan from the dairy section, please.",
+    "model": "llama3.1:8b",
+    "edited": true,
+    "note": "manual correction: invented almond/soy milk, organic, non-GMO, $4",
+    "original": "I need vegan milk alternatives, please - almond milk and soy milk, both organic and non-GMO, under $4 a half-gallon.",
+    "verified_by": [
+      "claude-review"
+    ]
+  }
+}

@@ -1,0 +1,3167 @@
+[
+  {
+    "id": "T01",
+    "template": "Add gluten-free chips to my cart.",
+    "expected": {
+      "category": "chips",
+      "dietary_tags": [
+        "gluten_free"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "3497911123350",
+      "0096619656493",
+      "0810091780947",
+      "0096619615162",
+      "00614207",
+      "0071146002456",
+      "0851769007003",
+      "0193968409326",
+      "0708163120589",
+      "0028400705769",
+      "0028400090858",
+      "0028400763035",
+      "3245550078704",
+      "0815099020309",
+      "0015665624058",
+      "0888849006656"
+    ],
+    "n_acceptable": 16,
+    "category_level": "leaf",
+    "prompt": "I need to get some gluten-free chips, can you grab a bag of those for me?",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: added 'potato' (narrows category)"
+  },
+  {
+    "id": "T02",
+    "template": "Add 2 packs of vegetarian cookies to my cart.",
+    "expected": {
+      "category": "cookies",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 2
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "7622210021502",
+      "0819898010745",
+      "0856069005193",
+      "8901719117183",
+      "0810091780909",
+      "0044000028282",
+      "0612322000202",
+      "6111259341197",
+      "0021788506102",
+      "7622210625243",
+      "0061232201047",
+      "0810091781074",
+      "0851769007966",
+      "0825625600011",
+      "7622202225512",
+      "8901063014145"
+    ],
+    "n_acceptable": 16,
+    "category_level": "leaf",
+    "prompt": "Can I add 2 packs of vegetarian cookies to my order?",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: 'veg' ambiguous (vegan vs vegetarian)"
+  },
+  {
+    "id": "T03",
+    "template": "Add kosher nuts or seeds to my cart.",
+    "expected": {
+      "category": "nuts_seeds",
+      "dietary_tags": [
+        "kosher"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0096619928910",
+      "0096619066254",
+      "0691779205514",
+      "0096619332731",
+      "0029000073456",
+      "0096619196470",
+      "0096619107698",
+      "0096619142453",
+      "0897922002041",
+      "0810032300463",
+      "0096619440498",
+      "0014113734066"
+    ],
+    "n_acceptable": 12,
+    "category_level": "leaf",
+    "prompt": "I need to add some kosher nuts or seeds, anything kosher-certified works.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: narrowed to almonds"
+  },
+  {
+    "id": "T04",
+    "template": "Add no-added-sugar juice to my cart.",
+    "expected": {
+      "category": "juice",
+      "dietary_tags": [
+        "no_added_sugar"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0082592660152",
+      "0048500205716",
+      "0898999011288",
+      "0082592194152",
+      "0025000100000",
+      "3123340008288",
+      "0082592720153",
+      "0025000136634",
+      "0096619036981",
+      "0025000136788"
+    ],
+    "n_acceptable": 10,
+    "category_level": "leaf",
+    "prompt": "I need a juice that's labeled no added sugar, please.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: added '100%'"
+  },
+  {
+    "id": "T05",
+    "template": "Add 2 packs of organic bread to my cart.",
+    "expected": {
+      "category": "bread",
+      "dietary_tags": [
+        "organic"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 2
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0013764027282",
+      "0013764027053",
+      "0013764027121",
+      "0013764027756",
+      "0073472001202",
+      "0073472001233",
+      "0013764028012",
+      "0013764027039",
+      "0013764027138",
+      "0013764028234",
+      "0013764027220"
+    ],
+    "n_acceptable": 11,
+    "category_level": "leaf",
+    "prompt": "Can I get 2 loaves of organic bread, please?",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: added 'USDA-certified', 'whole wheat'"
+  },
+  {
+    "id": "T06",
+    "template": "Add yogurt under $3 to my cart.",
+    "expected": {
+      "category": "yogurt",
+      "dietary_tags": [],
+      "excluded_allergens": [],
+      "max_price": 3,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "price"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0078742016856",
+      "0894700010144",
+      "0894700010267",
+      "0017077102322",
+      "6111242100206",
+      "8402001036606"
+    ],
+    "n_acceptable": 6,
+    "category_level": "leaf",
+    "prompt": "Can I get some yogurt, please? It needs to be under $3.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: added 'organic'"
+  },
+  {
+    "id": "T07",
+    "template": "Add 3 packs of pasta under $3 to my cart.",
+    "expected": {
+      "category": "pasta",
+      "dietary_tags": [],
+      "excluded_allergens": [],
+      "max_price": 3,
+      "quantity": 3
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "price"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "8076809523509",
+      "8076802085899",
+      "3038350014603",
+      "0078742209982",
+      "0076808280081",
+      "00671729",
+      "0076808501063",
+      "0076808005851"
+    ],
+    "n_acceptable": 8,
+    "category_level": "leaf",
+    "prompt": "I need to add three packs of pasta that are under $3 each.",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T08",
+    "template": "Add coffee or tea under $7 to my cart.",
+    "expected": {
+      "category": "coffee_tea",
+      "dietary_tags": [],
+      "excluded_allergens": [],
+      "max_price": 7,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "price"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0028000743079",
+      "0049000073546",
+      "0012000173196",
+      "0715374544042",
+      "0025500304199",
+      "0012000286193",
+      "0028000462987",
+      "3261342002108",
+      "0012000173219"
+    ],
+    "n_acceptable": 9,
+    "category_level": "leaf",
+    "prompt": "I need a coffee or tea that's under $7, please.",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T09",
+    "template": "Add kosher cheese to my cart.",
+    "expected": {
+      "category": "cheese",
+      "dietary_tags": [
+        "kosher"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0859977005064",
+      "3859888858336",
+      "0043192316900",
+      "0859977005149",
+      "0073420516208"
+    ],
+    "n_acceptable": 5,
+    "category_level": "leaf",
+    "prompt": "Need to add a kosher cheese to my shopping list.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: added vague price preference"
+  },
+  {
+    "id": "T10",
+    "template": "Add snack bars with no peanuts to my cart.",
+    "expected": {
+      "category": "snack_bars",
+      "dietary_tags": [],
+      "excluded_allergens": [
+        "peanuts"
+      ],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "allergen"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0096619215607",
+      "0687456215587",
+      "0016000264601",
+      "0687456211091",
+      "0687456213019",
+      "0851100003015",
+      "0853555006542",
+      "0047495013054",
+      "0722252194145",
+      "0687456221045",
+      "0857549004248",
+      "0018627115830",
+      "0687456223551",
+      "0722252194985",
+      "0047495610048",
+      "0857484006543",
+      "0722252194138"
+    ],
+    "n_acceptable": 17,
+    "category_level": "leaf",
+    "prompt": "I need snack bars that don't contain peanuts, can you add those to my cart?",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: added 'organic, vegan'"
+  },
+  {
+    "id": "T11",
+    "template": "Add crackers with no gluten to my cart.",
+    "expected": {
+      "category": "crackers",
+      "dietary_tags": [],
+      "excluded_allergens": [
+        "gluten"
+      ],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "allergen"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0041570052785",
+      "0044000045463",
+      "0048564067008",
+      "0856069005209",
+      "0044000044718"
+    ],
+    "n_acceptable": 5,
+    "category_level": "leaf",
+    "prompt": "Can I add some crackers to my order? They can't have any gluten in them.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: turned allergen exclusion into 'gluten-free' label"
+  },
+  {
+    "id": "T12",
+    "template": "Add 2 packs of chocolate with no milk to my cart.",
+    "expected": {
+      "category": "chocolate_candy",
+      "dietary_tags": [],
+      "excluded_allergens": [
+        "milk"
+      ],
+      "max_price": null,
+      "quantity": 2
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "allergen"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0037466016450",
+      "0857484006611",
+      "0747599607219",
+      "5901588018195",
+      "0071879700049",
+      "0850000547568",
+      "20005832",
+      "0797258004750",
+      "0850180006053",
+      "0716270001660",
+      "0070970474088",
+      "0850068582013"
+    ],
+    "n_acceptable": 12,
+    "category_level": "leaf",
+    "prompt": "I need 2 packs of chocolate with no milk in them.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: added 'dark', 'bars', '$5' cap"
+  },
+  {
+    "id": "T13",
+    "template": "Add non-GMO rice or grains to my cart.",
+    "expected": {
+      "category": "rice_grains",
+      "dietary_tags": [
+        "non_gmo"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0807176714027",
+      "0017400106959",
+      "0074401760412",
+      "0017400118457",
+      "0748404450044",
+      "0017400140311",
+      "0017400140045",
+      "0017400106676",
+      "0017400140380",
+      "0745042112013",
+      "0073416004306",
+      "0748404287947",
+      "0096619533602"
+    ],
+    "n_acceptable": 13,
+    "category_level": "leaf",
+    "prompt": "Hey, can you please add some non-GMO rice or grains to my cart? Thanks.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: split into two products (brown rice + quinoa); spec changed organic->non_gmo to avoid duplicating dev prompt #12"
+  },
+  {
+    "id": "T14",
+    "template": "Add vegan pasta sauce to my cart.",
+    "expected": {
+      "category": "pasta_sauce",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "8032817240319",
+      "0747479001052",
+      "00101110",
+      "0747479000017",
+      "00797535",
+      "0070234215105"
+    ],
+    "n_acceptable": 6,
+    "category_level": "leaf",
+    "prompt": "I need a vegan pasta sauce.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: added organic, non-GMO, $3.50, size"
+  },
+  {
+    "id": "T15",
+    "template": "Add 4 packs of gluten-free soup to my cart.",
+    "expected": {
+      "category": "soup",
+      "dietary_tags": [
+        "gluten_free"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 4
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0052603054256",
+      "0041196010220",
+      "8410748301000",
+      "0052603283670",
+      "0042272005109",
+      "0052603056076",
+      "0851702007008",
+      "0042272005826",
+      "0096619095032",
+      "0196633908056",
+      "0052603041843",
+      "0041196010138",
+      "0041196914153",
+      "0052603041201",
+      "8410748501004"
+    ],
+    "n_acceptable": 15,
+    "category_level": "leaf",
+    "prompt": "I need to grab some gluten-free soups - can you add 4 packs of those to my cart, please?",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T16",
+    "template": "Add non-GMO breakfast cereal to my cart.",
+    "expected": {
+      "category": "breakfast_cereal",
+      "dietary_tags": [
+        "non_gmo"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0030000010402",
+      "0810589032312",
+      "0058449770565",
+      "0016000435094",
+      "0021908133171",
+      "0018627115991",
+      "0030000011805",
+      "0030000010204",
+      "0884912004710",
+      "0018627116011",
+      "0675625371189",
+      "0855140002175",
+      "0850017468993",
+      "0039978049520",
+      "0058449221012",
+      "0058449770213",
+      "0687456221052",
+      "0021908120232"
+    ],
+    "n_acceptable": 18,
+    "category_level": "leaf",
+    "prompt": "Can I get a non-GMO breakfast cereal, thanks!",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T17",
+    "template": "Add lactose-free milk to my cart.",
+    "expected": {
+      "category": "milk",
+      "dietary_tags": [
+        "lactose_free"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0856312002757",
+      "0856312002771",
+      "0811620022194",
+      "0041383090738",
+      "0041383090363",
+      "0811620020169"
+    ],
+    "n_acceptable": 6,
+    "category_level": "leaf",
+    "prompt": "Can I get a carton of lactose-free milk, please?",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: added size and '2%'"
+  },
+  {
+    "id": "T18",
+    "template": "Add nut butter with no peanuts to my cart.",
+    "expected": {
+      "category": "nut_butters",
+      "dietary_tags": [],
+      "excluded_allergens": [
+        "peanuts"
+      ],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "allergen"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "8032523532456",
+      "4099100008043",
+      "0096619676811",
+      "0894697002184"
+    ],
+    "n_acceptable": 4,
+    "category_level": "leaf",
+    "prompt": "I need a jar of nut butter that's free from peanuts.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: narrowed to almond butter, added 'other common allergens'"
+  },
+  {
+    "id": "T19",
+    "template": "Add plant-based milk with no tree nuts to my cart.",
+    "expected": {
+      "category": "plant_milk",
+      "dietary_tags": [],
+      "excluded_allergens": [
+        "tree_nuts"
+      ],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "allergen"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0025293600232",
+      "0096619237432",
+      "0813636023912",
+      "0744473912353",
+      "4067796002003",
+      "7394376620157",
+      "4067796194807",
+      "0744473912056",
+      "0626027811025"
+    ],
+    "n_acceptable": 9,
+    "category_level": "leaf",
+    "prompt": "I need a plant-based milk that's free from tree nuts, is there an option that fits?",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: 'non-dairy' could be read as an extra milk exclusion"
+  },
+  {
+    "id": "T20",
+    "template": "Add vegan snacks to my cart.",
+    "expected": {
+      "category": "snacks",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0037466016450",
+      "0857484006611",
+      "0044000051709",
+      "7300400481588",
+      "0033617340610",
+      "0096619656493",
+      "0810091780947",
+      "0687456215587",
+      "0044000051723",
+      "0687456211091",
+      "0856069005193",
+      "0096619615162",
+      "5901588018195",
+      "0810091780909",
+      "0044000028282",
+      "0612322000202",
+      "0028400589291",
+      "0850036699187",
+      "0851769007003",
+      "0044000050986",
+      "0853555006542",
+      "0708163120589",
+      "0071879700049",
+      "0078742300665",
+      "0021788506102",
+      "0061232201047",
+      "0810091781074",
+      "0028400763035",
+      "0047495013054",
+      "3245550078704",
+      "0096619066254",
+      "0815099020309",
+      "0096619885725",
+      "0851769007966",
+      "0029000076501",
+      "0691779205514",
+      "0687456221045",
+      "0096619332731",
+      "0857549004248",
+      "0096619928927",
+      "0850180006053",
+      "0018627115830",
+      "0687456223551",
+      "0096619196470",
+      "0096619107698",
+      "0047495610048",
+      "00542562",
+      "0857484006543",
+      "0096619142453",
+      "0897922002041",
+      "0810032300463",
+      "0096619222490",
+      "0708747151930",
+      "3168930007340",
+      "0014113734066",
+      "0039978008442"
+    ],
+    "n_acceptable": 56,
+    "category_level": "group",
+    "prompt": "I need some vegan snack options, please.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: added gluten-free and $3 cap"
+  },
+  {
+    "id": "T21",
+    "template": "Add 2 packs of drinks under $4 to my cart.",
+    "expected": {
+      "category": "beverages",
+      "dietary_tags": [],
+      "excluded_allergens": [],
+      "max_price": 4,
+      "quantity": 2
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "price"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0898999010007",
+      "0813636023356",
+      "0861029000118",
+      "4061459332896",
+      "0025000061530",
+      "0852909003305",
+      "0082592660152",
+      "0048500205716",
+      "0025293600232",
+      "0096619274857",
+      "0041570110195",
+      "0041570056707"
+    ],
+    "n_acceptable": 12,
+    "category_level": "group",
+    "prompt": "Can I grab two packs of something to drink for under $4?",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: changed to organic sparkling water, $3.50"
+  },
+  {
+    "id": "T22",
+    "template": "Add organic dairy products to my cart.",
+    "expected": {
+      "category": "dairy",
+      "dietary_tags": [
+        "organic"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0093966513004",
+      "0742365264450",
+      "0859977005064",
+      "6111242100817",
+      "0855088005689",
+      "0052159000011",
+      "0093966515008",
+      "0043192315507",
+      "0196633884466",
+      "0855088005467",
+      "0043192316900",
+      "0096619483556",
+      "0093966009545"
+    ],
+    "n_acceptable": 13,
+    "category_level": "group",
+    "prompt": "I need some organic dairy products, please.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: invented multiple milk products and attributes"
+  },
+  {
+    "id": "T23",
+    "template": "Add organic coffee or tea to my cart.",
+    "expected": {
+      "category": "coffee_tea",
+      "dietary_tags": [
+        "organic"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "1",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "3261342002108",
+      "0032917002198",
+      "0892241000686",
+      "0810232020178"
+    ],
+    "n_acceptable": 4,
+    "category_level": "leaf",
+    "prompt": "I need organic coffee or tea, either one is fine.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: dropped tea, added $10 cap and size"
+  },
+  {
+    "id": "T24",
+    "template": "Add vegan chips under $4 to my cart.",
+    "expected": {
+      "category": "chips",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "excluded_allergens": [],
+      "max_price": 4,
+      "quantity": 1
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0096619656493",
+      "0810091780947"
+    ],
+    "n_acceptable": 2,
+    "category_level": "leaf",
+    "prompt": "Hey, can you add a bag of vegan chips to my order? They need to be under $4.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: added 'potato'"
+  },
+  {
+    "id": "T25",
+    "template": "Add vegan cookies with no soy to my cart.",
+    "expected": {
+      "category": "cookies",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "excluded_allergens": [
+        "soy"
+      ],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag",
+      "allergen"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0856069005193",
+      "0810091780909",
+      "0612322000202",
+      "0061232201047",
+      "0810091781074",
+      "0851769007966"
+    ],
+    "n_acceptable": 6,
+    "category_level": "leaf",
+    "prompt": "I need vegan cookies that don't contain soy, can you please add those to my list?",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T26",
+    "template": "Add 2 packs of lactose-free yogurt under $6 to my cart.",
+    "expected": {
+      "category": "yogurt",
+      "dietary_tags": [
+        "lactose_free"
+      ],
+      "excluded_allergens": [],
+      "max_price": 6,
+      "quantity": 2
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0818290017734",
+      "0818290015198",
+      "0818290015167"
+    ],
+    "n_acceptable": 3,
+    "category_level": "leaf",
+    "prompt": "Can you add 2 packs of lactose-free yogurt under $6 to my cart please?",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: 'preferably' weakened the price cap"
+  },
+  {
+    "id": "T27",
+    "template": "Add gluten-free vegetarian cheese to my cart.",
+    "expected": {
+      "category": "cheese",
+      "dietary_tags": [
+        "gluten_free",
+        "vegetarian"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "4099100013436",
+      "6111242106949",
+      "0078742032788"
+    ],
+    "n_acceptable": 3,
+    "category_level": "leaf",
+    "prompt": "I need to pick up gluten-free vegetarian cheese. Can you find a good brand that fits my requirements?",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T28",
+    "template": "Add organic nut butter under $8 to my cart.",
+    "expected": {
+      "category": "nut_butters",
+      "dietary_tags": [
+        "organic"
+      ],
+      "excluded_allergens": [],
+      "max_price": 8,
+      "quantity": 1
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0051500053300",
+      "0096619555505"
+    ],
+    "n_acceptable": 2,
+    "category_level": "leaf",
+    "prompt": "I need some organic nut butter that's under $8, can you add that to my cart?",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: added 'preferably creamy'"
+  },
+  {
+    "id": "T29",
+    "template": "Add 2 packs of organic vegan breakfast cereal to my cart.",
+    "expected": {
+      "category": "breakfast_cereal",
+      "dietary_tags": [
+        "organic",
+        "vegan"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 2
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0058449770565",
+      "0096619194261",
+      "0675625371189",
+      "0855140002175",
+      "0039978049520",
+      "0687456221052"
+    ],
+    "n_acceptable": 6,
+    "category_level": "leaf",
+    "prompt": "I need 2 packs of organic, vegan cereal - can you add those to my cart?",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T30",
+    "template": "Add gluten-free snack bars with no soy to my cart.",
+    "expected": {
+      "category": "snack_bars",
+      "dietary_tags": [
+        "gluten_free"
+      ],
+      "excluded_allergens": [
+        "soy"
+      ],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag",
+      "allergen"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0687456215587",
+      "0687456211091",
+      "0687456213019",
+      "0853555006542",
+      "0687456221045",
+      "0857549004248",
+      "0687456223551",
+      "0857484006543"
+    ],
+    "n_acceptable": 8,
+    "category_level": "leaf",
+    "prompt": "Need to add some gluten-free snack bars to my cart that don't contain soy.",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T31",
+    "template": "Add non-GMO crackers under $4 to my cart.",
+    "expected": {
+      "category": "crackers",
+      "dietary_tags": [
+        "non_gmo"
+      ],
+      "excluded_allergens": [],
+      "max_price": 4,
+      "quantity": 1
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0044000051709",
+      "0041570052785",
+      "0033617340610",
+      "0044000050993",
+      "0044000045463",
+      "0066721007438"
+    ],
+    "n_acceptable": 6,
+    "category_level": "leaf",
+    "prompt": "Can you add some non-GMO crackers to my shopping list? I need them to be under $4 each, thanks!",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T32",
+    "template": "Add fair-trade chocolate under $6 to my cart.",
+    "expected": {
+      "category": "chocolate_candy",
+      "dietary_tags": [
+        "fair_trade"
+      ],
+      "excluded_allergens": [],
+      "max_price": 6,
+      "quantity": 1
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0857484006611"
+    ],
+    "n_acceptable": 1,
+    "category_level": "leaf",
+    "prompt": "Need to grab some fair-trade chocolate, can you add one that's under $6 to my cart?",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: narrowed to bars"
+  },
+  {
+    "id": "T33",
+    "template": "Add 2 packs of organic nuts or seeds under $10 to my cart.",
+    "expected": {
+      "category": "nuts_seeds",
+      "dietary_tags": [
+        "organic"
+      ],
+      "excluded_allergens": [],
+      "max_price": 10,
+      "quantity": 2
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0078742300665",
+      "0096619066254",
+      "0691779205514",
+      "0096619928927",
+      "00542562"
+    ],
+    "n_acceptable": 5,
+    "category_level": "leaf",
+    "prompt": "I need organic nuts or seeds, 2 packs, under $10 please.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: narrowed to almonds"
+  },
+  {
+    "id": "T34",
+    "template": "Add 3 packs of non-GMO bread with no sesame to my cart.",
+    "expected": {
+      "category": "bread",
+      "dietary_tags": [
+        "non_gmo"
+      ],
+      "excluded_allergens": [
+        "sesame"
+      ],
+      "max_price": null,
+      "quantity": 3
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag",
+      "allergen"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0013764027053",
+      "0013764027121",
+      "0060885000670",
+      "0072250037129",
+      "0013764027756",
+      "0073472001202",
+      "0013764028012",
+      "0013764027039",
+      "0013764027220",
+      "0072250020756"
+    ],
+    "n_acceptable": 10,
+    "category_level": "leaf",
+    "prompt": "Can I get 3 loaves of non-GMO bread that don't contain sesame seeds, please?",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T35",
+    "template": "Add gluten-free non-GMO rice or grains to my cart.",
+    "expected": {
+      "category": "rice_grains",
+      "dietary_tags": [
+        "gluten_free",
+        "non_gmo"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0807176714027",
+      "0017400106959",
+      "0074401760412",
+      "0017400118457",
+      "0017400140045",
+      "0017400140380",
+      "0073416004306",
+      "0096619533602"
+    ],
+    "n_acceptable": 8,
+    "category_level": "leaf",
+    "prompt": "I need some gluten-free non-GMO rice or grains.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: added '2 lbs of brown rice', vague price"
+  },
+  {
+    "id": "T36",
+    "template": "Add vegan pasta under $2.50 to my cart.",
+    "expected": {
+      "category": "pasta",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "excluded_allergens": [],
+      "max_price": 2.5,
+      "quantity": 1
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "8076809523509",
+      "8076802085899",
+      "3038350014603",
+      "0076808280081",
+      "00671729"
+    ],
+    "n_acceptable": 5,
+    "category_level": "leaf",
+    "prompt": "I need to find a vegan pasta that's under $2.50. Can you add that to my cart?",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T37",
+    "template": "Add pasta sauce with no milk under $6 to my cart.",
+    "expected": {
+      "category": "pasta_sauce",
+      "dietary_tags": [],
+      "excluded_allergens": [
+        "milk"
+      ],
+      "max_price": 6,
+      "quantity": 1
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "allergen",
+      "price"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "8032817240319",
+      "0036200430972",
+      "0096619072101",
+      "0747479001052",
+      "0051000025487",
+      "0036200431733",
+      "0036200223024",
+      "0051000269775",
+      "00452267",
+      "0051000027948",
+      "0747479000604"
+    ],
+    "n_acceptable": 11,
+    "category_level": "leaf",
+    "prompt": "Need a pasta sauce that's milk-free, for under $6.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: added gluten-free"
+  },
+  {
+    "id": "T38",
+    "template": "Add 2 packs of organic vegan soup to my cart.",
+    "expected": {
+      "category": "soup",
+      "dietary_tags": [
+        "organic",
+        "vegan"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 2
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0042272005109",
+      "0042272005826"
+    ],
+    "n_acceptable": 2,
+    "category_level": "leaf",
+    "prompt": "Can I add two packs of organic, vegan soup to my cart, please?",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T39",
+    "template": "Add vegan juice under $5 to my cart.",
+    "expected": {
+      "category": "juice",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "excluded_allergens": [],
+      "max_price": 5,
+      "quantity": 1
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0898999010007",
+      "0025000061530",
+      "0048500205716",
+      "0898999011288",
+      "0898999000503"
+    ],
+    "n_acceptable": 5,
+    "category_level": "leaf",
+    "prompt": "Hey, can you add a bottle of vegan juice that's under $5 to my cart, please?",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: narrowed to orange juice"
+  },
+  {
+    "id": "T40",
+    "template": "Add vegan coffee or tea under $8 to my cart.",
+    "expected": {
+      "category": "coffee_tea",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "excluded_allergens": [],
+      "max_price": 8,
+      "quantity": 1
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0028000743079",
+      "0049000073546",
+      "0715374544042",
+      "0025500304199",
+      "0028000462987",
+      "3261342002108",
+      "0012000173219",
+      "0025500304014"
+    ],
+    "n_acceptable": 8,
+    "category_level": "leaf",
+    "prompt": "I need some vegan coffee or tea, can you add one under $8 to my cart?",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: dropped the $8 cap ('affordable')"
+  },
+  {
+    "id": "T41",
+    "template": "Add kosher plant-based milk with no soy to my cart.",
+    "expected": {
+      "category": "plant_milk",
+      "dietary_tags": [
+        "kosher"
+      ],
+      "excluded_allergens": [
+        "soy"
+      ],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag",
+      "allergen"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0813636023356",
+      "0852909003305",
+      "0096619274857",
+      "0096619237432",
+      "0813636023912",
+      "0041570055311",
+      "0096619533008",
+      "0041570054130",
+      "0626027811025"
+    ],
+    "n_acceptable": 9,
+    "category_level": "leaf",
+    "prompt": "I need to add a kosher-certified plant-based milk alternative that's free from soy to my cart, can you find one for me?",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T42",
+    "template": "Add organic milk under $5 to my cart.",
+    "expected": {
+      "category": "milk",
+      "dietary_tags": [
+        "organic"
+      ],
+      "excluded_allergens": [],
+      "max_price": 5,
+      "quantity": 1
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0093966513004",
+      "0742365264450",
+      "6111242100817",
+      "0855088005689"
+    ],
+    "n_acceptable": 4,
+    "category_level": "leaf",
+    "prompt": "Can I get organic milk for $5 or less, please?",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: changed cap to $3.99, added '2%'"
+  },
+  {
+    "id": "T43",
+    "template": "Add kosher pantry staples under $4 to my cart.",
+    "expected": {
+      "category": "pantry",
+      "dietary_tags": [
+        "kosher"
+      ],
+      "excluded_allergens": [],
+      "max_price": 4,
+      "quantity": 1
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0078742209982",
+      "8032817240319",
+      "0857183005007",
+      "0096619072101",
+      "0017400106959",
+      "0076808533583",
+      "0850791002352"
+    ],
+    "n_acceptable": 7,
+    "category_level": "group",
+    "prompt": "Can I get some kosher pantry staples that are under $4, thanks!",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: changed category to spices and oils"
+  },
+  {
+    "id": "T44",
+    "template": "Add 3 packs of snacks with no nuts to my cart.",
+    "expected": {
+      "category": "snacks",
+      "dietary_tags": [],
+      "excluded_allergens": [
+        "peanuts",
+        "tree_nuts"
+      ],
+      "max_price": null,
+      "quantity": 3
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "allergen"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0037466016450",
+      "0857484006611",
+      "5060198820052",
+      "0044000051709",
+      "7300400481588",
+      "0033617340610",
+      "3497911123350",
+      "0044000050993",
+      "0096619656493",
+      "0044000045463",
+      "0066721007438",
+      "7622210021502",
+      "0819898010745",
+      "03424005",
+      "0747599607219",
+      "0810091780947",
+      "5010029219494",
+      "0687456215587",
+      "0016000264601",
+      "0044000051723",
+      "0687456211091",
+      "8901719117183",
+      "0068437389754",
+      "0096619615162",
+      "0687456213019",
+      "5901588018195",
+      "0044000028282",
+      "0612322000202",
+      "0028400589291",
+      "0014100074724",
+      "0851100003015",
+      "0048564067008",
+      "00614207",
+      "0071146002456",
+      "0850036699187",
+      "0851769007003",
+      "0044000050986",
+      "0193968409326",
+      "0044000031114",
+      "0853555006542",
+      "0708163120589",
+      "0071879700049",
+      "0078742300665",
+      "6111259341197",
+      "0021788506102",
+      "0044000000578",
+      "0028400705769",
+      "7622210625243",
+      "0061232201047",
+      "0028400090858",
+      "0028400763035",
+      "0047495013054",
+      "3245550078704",
+      "0810291001088",
+      "0038000138416",
+      "0044000004637",
+      "0059290573220",
+      "0850000547568",
+      "0096619066254",
+      "0044000045753",
+      "0066721028426",
+      "0044000051013",
+      "0815099020309",
+      "0015665624058",
+      "0722252194145",
+      "00931847",
+      "0049508250302",
+      "0028400247245",
+      "8901491101844",
+      "0888849006656",
+      "0691779205514",
+      "0825625600011",
+      "0687456221045",
+      "7622202225512",
+      "8901063014145",
+      "0857549004248",
+      "20005832",
+      "0797258004750",
+      "0850180006053",
+      "0716270001660",
+      "0070970474088",
+      "0018627115830",
+      "0687456223551",
+      "0722252194985",
+      "0047495610048",
+      "00542562",
+      "0857484006543",
+      "0722252194138",
+      "0897922002041",
+      "0810032300463",
+      "0039978008442"
+    ],
+    "n_acceptable": 91,
+    "category_level": "group",
+    "prompt": "I need to add 3 packs of nut-free snacks to my order.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: added crunchy, gluten-free, $5 cap"
+  },
+  {
+    "id": "T45",
+    "template": "Add no-added-sugar vegan plant-based milk to my cart.",
+    "expected": {
+      "category": "plant_milk",
+      "dietary_tags": [
+        "no_added_sugar",
+        "vegan"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0096619274857",
+      "0041570056707",
+      "4067796002003",
+      "4067796194807",
+      "0744473912056"
+    ],
+    "n_acceptable": 5,
+    "category_level": "leaf",
+    "prompt": "I need a vegan plant-based milk with no added sugar. Can you add one of those to my cart please?",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: added size and 'non-dairy'"
+  },
+  {
+    "id": "T46",
+    "template": "Add kosher chips with no milk to my cart.",
+    "expected": {
+      "category": "chips",
+      "dietary_tags": [
+        "kosher"
+      ],
+      "excluded_allergens": [
+        "milk"
+      ],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag",
+      "allergen"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0096619656493",
+      "0850036699187",
+      "0028400090858",
+      "0038000138416",
+      "0815099020309",
+      "0028400247245"
+    ],
+    "n_acceptable": 6,
+    "category_level": "leaf",
+    "prompt": "Can I add kosher certified chips to my list that don't contain milk?",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: added 'potato'"
+  },
+  {
+    "id": "T47",
+    "template": "Add 2 packs of organic non-GMO snack bars under $7 to my cart.",
+    "expected": {
+      "category": "snack_bars",
+      "dietary_tags": [
+        "organic",
+        "non_gmo"
+      ],
+      "excluded_allergens": [],
+      "max_price": 7,
+      "quantity": 2
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0687456215587",
+      "0687456211091",
+      "0687456213019",
+      "0853555006542",
+      "0687456221045",
+      "0857549004248"
+    ],
+    "n_acceptable": 6,
+    "category_level": "leaf",
+    "prompt": "Can you add two packs of organic non-GMO snack bars to my cart for under $7?",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T48",
+    "template": "Add 2 packs of vegetarian cookies with no nuts to my cart.",
+    "expected": {
+      "category": "cookies",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "excluded_allergens": [
+        "peanuts",
+        "tree_nuts"
+      ],
+      "max_price": null,
+      "quantity": 2
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "allergen"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "7622210021502",
+      "0819898010745",
+      "8901719117183",
+      "0044000028282",
+      "0612322000202",
+      "6111259341197",
+      "0021788506102",
+      "7622210625243",
+      "0061232201047",
+      "0825625600011",
+      "7622202225512",
+      "8901063014145"
+    ],
+    "n_acceptable": 12,
+    "category_level": "leaf",
+    "prompt": "Need 2 packs of vegetarian cookies, no nuts, can you grab those for me?",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: 'veggie' ambiguous"
+  },
+  {
+    "id": "T49",
+    "template": "Add gluten-free crackers with no sesame under $5.50 to my cart.",
+    "expected": {
+      "category": "crackers",
+      "dietary_tags": [
+        "gluten_free"
+      ],
+      "excluded_allergens": [
+        "sesame"
+      ],
+      "max_price": 5.5,
+      "quantity": 1
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "allergen",
+      "price"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0041570052785",
+      "0044000045463",
+      "0048564067008",
+      "0856069005209"
+    ],
+    "n_acceptable": 4,
+    "category_level": "leaf",
+    "prompt": "Hey, I need a pack of gluten-free crackers, please make sure they're sesame-free, and the price shouldn't be more than $5.50.",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T50",
+    "template": "Add organic non-GMO breakfast cereal under $7 to my cart.",
+    "expected": {
+      "category": "breakfast_cereal",
+      "dietary_tags": [
+        "organic",
+        "non_gmo"
+      ],
+      "excluded_allergens": [],
+      "max_price": 7,
+      "quantity": 1
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0058449770565",
+      "0021908133171",
+      "0018627115991",
+      "0675625371189",
+      "0855140002175",
+      "0039978049520",
+      "0058449221012",
+      "0058449770213",
+      "0687456221052",
+      "0021908120232"
+    ],
+    "n_acceptable": 10,
+    "category_level": "leaf",
+    "prompt": "I need to add some organic, non-GMO breakfast cereal to my order, something that's under $7, please.",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T51",
+    "template": "Add gluten-free vegan chips under $5 to my cart.",
+    "expected": {
+      "category": "chips",
+      "dietary_tags": [
+        "gluten_free",
+        "vegan"
+      ],
+      "excluded_allergens": [],
+      "max_price": 5,
+      "quantity": 1
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0096619656493",
+      "0810091780947",
+      "0096619615162",
+      "0851769007003",
+      "0708163120589"
+    ],
+    "n_acceptable": 5,
+    "category_level": "leaf",
+    "prompt": "Hey, I need some gluten-free, vegan chips that are under $5. Can you grab those for me?",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T52",
+    "template": "Add 2 packs of organic vegan plant-based milk with no soy to my cart.",
+    "expected": {
+      "category": "plant_milk",
+      "dietary_tags": [
+        "organic",
+        "vegan"
+      ],
+      "excluded_allergens": [
+        "soy"
+      ],
+      "max_price": null,
+      "quantity": 2
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "allergen"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0813636023356",
+      "0861029000118",
+      "0813636023912",
+      "0744473912353",
+      "4067796002003",
+      "4067796194807",
+      "0744473912056"
+    ],
+    "n_acceptable": 7,
+    "category_level": "leaf",
+    "prompt": "I need 2 cartons of organic vegan plant-based milk that's soy-free, please.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: dropped 'vegan', added 'non-dairy'"
+  },
+  {
+    "id": "T53",
+    "template": "Add gluten-free vegetarian yogurt under $6 to my cart.",
+    "expected": {
+      "category": "yogurt",
+      "dietary_tags": [
+        "gluten_free",
+        "vegetarian"
+      ],
+      "excluded_allergens": [],
+      "max_price": 6,
+      "quantity": 1
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0078742016856"
+    ],
+    "n_acceptable": 1,
+    "category_level": "leaf",
+    "prompt": "Hey, I need a gluten-free, vegetarian yogurt that's under $6. Can you add that to my cart?",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T54",
+    "template": "Add kosher gluten-free cheese under $9 to my cart.",
+    "expected": {
+      "category": "cheese",
+      "dietary_tags": [
+        "kosher",
+        "gluten_free"
+      ],
+      "excluded_allergens": [],
+      "max_price": 9,
+      "quantity": 1
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0859977005064",
+      "0859977005149"
+    ],
+    "n_acceptable": 2,
+    "category_level": "leaf",
+    "prompt": "Can you add a kosher-certified, gluten-free cheese option for under $9, please?",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T55",
+    "template": "Add vegan non-GMO nut butter with no tree nuts to my cart.",
+    "expected": {
+      "category": "nut_butters",
+      "dietary_tags": [
+        "vegan",
+        "non_gmo"
+      ],
+      "excluded_allergens": [
+        "tree_nuts"
+      ],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "allergen"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0856260006005",
+      "0071018010183",
+      "0850791002352",
+      "0051500068243",
+      "0051500017012",
+      "0051500245408"
+    ],
+    "n_acceptable": 6,
+    "category_level": "leaf",
+    "prompt": "I'm looking for a vegan non-GMO nut butter that doesn't contain tree nuts, can you add that to my cart please?",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T56",
+    "template": "Add 2 packs of vegan kosher nuts or seeds under $12 to my cart.",
+    "expected": {
+      "category": "nuts_seeds",
+      "dietary_tags": [
+        "vegan",
+        "kosher"
+      ],
+      "excluded_allergens": [],
+      "max_price": 12,
+      "quantity": 2
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0096619066254",
+      "0691779205514",
+      "0096619332731",
+      "0096619196470",
+      "0096619107698",
+      "0096619142453",
+      "0897922002041",
+      "0810032300463"
+    ],
+    "n_acceptable": 8,
+    "category_level": "leaf",
+    "prompt": "Hey, I need 2 packs of nuts or seeds that are vegan and kosher, can you add those to my cart for under $12?",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T57",
+    "template": "Add organic vegan bread under $6.50 to my cart.",
+    "expected": {
+      "category": "bread",
+      "dietary_tags": [
+        "organic",
+        "vegan"
+      ],
+      "excluded_allergens": [],
+      "max_price": 6.5,
+      "quantity": 1
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0073472001202",
+      "0073472001233"
+    ],
+    "n_acceptable": 2,
+    "category_level": "leaf",
+    "prompt": "Can you please add some organic vegan bread to my shopping list for under $6.50?",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T58",
+    "template": "Add 4 packs of vegan non-GMO pasta under $4 to my cart.",
+    "expected": {
+      "category": "pasta",
+      "dietary_tags": [
+        "vegan",
+        "non_gmo"
+      ],
+      "excluded_allergens": [],
+      "max_price": 4,
+      "quantity": 4
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0076808280081",
+      "0076808005851",
+      "0857183005007",
+      "0076808533583"
+    ],
+    "n_acceptable": 4,
+    "category_level": "leaf",
+    "prompt": "Hey, can you grab 4 packs of vegan non-GMO pasta, please? It has to be under $4 per pack, thanks!",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: 'would be great' weakened the price cap"
+  },
+  {
+    "id": "T59",
+    "template": "Add vegan gluten-free pasta sauce with no milk to my cart.",
+    "expected": {
+      "category": "pasta_sauce",
+      "dietary_tags": [
+        "vegan",
+        "gluten_free"
+      ],
+      "excluded_allergens": [
+        "milk"
+      ],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "allergen"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "8032817240319"
+    ],
+    "n_acceptable": 1,
+    "category_level": "leaf",
+    "prompt": "Need a gluten-free pasta sauce that's vegan and doesn't contain any milk, please.",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T60",
+    "template": "Add gluten-free organic soup under $5 to my cart.",
+    "expected": {
+      "category": "soup",
+      "dietary_tags": [
+        "gluten_free",
+        "organic"
+      ],
+      "excluded_allergens": [],
+      "max_price": 5,
+      "quantity": 1
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0052603054256",
+      "0052603283670",
+      "0042272005109",
+      "0052603056076",
+      "0042272005826"
+    ],
+    "n_acceptable": 5,
+    "category_level": "leaf",
+    "prompt": "Hey, I need a gluten-free, organic soup that's under $5. Can you add one to my cart?",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T61",
+    "template": "Add 3 packs of vegan no-added-sugar juice under $6 to my cart.",
+    "expected": {
+      "category": "juice",
+      "dietary_tags": [
+        "vegan",
+        "no_added_sugar"
+      ],
+      "excluded_allergens": [],
+      "max_price": 6,
+      "quantity": 3
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0048500205716",
+      "0898999011288",
+      "0025000100000"
+    ],
+    "n_acceptable": 3,
+    "category_level": "leaf",
+    "prompt": "I need 3 packs of vegan juice that's no added sugar, can you add that to my cart for under $6?",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T62",
+    "template": "Add vegan organic coffee or tea under $12 to my cart.",
+    "expected": {
+      "category": "coffee_tea",
+      "dietary_tags": [
+        "vegan",
+        "organic"
+      ],
+      "excluded_allergens": [],
+      "max_price": 12,
+      "quantity": 1
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "3261342002108"
+    ],
+    "n_acceptable": 1,
+    "category_level": "leaf",
+    "prompt": "I need a pack of organic vegan coffee or tea that's less than $12.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: dropped tea"
+  },
+  {
+    "id": "T63",
+    "template": "Add organic vegan gluten-free rice or grains to my cart.",
+    "expected": {
+      "category": "rice_grains",
+      "dietary_tags": [
+        "organic",
+        "vegan",
+        "gluten_free"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0195893170920",
+      "0096619533602"
+    ],
+    "n_acceptable": 2,
+    "category_level": "leaf",
+    "prompt": "I need some organic vegan gluten-free rice or grains, can you add a bag to my cart?",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: narrowed to rice"
+  },
+  {
+    "id": "T64",
+    "template": "Add vegan chocolate with no soy under $6 to my cart.",
+    "expected": {
+      "category": "chocolate_candy",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "excluded_allergens": [
+        "soy"
+      ],
+      "max_price": 6,
+      "quantity": 1
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "allergen",
+      "price"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0037466016450",
+      "0857484006611"
+    ],
+    "n_acceptable": 2,
+    "category_level": "leaf",
+    "prompt": "Hey, can you grab some vegan chocolate without soy? I'm looking for something under $6.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: narrowed to bars"
+  },
+  {
+    "id": "T65",
+    "template": "Add lactose-free gluten-free milk under $6 to my cart.",
+    "expected": {
+      "category": "milk",
+      "dietary_tags": [
+        "lactose_free",
+        "gluten_free"
+      ],
+      "excluded_allergens": [],
+      "max_price": 6,
+      "quantity": 1
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "price"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0811620022194",
+      "0041383090738",
+      "0041383090363"
+    ],
+    "n_acceptable": 3,
+    "category_level": "leaf",
+    "prompt": "I need lactose-free milk that's also gluten-free, can you add it to my cart for under $6?",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T66",
+    "template": "Add 2 packs of vegan pasta with no gluten to my cart.",
+    "expected": {
+      "category": "pasta",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "excluded_allergens": [
+        "gluten"
+      ],
+      "max_price": null,
+      "quantity": 2
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag",
+      "allergen"
+    ],
+    "stratum": "2",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0857183005007"
+    ],
+    "n_acceptable": 1,
+    "category_level": "leaf",
+    "prompt": "Need 2 packs of vegan pasta with no gluten in it, please.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: dropped vegan as product property; allergen became 'gluten-free'"
+  },
+  {
+    "id": "T67",
+    "template": "Add non-GMO gluten-free soup with no celery to my cart.",
+    "expected": {
+      "category": "soup",
+      "dietary_tags": [
+        "non_gmo",
+        "gluten_free"
+      ],
+      "excluded_allergens": [
+        "celery"
+      ],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "allergen"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0042272005109"
+    ],
+    "n_acceptable": 1,
+    "category_level": "leaf",
+    "prompt": "I need to add a non-GMO, gluten-free soup to my order, please make sure it doesn't contain any celery.",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T68",
+    "template": "Add vegan kosher snacks with no soy under $8 to my cart.",
+    "expected": {
+      "category": "snacks",
+      "dietary_tags": [
+        "vegan",
+        "kosher"
+      ],
+      "excluded_allergens": [
+        "soy"
+      ],
+      "max_price": 8,
+      "quantity": 1
+    },
+    "n_constraints": 4,
+    "constraint_types": [
+      "tag",
+      "allergen",
+      "price"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0044000051709",
+      "0096619656493",
+      "0687456215587",
+      "0850036699187",
+      "0044000050986",
+      "0047495013054",
+      "0096619066254",
+      "0815099020309",
+      "0691779205514",
+      "0096619332731",
+      "0850180006053"
+    ],
+    "n_acceptable": 11,
+    "category_level": "group",
+    "prompt": "I need vegan kosher snacks that don't contain soy, can you please add some options to my cart that are under $8?",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T69",
+    "template": "Add no-added-sugar breakfast cereal with no gluten under $7 to my cart.",
+    "expected": {
+      "category": "breakfast_cereal",
+      "dietary_tags": [
+        "no_added_sugar"
+      ],
+      "excluded_allergens": [
+        "gluten"
+      ],
+      "max_price": 7,
+      "quantity": 1
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "allergen",
+      "price"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0021908133171"
+    ],
+    "n_acceptable": 1,
+    "category_level": "leaf",
+    "prompt": "Can I add a breakfast cereal with no gluten and no added sugar to my cart, something $7 or less?",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: allergen became 'gluten-free'; 'around' blurred cap"
+  },
+  {
+    "id": "T70",
+    "template": "Add fair-trade snack bars with no soy under $10 to my cart.",
+    "expected": {
+      "category": "snack_bars",
+      "dietary_tags": [
+        "fair_trade"
+      ],
+      "excluded_allergens": [
+        "soy"
+      ],
+      "max_price": 10,
+      "quantity": 1
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "allergen",
+      "price"
+    ],
+    "stratum": "3+",
+    "feasible": true,
+    "infeasible_reason": null,
+    "acceptable": [
+      "0857484006543"
+    ],
+    "n_acceptable": 1,
+    "category_level": "leaf",
+    "prompt": "I need fair-trade snack bars that are soy-free, please add them to my cart if they're under $10 each.",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T71",
+    "template": "Add vegan cheese to my cart.",
+    "expected": {
+      "category": "cheese",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "1",
+    "feasible": false,
+    "infeasible_reason": "tag_x_category: no vegan cheese in catalog",
+    "acceptable": [],
+    "n_acceptable": 0,
+    "category_level": "leaf",
+    "prompt": "I'm looking for a vegan cheese, can you please add that to my cart?",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: narrowed to mozzarella 'alternative'"
+  },
+  {
+    "id": "T72",
+    "template": "Add yogurt with no milk to my cart.",
+    "expected": {
+      "category": "yogurt",
+      "dietary_tags": [],
+      "excluded_allergens": [
+        "milk"
+      ],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "allergen"
+    ],
+    "stratum": "1",
+    "feasible": false,
+    "infeasible_reason": "allergen_x_category: every yogurt contains milk",
+    "acceptable": [],
+    "n_acceptable": 0,
+    "category_level": "leaf",
+    "prompt": "I need a yogurt that doesn't have any milk in it.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: invented coconut/almond, organic, $4, 3 cups"
+  },
+  {
+    "id": "T73",
+    "template": "Add gluten-free bread to my cart.",
+    "expected": {
+      "category": "bread",
+      "dietary_tags": [
+        "gluten_free"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "1",
+    "feasible": false,
+    "infeasible_reason": "tag_x_category: no gluten-free bread",
+    "acceptable": [],
+    "n_acceptable": 0,
+    "category_level": "leaf",
+    "prompt": "I need a loaf of gluten-free bread.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: added $4 cap"
+  },
+  {
+    "id": "T74",
+    "template": "Add coffee or tea under $4 to my cart.",
+    "expected": {
+      "category": "coffee_tea",
+      "dietary_tags": [],
+      "excluded_allergens": [],
+      "max_price": 4,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "price"
+    ],
+    "stratum": "1",
+    "feasible": false,
+    "infeasible_reason": "price_below_min: cheapest coffee/tea is $4.52",
+    "acceptable": [],
+    "n_acceptable": 0,
+    "category_level": "leaf",
+    "prompt": "Hey, can you add a coffee or tea for under $4, thanks?",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: added gluten-free and fair trade"
+  },
+  {
+    "id": "T75",
+    "template": "Add 2 packs of nuts or seeds under $4 to my cart.",
+    "expected": {
+      "category": "nuts_seeds",
+      "dietary_tags": [],
+      "excluded_allergens": [],
+      "max_price": 4,
+      "quantity": 2
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "price"
+    ],
+    "stratum": "1",
+    "feasible": false,
+    "infeasible_reason": "price_below_min: cheapest nuts/seeds is $4.05",
+    "acceptable": [],
+    "n_acceptable": 0,
+    "category_level": "leaf",
+    "prompt": "Hey, can I get 2 packs of nuts or seeds? They need to be under $4 each, thanks!",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: narrowed to almonds/pumpkin seeds; 'total' changed price semantics"
+  },
+  {
+    "id": "T76",
+    "template": "Add gluten-free organic crackers to my cart.",
+    "expected": {
+      "category": "crackers",
+      "dietary_tags": [
+        "gluten_free",
+        "organic"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "2",
+    "feasible": false,
+    "infeasible_reason": "tag_conjunction: no organic gluten-free crackers",
+    "acceptable": [],
+    "n_acceptable": 0,
+    "category_level": "leaf",
+    "prompt": "I need the gluten-free organic crackers, can you add them to my order?",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T77",
+    "template": "Add organic lactose-free milk to my cart.",
+    "expected": {
+      "category": "milk",
+      "dietary_tags": [
+        "organic",
+        "lactose_free"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "2",
+    "feasible": false,
+    "infeasible_reason": "tag_conjunction: no organic lactose-free milk",
+    "acceptable": [],
+    "n_acceptable": 0,
+    "category_level": "leaf",
+    "prompt": "Need to add some organic lactose-free milk, thanks.",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T78",
+    "template": "Add kosher cookies with no eggs to my cart.",
+    "expected": {
+      "category": "cookies",
+      "dietary_tags": [
+        "kosher"
+      ],
+      "excluded_allergens": [
+        "eggs"
+      ],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 2,
+    "constraint_types": [
+      "tag",
+      "allergen"
+    ],
+    "stratum": "2",
+    "feasible": false,
+    "infeasible_reason": "tag_x_allergen: no egg-free kosher cookies",
+    "acceptable": [],
+    "n_acceptable": 0,
+    "category_level": "leaf",
+    "prompt": "I need kosher cookies without eggs, please.",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T79",
+    "template": "Add vegan cookies with no soy under $4 to my cart.",
+    "expected": {
+      "category": "cookies",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "excluded_allergens": [
+        "soy"
+      ],
+      "max_price": 4,
+      "quantity": 1
+    },
+    "n_constraints": 3,
+    "constraint_types": [
+      "tag",
+      "allergen",
+      "price"
+    ],
+    "stratum": "3+",
+    "feasible": false,
+    "infeasible_reason": "three_way: no vegan soy-free cookies under $4",
+    "acceptable": [],
+    "n_acceptable": 0,
+    "category_level": "leaf",
+    "prompt": "I'm looking for vegan cookies without soy that fit within my $4 budget, can you suggest some options?",
+    "source": "template+paraphrase",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "T80",
+    "template": "Add vegan dairy products to my cart.",
+    "expected": {
+      "category": "dairy",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "excluded_allergens": [],
+      "max_price": null,
+      "quantity": 1
+    },
+    "n_constraints": 1,
+    "constraint_types": [
+      "tag"
+    ],
+    "stratum": "1",
+    "feasible": false,
+    "infeasible_reason": "group_level: no vegan product in the dairy group",
+    "acceptable": [],
+    "n_acceptable": 0,
+    "category_level": "group",
+    "prompt": "I need something vegan from the dairy section, please.",
+    "source": "template+paraphrase+manual_edit",
+    "paraphrase_model": "llama3.1:8b",
+    "verified_by": [
+      "claude-review"
+    ],
+    "notes": "manual correction: invented almond/soy milk, organic, non-GMO, $4"
+  }
+]

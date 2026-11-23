@@ -1,0 +1,2571 @@
+{
+  "config": "A (TF-IDF top-1)",
+  "dataset": "data/evaluation/test_prompts.json",
+  "text_field": "prompt",
+  "vectorizer": {
+    "lowercase": true,
+    "strip_accents": null,
+    "ngram_range": [
+      1,
+      1
+    ],
+    "sublinear_tf": false,
+    "smooth_idf": true,
+    "norm": "l2"
+  },
+  "summary": {
+    "n_prompts": 80,
+    "n_feasible": 70,
+    "n_infeasible": 10,
+    "css": 0.7664285714285715,
+    "tsr": 0.5285714285714286,
+    "tsr_successes": 37,
+    "ira": 0.0,
+    "infeasible_confusion": {
+      "tp": 0,
+      "fn": 10,
+      "fp": 0,
+      "tn": 70
+    },
+    "infeasible_precision": 0.0,
+    "infeasible_recall": 0.0,
+    "infeasible_f1": 0.0,
+    "over_refusal_rate": 0.0,
+    "tsr_ci95": [
+      0.41321887380944555,
+      0.6409512368655101
+    ],
+    "ira_ci95": [
+      0.0,
+      0.2775328030260577
+    ],
+    "css_ci95": [
+      0.6997619047619048,
+      0.8304761904761905
+    ],
+    "tfidf_recall@1": 0.5285714285714286,
+    "tfidf_recall@20": 0.9714285714285714,
+    "tfidf_mrr": 0.6572811276025561
+  },
+  "by_stratum": {
+    "1": {
+      "n_prompts": 29,
+      "n_feasible": 23,
+      "n_infeasible": 6,
+      "css": 0.717391304347826,
+      "tsr": 0.5217391304347826,
+      "tsr_successes": 12,
+      "ira": 0.0,
+      "infeasible_confusion": {
+        "tp": 0,
+        "fn": 6,
+        "fp": 0,
+        "tn": 23
+      },
+      "infeasible_precision": 0.0,
+      "infeasible_recall": 0.0,
+      "infeasible_f1": 0.0,
+      "over_refusal_rate": 0.0,
+      "tsr_ci95": [
+        0.3296273720444183,
+        0.7076284270692741
+      ],
+      "ira_ci95": [
+        0.0,
+        0.39033429165637346
+      ],
+      "css_ci95": [
+        0.5869565217391305,
+        0.8478260869565217
+      ]
+    },
+    "2": {
+      "n_prompts": 27,
+      "n_feasible": 24,
+      "n_infeasible": 3,
+      "css": 0.7916666666666666,
+      "tsr": 0.5416666666666666,
+      "tsr_successes": 13,
+      "ira": 0.0,
+      "infeasible_confusion": {
+        "tp": 0,
+        "fn": 3,
+        "fp": 0,
+        "tn": 24
+      },
+      "infeasible_precision": 0.0,
+      "infeasible_recall": 0.0,
+      "infeasible_f1": 0.0,
+      "over_refusal_rate": 0.0,
+      "tsr_ci95": [
+        0.35074865225073715,
+        0.7210866638699854
+      ],
+      "ira_ci95": [
+        0.0,
+        0.5614970356393196
+      ],
+      "css_ci95": [
+        0.6805555555555555,
+        0.8888888888888888
+      ]
+    },
+    "3+": {
+      "n_prompts": 24,
+      "n_feasible": 23,
+      "n_infeasible": 1,
+      "css": 0.7891304347826086,
+      "tsr": 0.5217391304347826,
+      "tsr_successes": 12,
+      "ira": 0.0,
+      "infeasible_confusion": {
+        "tp": 0,
+        "fn": 1,
+        "fp": 0,
+        "tn": 23
+      },
+      "infeasible_precision": 0.0,
+      "infeasible_recall": 0.0,
+      "infeasible_f1": 0.0,
+      "over_refusal_rate": 0.0,
+      "tsr_ci95": [
+        0.3296273720444183,
+        0.7076284270692741
+      ],
+      "ira_ci95": [
+        0.0,
+        0.7934506882081973
+      ],
+      "css_ci95": [
+        0.6847826086956522,
+        0.8869565217391304
+      ]
+    }
+  },
+  "violations_on_feasible": {
+    "price": 10,
+    "category": 10,
+    "tag": 13,
+    "allergen": 15
+  },
+  "results": [
+    {
+      "id": "T01",
+      "prompt": "I need to get some gluten-free chips, can you grab a bag of those for me?",
+      "expected": {
+        "category": "chips",
+        "dietary_tags": [
+          "gluten_free"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "3497911123350",
+        "0096619656493",
+        "0810091780947",
+        "0096619615162",
+        "00614207",
+        "0071146002456",
+        "0851769007003",
+        "0193968409326",
+        "0708163120589",
+        "0028400705769",
+        "0028400090858",
+        "0028400763035",
+        "3245550078704",
+        "0815099020309",
+        "0015665624058",
+        "0888849006656"
+      ],
+      "stratum": "1",
+      "selected_code": "0071146002456",
+      "selected_name": "HARVEST SNAPS Lightly Salted Crispy Baked Veggie Snacks",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T02",
+      "prompt": "Can I add 2 packs of vegetarian cookies to my order?",
+      "expected": {
+        "category": "cookies",
+        "dietary_tags": [
+          "vegetarian"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 2
+      },
+      "feasible": true,
+      "acceptable": [
+        "7622210021502",
+        "0819898010745",
+        "0856069005193",
+        "8901719117183",
+        "0810091780909",
+        "0044000028282",
+        "0612322000202",
+        "6111259341197",
+        "0021788506102",
+        "7622210625243",
+        "0061232201047",
+        "0810091781074",
+        "0851769007966",
+        "0825625600011",
+        "7622202225512",
+        "8901063014145"
+      ],
+      "stratum": "1",
+      "selected_code": "0819898010745",
+      "selected_name": "Chocolate Chunk Cookies",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T03",
+      "prompt": "I need to add some kosher nuts or seeds, anything kosher-certified works.",
+      "expected": {
+        "category": "nuts_seeds",
+        "dietary_tags": [
+          "kosher"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0096619928910",
+        "0096619066254",
+        "0691779205514",
+        "0096619332731",
+        "0029000073456",
+        "0096619196470",
+        "0096619107698",
+        "0096619142453",
+        "0897922002041",
+        "0810032300463",
+        "0096619440498",
+        "0014113734066"
+      ],
+      "stratum": "1",
+      "selected_code": "0096619332731",
+      "selected_name": "Macadamia Nuts",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T04",
+      "prompt": "I need a juice that's labeled no added sugar, please.",
+      "expected": {
+        "category": "juice",
+        "dietary_tags": [
+          "no_added_sugar"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0082592660152",
+        "0048500205716",
+        "0898999011288",
+        "0082592194152",
+        "0025000100000",
+        "3123340008288",
+        "0082592720153",
+        "0025000136634",
+        "0096619036981",
+        "0025000136788"
+      ],
+      "stratum": "1",
+      "selected_code": "0048500205716",
+      "selected_name": "No Pulp OJ",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T05",
+      "prompt": "Can I get 2 loaves of organic bread, please?",
+      "expected": {
+        "category": "bread",
+        "dietary_tags": [
+          "organic"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 2
+      },
+      "feasible": true,
+      "acceptable": [
+        "0013764027282",
+        "0013764027053",
+        "0013764027121",
+        "0013764027756",
+        "0073472001202",
+        "0073472001233",
+        "0013764028012",
+        "0013764027039",
+        "0013764027138",
+        "0013764028234",
+        "0013764027220"
+      ],
+      "stratum": "1",
+      "selected_code": "0013764027121",
+      "selected_name": "ORGANIC BREAD GOOD SEED THIN-SLICED",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T06",
+      "prompt": "Can I get some yogurt, please? It needs to be under $3.",
+      "expected": {
+        "category": "yogurt",
+        "dietary_tags": [],
+        "excluded_allergens": [],
+        "max_price": 3,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0078742016856",
+        "0894700010144",
+        "0894700010267",
+        "0017077102322",
+        "6111242100206",
+        "8402001036606"
+      ],
+      "stratum": "1",
+      "selected_code": "00038317",
+      "selected_name": "Authentic Greek Yogurt Natural",
+      "violated": [
+        "price"
+      ],
+      "rank_first_acceptable": 3
+    },
+    {
+      "id": "T07",
+      "prompt": "I need to add three packs of pasta that are under $3 each.",
+      "expected": {
+        "category": "pasta",
+        "dietary_tags": [],
+        "excluded_allergens": [],
+        "max_price": 3,
+        "quantity": 3
+      },
+      "feasible": true,
+      "acceptable": [
+        "8076809523509",
+        "8076802085899",
+        "3038350014603",
+        "0078742209982",
+        "0076808280081",
+        "00671729",
+        "0076808501063",
+        "0076808005851"
+      ],
+      "stratum": "1",
+      "selected_code": "0070234215105",
+      "selected_name": "Pasta Sauce",
+      "violated": [
+        "category",
+        "price"
+      ],
+      "rank_first_acceptable": 2
+    },
+    {
+      "id": "T08",
+      "prompt": "I need a coffee or tea that's under $7, please.",
+      "expected": {
+        "category": "coffee_tea",
+        "dietary_tags": [],
+        "excluded_allergens": [],
+        "max_price": 7,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0028000743079",
+        "0049000073546",
+        "0012000173196",
+        "0715374544042",
+        "0025500304199",
+        "0012000286193",
+        "0028000462987",
+        "3261342002108",
+        "0012000173219"
+      ],
+      "stratum": "1",
+      "selected_code": "0028000743079",
+      "selected_name": "Coffee",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T09",
+      "prompt": "Need to add a kosher cheese to my shopping list.",
+      "expected": {
+        "category": "cheese",
+        "dietary_tags": [
+          "kosher"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0859977005064",
+        "3859888858336",
+        "0043192316900",
+        "0859977005149",
+        "0073420516208"
+      ],
+      "stratum": "1",
+      "selected_code": "0096619362776",
+      "selected_name": "Shredded Mexican-Style Blend Cheese",
+      "violated": [
+        "tag:kosher"
+      ],
+      "rank_first_acceptable": 2
+    },
+    {
+      "id": "T10",
+      "prompt": "I need snack bars that don't contain peanuts, can you add those to my cart?",
+      "expected": {
+        "category": "snack_bars",
+        "dietary_tags": [],
+        "excluded_allergens": [
+          "peanuts"
+        ],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0096619215607",
+        "0687456215587",
+        "0016000264601",
+        "0687456211091",
+        "0687456213019",
+        "0851100003015",
+        "0853555006542",
+        "0047495013054",
+        "0722252194145",
+        "0687456221045",
+        "0857549004248",
+        "0018627115830",
+        "0687456223551",
+        "0722252194985",
+        "0047495610048",
+        "0857484006543",
+        "0722252194138"
+      ],
+      "stratum": "1",
+      "selected_code": "0602652670527",
+      "selected_name": "Minis",
+      "violated": [
+        "allergen:peanuts"
+      ],
+      "rank_first_acceptable": 4
+    },
+    {
+      "id": "T11",
+      "prompt": "Can I add some crackers to my order? They can't have any gluten in them.",
+      "expected": {
+        "category": "crackers",
+        "dietary_tags": [],
+        "excluded_allergens": [
+          "gluten"
+        ],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0041570052785",
+        "0044000045463",
+        "0048564067008",
+        "0856069005209",
+        "0044000044718"
+      ],
+      "stratum": "1",
+      "selected_code": "0044000051709",
+      "selected_name": "Reduced Fat Triscuit Crackers",
+      "violated": [
+        "allergen:gluten"
+      ],
+      "rank_first_acceptable": 3
+    },
+    {
+      "id": "T12",
+      "prompt": "I need 2 packs of chocolate with no milk in them.",
+      "expected": {
+        "category": "chocolate_candy",
+        "dietary_tags": [],
+        "excluded_allergens": [
+          "milk"
+        ],
+        "max_price": null,
+        "quantity": 2
+      },
+      "feasible": true,
+      "acceptable": [
+        "0037466016450",
+        "0857484006611",
+        "0747599607219",
+        "5901588018195",
+        "0071879700049",
+        "0850000547568",
+        "20005832",
+        "0797258004750",
+        "0850180006053",
+        "0716270001660",
+        "0070970474088",
+        "0850068582013"
+      ],
+      "stratum": "1",
+      "selected_code": "03424005",
+      "selected_name": "milk chocolate",
+      "violated": [
+        "allergen:milk"
+      ],
+      "rank_first_acceptable": 2
+    },
+    {
+      "id": "T13",
+      "prompt": "Hey, can you please add some non-GMO rice or grains to my cart? Thanks.",
+      "expected": {
+        "category": "rice_grains",
+        "dietary_tags": [
+          "non_gmo"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0807176714027",
+        "0017400106959",
+        "0074401760412",
+        "0017400118457",
+        "0748404450044",
+        "0017400140311",
+        "0017400140045",
+        "0017400106676",
+        "0017400140380",
+        "0745042112013",
+        "0073416004306",
+        "0748404287947",
+        "0096619533602"
+      ],
+      "stratum": "1",
+      "selected_code": "0017400118457",
+      "selected_name": "BROWN RICE",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T14",
+      "prompt": "I need a vegan pasta sauce.",
+      "expected": {
+        "category": "pasta_sauce",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "8032817240319",
+        "0747479001052",
+        "00101110",
+        "0747479000017",
+        "00797535",
+        "0070234215105"
+      ],
+      "stratum": "1",
+      "selected_code": "0070234215105",
+      "selected_name": "Pasta Sauce",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T15",
+      "prompt": "I need to grab some gluten-free soups - can you add 4 packs of those to my cart, please?",
+      "expected": {
+        "category": "soup",
+        "dietary_tags": [
+          "gluten_free"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 4
+      },
+      "feasible": true,
+      "acceptable": [
+        "0052603054256",
+        "0041196010220",
+        "8410748301000",
+        "0052603283670",
+        "0042272005109",
+        "0052603056076",
+        "0851702007008",
+        "0042272005826",
+        "0096619095032",
+        "0196633908056",
+        "0052603041843",
+        "0041196010138",
+        "0041196914153",
+        "0052603041201",
+        "8410748501004"
+      ],
+      "stratum": "1",
+      "selected_code": "0041383155482",
+      "selected_name": "Cottage Cheese",
+      "violated": [
+        "category"
+      ],
+      "rank_first_acceptable": 25
+    },
+    {
+      "id": "T16",
+      "prompt": "Can I get a non-GMO breakfast cereal, thanks!",
+      "expected": {
+        "category": "breakfast_cereal",
+        "dietary_tags": [
+          "non_gmo"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0030000010402",
+        "0810589032312",
+        "0058449770565",
+        "0016000435094",
+        "0021908133171",
+        "0018627115991",
+        "0030000011805",
+        "0030000010204",
+        "0884912004710",
+        "0018627116011",
+        "0675625371189",
+        "0855140002175",
+        "0850017468993",
+        "0039978049520",
+        "0058449221012",
+        "0058449770213",
+        "0687456221052",
+        "0021908120232"
+      ],
+      "stratum": "1",
+      "selected_code": "0018627116011",
+      "selected_name": "organic cinnamon harvest",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T17",
+      "prompt": "Can I get a carton of lactose-free milk, please?",
+      "expected": {
+        "category": "milk",
+        "dietary_tags": [
+          "lactose_free"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0856312002757",
+        "0856312002771",
+        "0811620022194",
+        "0041383090738",
+        "0041383090363",
+        "0811620020169"
+      ],
+      "stratum": "1",
+      "selected_code": "0041383090363",
+      "selected_name": "Lactose Free Whole Milk",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T18",
+      "prompt": "I need a jar of nut butter that's free from peanuts.",
+      "expected": {
+        "category": "nut_butters",
+        "dietary_tags": [],
+        "excluded_allergens": [
+          "peanuts"
+        ],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "8032523532456",
+        "4099100008043",
+        "0096619676811",
+        "0894697002184"
+      ],
+      "stratum": "1",
+      "selected_code": "0051500017005",
+      "selected_name": "Natural Creamy Peanut Butter",
+      "violated": [
+        "allergen:peanuts"
+      ],
+      "rank_first_acceptable": 15
+    },
+    {
+      "id": "T19",
+      "prompt": "I need a plant-based milk that's free from tree nuts, is there an option that fits?",
+      "expected": {
+        "category": "plant_milk",
+        "dietary_tags": [],
+        "excluded_allergens": [
+          "tree_nuts"
+        ],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0025293600232",
+        "0096619237432",
+        "0813636023912",
+        "0744473912353",
+        "4067796002003",
+        "7394376620157",
+        "4067796194807",
+        "0744473912056",
+        "0626027811025"
+      ],
+      "stratum": "1",
+      "selected_code": "0813636023912",
+      "selected_name": "Organic Coconut Milk Unsweetened",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T20",
+      "prompt": "I need some vegan snack options, please.",
+      "expected": {
+        "category": "snacks",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0037466016450",
+        "0857484006611",
+        "0044000051709",
+        "7300400481588",
+        "0033617340610",
+        "0096619656493",
+        "0810091780947",
+        "0687456215587",
+        "0044000051723",
+        "0687456211091",
+        "0856069005193",
+        "0096619615162",
+        "5901588018195",
+        "0810091780909",
+        "0044000028282",
+        "0612322000202",
+        "0028400589291",
+        "0850036699187",
+        "0851769007003",
+        "0044000050986",
+        "0853555006542",
+        "0708163120589",
+        "0071879700049",
+        "0078742300665",
+        "0021788506102",
+        "0061232201047",
+        "0810091781074",
+        "0028400763035",
+        "0047495013054",
+        "3245550078704",
+        "0096619066254",
+        "0815099020309",
+        "0096619885725",
+        "0851769007966",
+        "0029000076501",
+        "0691779205514",
+        "0687456221045",
+        "0096619332731",
+        "0857549004248",
+        "0096619928927",
+        "0850180006053",
+        "0018627115830",
+        "0687456223551",
+        "0096619196470",
+        "0096619107698",
+        "0047495610048",
+        "00542562",
+        "0857484006543",
+        "0096619142453",
+        "0897922002041",
+        "0810032300463",
+        "0096619222490",
+        "0708747151930",
+        "3168930007340",
+        "0014113734066",
+        "0039978008442"
+      ],
+      "stratum": "1",
+      "selected_code": "0857484006543",
+      "selected_name": "dark chocolate coconut bars",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T21",
+      "prompt": "Can I grab two packs of something to drink for under $4?",
+      "expected": {
+        "category": "beverages",
+        "dietary_tags": [],
+        "excluded_allergens": [],
+        "max_price": 4,
+        "quantity": 2
+      },
+      "feasible": true,
+      "acceptable": [
+        "0898999010007",
+        "0813636023356",
+        "0861029000118",
+        "4061459332896",
+        "0025000061530",
+        "0852909003305",
+        "0082592660152",
+        "0048500205716",
+        "0025293600232",
+        "0096619274857",
+        "0041570110195",
+        "0041570056707"
+      ],
+      "stratum": "1",
+      "selected_code": "0036632042842",
+      "selected_name": "Oikos Pro Strawberry Banana Cultured Dairy Drink",
+      "violated": [
+        "category",
+        "price"
+      ],
+      "rank_first_acceptable": 11
+    },
+    {
+      "id": "T22",
+      "prompt": "I need some organic dairy products, please.",
+      "expected": {
+        "category": "dairy",
+        "dietary_tags": [
+          "organic"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0093966513004",
+        "0742365264450",
+        "0859977005064",
+        "6111242100817",
+        "0855088005689",
+        "0052159000011",
+        "0093966515008",
+        "0043192315507",
+        "0196633884466",
+        "0855088005467",
+        "0043192316900",
+        "0096619483556",
+        "0093966009545"
+      ],
+      "stratum": "1",
+      "selected_code": "0731216103987",
+      "selected_name": "Aussie Bites",
+      "violated": [
+        "category"
+      ],
+      "rank_first_acceptable": 5
+    },
+    {
+      "id": "T23",
+      "prompt": "I need organic coffee or tea, either one is fine.",
+      "expected": {
+        "category": "coffee_tea",
+        "dietary_tags": [
+          "organic"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "3261342002108",
+        "0032917002198",
+        "0892241000686",
+        "0810232020178"
+      ],
+      "stratum": "1",
+      "selected_code": "0028000743079",
+      "selected_name": "Coffee",
+      "violated": [
+        "tag:organic"
+      ],
+      "rank_first_acceptable": 5
+    },
+    {
+      "id": "T24",
+      "prompt": "Hey, can you add a bag of vegan chips to my order? They need to be under $4.",
+      "expected": {
+        "category": "chips",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [],
+        "max_price": 4,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0096619656493",
+        "0810091780947"
+      ],
+      "stratum": "2",
+      "selected_code": "0850036699187",
+      "selected_name": "Sweet Potato Chips Sea Salt",
+      "violated": [
+        "price"
+      ],
+      "rank_first_acceptable": 5
+    },
+    {
+      "id": "T25",
+      "prompt": "I need vegan cookies that don't contain soy, can you please add those to my list?",
+      "expected": {
+        "category": "cookies",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [
+          "soy"
+        ],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0856069005193",
+        "0810091780909",
+        "0612322000202",
+        "0061232201047",
+        "0810091781074",
+        "0851769007966"
+      ],
+      "stratum": "2",
+      "selected_code": "0819898010745",
+      "selected_name": "Chocolate Chunk Cookies",
+      "violated": [
+        "tag:vegan",
+        "allergen:soy"
+      ],
+      "rank_first_acceptable": 7
+    },
+    {
+      "id": "T26",
+      "prompt": "Can you add 2 packs of lactose-free yogurt under $6 to my cart please?",
+      "expected": {
+        "category": "yogurt",
+        "dietary_tags": [
+          "lactose_free"
+        ],
+        "excluded_allergens": [],
+        "max_price": 6,
+        "quantity": 2
+      },
+      "feasible": true,
+      "acceptable": [
+        "0818290017734",
+        "0818290015198",
+        "0818290015167"
+      ],
+      "stratum": "2",
+      "selected_code": "0818290015198",
+      "selected_name": "Lowfat Greek Yogurt Vanilla",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T27",
+      "prompt": "I need to pick up gluten-free vegetarian cheese. Can you find a good brand that fits my requirements?",
+      "expected": {
+        "category": "cheese",
+        "dietary_tags": [
+          "gluten_free",
+          "vegetarian"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "4099100013436",
+        "6111242106949",
+        "0078742032788"
+      ],
+      "stratum": "2",
+      "selected_code": "0096619362776",
+      "selected_name": "Shredded Mexican-Style Blend Cheese",
+      "violated": [
+        "tag:vegetarian"
+      ],
+      "rank_first_acceptable": 3
+    },
+    {
+      "id": "T28",
+      "prompt": "I need some organic nut butter that's under $8, can you add that to my cart?",
+      "expected": {
+        "category": "nut_butters",
+        "dietary_tags": [
+          "organic"
+        ],
+        "excluded_allergens": [],
+        "max_price": 8,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0051500053300",
+        "0096619555505"
+      ],
+      "stratum": "2",
+      "selected_code": "0051500053300",
+      "selected_name": "Peanut butter",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T29",
+      "prompt": "I need 2 packs of organic, vegan cereal - can you add those to my cart?",
+      "expected": {
+        "category": "breakfast_cereal",
+        "dietary_tags": [
+          "organic",
+          "vegan"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 2
+      },
+      "feasible": true,
+      "acceptable": [
+        "0058449770565",
+        "0096619194261",
+        "0675625371189",
+        "0855140002175",
+        "0039978049520",
+        "0687456221052"
+      ],
+      "stratum": "2",
+      "selected_code": "0855140002175",
+      "selected_name": "ORIGINAL ANCIENT GRAIN GRANOLA",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T30",
+      "prompt": "Need to add some gluten-free snack bars to my cart that don't contain soy.",
+      "expected": {
+        "category": "snack_bars",
+        "dietary_tags": [
+          "gluten_free"
+        ],
+        "excluded_allergens": [
+          "soy"
+        ],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0687456215587",
+        "0687456211091",
+        "0687456213019",
+        "0853555006542",
+        "0687456221045",
+        "0857549004248",
+        "0687456223551",
+        "0857484006543"
+      ],
+      "stratum": "2",
+      "selected_code": "0857484006543",
+      "selected_name": "dark chocolate coconut bars",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T31",
+      "prompt": "Can you add some non-GMO crackers to my shopping list? I need them to be under $4 each, thanks!",
+      "expected": {
+        "category": "crackers",
+        "dietary_tags": [
+          "non_gmo"
+        ],
+        "excluded_allergens": [],
+        "max_price": 4,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0044000051709",
+        "0041570052785",
+        "0033617340610",
+        "0044000050993",
+        "0044000045463",
+        "0066721007438"
+      ],
+      "stratum": "2",
+      "selected_code": "0044000051723",
+      "selected_name": "thin crisps original",
+      "violated": [
+        "price"
+      ],
+      "rank_first_acceptable": 2
+    },
+    {
+      "id": "T32",
+      "prompt": "Need to grab some fair-trade chocolate, can you add one that's under $6 to my cart?",
+      "expected": {
+        "category": "chocolate_candy",
+        "dietary_tags": [
+          "fair_trade"
+        ],
+        "excluded_allergens": [],
+        "max_price": 6,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0857484006611"
+      ],
+      "stratum": "2",
+      "selected_code": "0857484006611",
+      "selected_name": "dark chocolate coconut whips",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T33",
+      "prompt": "I need organic nuts or seeds, 2 packs, under $10 please.",
+      "expected": {
+        "category": "nuts_seeds",
+        "dietary_tags": [
+          "organic"
+        ],
+        "excluded_allergens": [],
+        "max_price": 10,
+        "quantity": 2
+      },
+      "feasible": true,
+      "acceptable": [
+        "0078742300665",
+        "0096619066254",
+        "0691779205514",
+        "0096619928927",
+        "00542562"
+      ],
+      "stratum": "2",
+      "selected_code": "0078742300665",
+      "selected_name": "Chia Seeds",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T34",
+      "prompt": "Can I get 3 loaves of non-GMO bread that don't contain sesame seeds, please?",
+      "expected": {
+        "category": "bread",
+        "dietary_tags": [
+          "non_gmo"
+        ],
+        "excluded_allergens": [
+          "sesame"
+        ],
+        "max_price": null,
+        "quantity": 3
+      },
+      "feasible": true,
+      "acceptable": [
+        "0013764027053",
+        "0013764027121",
+        "0060885000670",
+        "0072250037129",
+        "0013764027756",
+        "0073472001202",
+        "0013764028012",
+        "0013764027039",
+        "0013764027220",
+        "0072250020756"
+      ],
+      "stratum": "2",
+      "selected_code": "0073132031112",
+      "selected_name": "Sourdough Bread",
+      "violated": [
+        "allergen:sesame"
+      ],
+      "rank_first_acceptable": 3
+    },
+    {
+      "id": "T35",
+      "prompt": "I need some gluten-free non-GMO rice or grains.",
+      "expected": {
+        "category": "rice_grains",
+        "dietary_tags": [
+          "gluten_free",
+          "non_gmo"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0807176714027",
+        "0017400106959",
+        "0074401760412",
+        "0017400118457",
+        "0017400140045",
+        "0017400140380",
+        "0073416004306",
+        "0096619533602"
+      ],
+      "stratum": "2",
+      "selected_code": "0017400118457",
+      "selected_name": "BROWN RICE",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T36",
+      "prompt": "I need to find a vegan pasta that's under $2.50. Can you add that to my cart?",
+      "expected": {
+        "category": "pasta",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [],
+        "max_price": 2.5,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "8076809523509",
+        "8076802085899",
+        "3038350014603",
+        "0076808280081",
+        "00671729"
+      ],
+      "stratum": "2",
+      "selected_code": "0058449770565",
+      "selected_name": "Pumpkin Seed + Flax Granola",
+      "violated": [
+        "category",
+        "price"
+      ],
+      "rank_first_acceptable": 4
+    },
+    {
+      "id": "T37",
+      "prompt": "Need a pasta sauce that's milk-free, for under $6.",
+      "expected": {
+        "category": "pasta_sauce",
+        "dietary_tags": [],
+        "excluded_allergens": [
+          "milk"
+        ],
+        "max_price": 6,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "8032817240319",
+        "0036200430972",
+        "0096619072101",
+        "0747479001052",
+        "0051000025487",
+        "0036200431733",
+        "0036200223024",
+        "0051000269775",
+        "00452267",
+        "0051000027948",
+        "0747479000604"
+      ],
+      "stratum": "2",
+      "selected_code": "0070234215105",
+      "selected_name": "Pasta Sauce",
+      "violated": [
+        "price"
+      ],
+      "rank_first_acceptable": 4
+    },
+    {
+      "id": "T38",
+      "prompt": "Can I add two packs of organic, vegan soup to my cart, please?",
+      "expected": {
+        "category": "soup",
+        "dietary_tags": [
+          "organic",
+          "vegan"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 2
+      },
+      "feasible": true,
+      "acceptable": [
+        "0042272005109",
+        "0042272005826"
+      ],
+      "stratum": "2",
+      "selected_code": "0042272005826",
+      "selected_name": "Lentil Vegetable Soup",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T39",
+      "prompt": "Hey, can you add a bottle of vegan juice that's under $5 to my cart, please?",
+      "expected": {
+        "category": "juice",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [],
+        "max_price": 5,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0898999010007",
+        "0025000061530",
+        "0048500205716",
+        "0898999011288",
+        "0898999000503"
+      ],
+      "stratum": "2",
+      "selected_code": "0014800000344",
+      "selected_name": "100% Juice Apple",
+      "violated": [
+        "price"
+      ],
+      "rank_first_acceptable": 2
+    },
+    {
+      "id": "T40",
+      "prompt": "I need some vegan coffee or tea, can you add one under $8 to my cart?",
+      "expected": {
+        "category": "coffee_tea",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [],
+        "max_price": 8,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0028000743079",
+        "0049000073546",
+        "0715374544042",
+        "0025500304199",
+        "0028000462987",
+        "3261342002108",
+        "0012000173219",
+        "0025500304014"
+      ],
+      "stratum": "2",
+      "selected_code": "0028000743079",
+      "selected_name": "Coffee",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T41",
+      "prompt": "I need to add a kosher-certified plant-based milk alternative that's free from soy to my cart, can you find one for me?",
+      "expected": {
+        "category": "plant_milk",
+        "dietary_tags": [
+          "kosher"
+        ],
+        "excluded_allergens": [
+          "soy"
+        ],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0813636023356",
+        "0852909003305",
+        "0096619274857",
+        "0096619237432",
+        "0813636023912",
+        "0041570055311",
+        "0096619533008",
+        "0041570054130",
+        "0626027811025"
+      ],
+      "stratum": "2",
+      "selected_code": "0855188003004",
+      "selected_name": "PEANUT BUTTER SPREAD",
+      "violated": [
+        "category",
+        "tag:kosher"
+      ],
+      "rank_first_acceptable": 2
+    },
+    {
+      "id": "T42",
+      "prompt": "Can I get organic milk for $5 or less, please?",
+      "expected": {
+        "category": "milk",
+        "dietary_tags": [
+          "organic"
+        ],
+        "excluded_allergens": [],
+        "max_price": 5,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0093966513004",
+        "0742365264450",
+        "6111242100817",
+        "0855088005689"
+      ],
+      "stratum": "2",
+      "selected_code": "0742365264450",
+      "selected_name": "Organic Whole Milk",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T43",
+      "prompt": "Can I get some kosher pantry staples that are under $4, thanks!",
+      "expected": {
+        "category": "pantry",
+        "dietary_tags": [
+          "kosher"
+        ],
+        "excluded_allergens": [],
+        "max_price": 4,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0078742209982",
+        "8032817240319",
+        "0857183005007",
+        "0096619072101",
+        "0017400106959",
+        "0076808533583",
+        "0850791002352"
+      ],
+      "stratum": "2",
+      "selected_code": "0078742209982",
+      "selected_name": "Penne",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T44",
+      "prompt": "I need to add 3 packs of nut-free snacks to my order.",
+      "expected": {
+        "category": "snacks",
+        "dietary_tags": [],
+        "excluded_allergens": [
+          "peanuts",
+          "tree_nuts"
+        ],
+        "max_price": null,
+        "quantity": 3
+      },
+      "feasible": true,
+      "acceptable": [
+        "0037466016450",
+        "0857484006611",
+        "5060198820052",
+        "0044000051709",
+        "7300400481588",
+        "0033617340610",
+        "3497911123350",
+        "0044000050993",
+        "0096619656493",
+        "0044000045463",
+        "0066721007438",
+        "7622210021502",
+        "0819898010745",
+        "03424005",
+        "0747599607219",
+        "0810091780947",
+        "5010029219494",
+        "0687456215587",
+        "0016000264601",
+        "0044000051723",
+        "0687456211091",
+        "8901719117183",
+        "0068437389754",
+        "0096619615162",
+        "0687456213019",
+        "5901588018195",
+        "0044000028282",
+        "0612322000202",
+        "0028400589291",
+        "0014100074724",
+        "0851100003015",
+        "0048564067008",
+        "00614207",
+        "0071146002456",
+        "0850036699187",
+        "0851769007003",
+        "0044000050986",
+        "0193968409326",
+        "0044000031114",
+        "0853555006542",
+        "0708163120589",
+        "0071879700049",
+        "0078742300665",
+        "6111259341197",
+        "0021788506102",
+        "0044000000578",
+        "0028400705769",
+        "7622210625243",
+        "0061232201047",
+        "0028400090858",
+        "0028400763035",
+        "0047495013054",
+        "3245550078704",
+        "0810291001088",
+        "0038000138416",
+        "0044000004637",
+        "0059290573220",
+        "0850000547568",
+        "0096619066254",
+        "0044000045753",
+        "0066721028426",
+        "0044000051013",
+        "0815099020309",
+        "0015665624058",
+        "0722252194145",
+        "00931847",
+        "0049508250302",
+        "0028400247245",
+        "8901491101844",
+        "0888849006656",
+        "0691779205514",
+        "0825625600011",
+        "0687456221045",
+        "7622202225512",
+        "8901063014145",
+        "0857549004248",
+        "20005832",
+        "0797258004750",
+        "0850180006053",
+        "0716270001660",
+        "0070970474088",
+        "0018627115830",
+        "0687456223551",
+        "0722252194985",
+        "0047495610048",
+        "00542562",
+        "0857484006543",
+        "0722252194138",
+        "0897922002041",
+        "0810032300463",
+        "0039978008442"
+      ],
+      "stratum": "2",
+      "selected_code": "0051500017005",
+      "selected_name": "Natural Creamy Peanut Butter",
+      "violated": [
+        "category",
+        "allergen:peanuts"
+      ],
+      "rank_first_acceptable": 4
+    },
+    {
+      "id": "T45",
+      "prompt": "I need a vegan plant-based milk with no added sugar. Can you add one of those to my cart please?",
+      "expected": {
+        "category": "plant_milk",
+        "dietary_tags": [
+          "no_added_sugar",
+          "vegan"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0096619274857",
+        "0041570056707",
+        "4067796002003",
+        "4067796194807",
+        "0744473912056"
+      ],
+      "stratum": "2",
+      "selected_code": "0041570056707",
+      "selected_name": "Almondmilk",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T46",
+      "prompt": "Can I add kosher certified chips to my list that don't contain milk?",
+      "expected": {
+        "category": "chips",
+        "dietary_tags": [
+          "kosher"
+        ],
+        "excluded_allergens": [
+          "milk"
+        ],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0096619656493",
+        "0850036699187",
+        "0028400090858",
+        "0038000138416",
+        "0815099020309",
+        "0028400247245"
+      ],
+      "stratum": "2",
+      "selected_code": "0028400090858",
+      "selected_name": "Classic Potato Chips",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T47",
+      "prompt": "Can you add two packs of organic non-GMO snack bars to my cart for under $7?",
+      "expected": {
+        "category": "snack_bars",
+        "dietary_tags": [
+          "organic",
+          "non_gmo"
+        ],
+        "excluded_allergens": [],
+        "max_price": 7,
+        "quantity": 2
+      },
+      "feasible": true,
+      "acceptable": [
+        "0687456215587",
+        "0687456211091",
+        "0687456213019",
+        "0853555006542",
+        "0687456221045",
+        "0857549004248"
+      ],
+      "stratum": "3+",
+      "selected_code": "0687456213019",
+      "selected_name": "ORGANIC CHEWY GRANOLA BARS chocolate chip",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T48",
+      "prompt": "Need 2 packs of vegetarian cookies, no nuts, can you grab those for me?",
+      "expected": {
+        "category": "cookies",
+        "dietary_tags": [
+          "vegetarian"
+        ],
+        "excluded_allergens": [
+          "peanuts",
+          "tree_nuts"
+        ],
+        "max_price": null,
+        "quantity": 2
+      },
+      "feasible": true,
+      "acceptable": [
+        "7622210021502",
+        "0819898010745",
+        "8901719117183",
+        "0044000028282",
+        "0612322000202",
+        "6111259341197",
+        "0021788506102",
+        "7622210625243",
+        "0061232201047",
+        "0825625600011",
+        "7622202225512",
+        "8901063014145"
+      ],
+      "stratum": "3+",
+      "selected_code": "0096619885725",
+      "selected_name": "Extra Fancy Salted Mixed Nuts",
+      "violated": [
+        "category",
+        "allergen:peanuts",
+        "allergen:tree_nuts"
+      ],
+      "rank_first_acceptable": 4
+    },
+    {
+      "id": "T49",
+      "prompt": "Hey, I need a pack of gluten-free crackers, please make sure they're sesame-free, and the price shouldn't be more than $5.50.",
+      "expected": {
+        "category": "crackers",
+        "dietary_tags": [
+          "gluten_free"
+        ],
+        "excluded_allergens": [
+          "sesame"
+        ],
+        "max_price": 5.5,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0041570052785",
+        "0044000045463",
+        "0048564067008",
+        "0856069005209"
+      ],
+      "stratum": "3+",
+      "selected_code": "0048564067008",
+      "selected_name": "TOSTADAS CASERAS AMARILLAS",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T50",
+      "prompt": "I need to add some organic, non-GMO breakfast cereal to my order, something that's under $7, please.",
+      "expected": {
+        "category": "breakfast_cereal",
+        "dietary_tags": [
+          "organic",
+          "non_gmo"
+        ],
+        "excluded_allergens": [],
+        "max_price": 7,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0058449770565",
+        "0021908133171",
+        "0018627115991",
+        "0675625371189",
+        "0855140002175",
+        "0039978049520",
+        "0058449221012",
+        "0058449770213",
+        "0687456221052",
+        "0021908120232"
+      ],
+      "stratum": "3+",
+      "selected_code": "0058449770565",
+      "selected_name": "Pumpkin Seed + Flax Granola",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T51",
+      "prompt": "Hey, I need some gluten-free, vegan chips that are under $5. Can you grab those for me?",
+      "expected": {
+        "category": "chips",
+        "dietary_tags": [
+          "gluten_free",
+          "vegan"
+        ],
+        "excluded_allergens": [],
+        "max_price": 5,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0096619656493",
+        "0810091780947",
+        "0096619615162",
+        "0851769007003",
+        "0708163120589"
+      ],
+      "stratum": "3+",
+      "selected_code": "0851769007003",
+      "selected_name": "Grain Free Tortilla Chips",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T52",
+      "prompt": "I need 2 cartons of organic vegan plant-based milk that's soy-free, please.",
+      "expected": {
+        "category": "plant_milk",
+        "dietary_tags": [
+          "organic",
+          "vegan"
+        ],
+        "excluded_allergens": [
+          "soy"
+        ],
+        "max_price": null,
+        "quantity": 2
+      },
+      "feasible": true,
+      "acceptable": [
+        "0813636023356",
+        "0861029000118",
+        "0813636023912",
+        "0744473912353",
+        "4067796002003",
+        "4067796194807",
+        "0744473912056"
+      ],
+      "stratum": "3+",
+      "selected_code": "0813636023356",
+      "selected_name": "Organic Almondmilk Unsweetened",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T53",
+      "prompt": "Hey, I need a gluten-free, vegetarian yogurt that's under $6. Can you add that to my cart?",
+      "expected": {
+        "category": "yogurt",
+        "dietary_tags": [
+          "gluten_free",
+          "vegetarian"
+        ],
+        "excluded_allergens": [],
+        "max_price": 6,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0078742016856"
+      ],
+      "stratum": "3+",
+      "selected_code": "0078742016856",
+      "selected_name": "Greek Plain",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T54",
+      "prompt": "Can you add a kosher-certified, gluten-free cheese option for under $9, please?",
+      "expected": {
+        "category": "cheese",
+        "dietary_tags": [
+          "kosher",
+          "gluten_free"
+        ],
+        "excluded_allergens": [],
+        "max_price": 9,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0859977005064",
+        "0859977005149"
+      ],
+      "stratum": "3+",
+      "selected_code": "0073420516208",
+      "selected_name": "Cottage Cheese Pure & Natural",
+      "violated": [
+        "tag:gluten_free",
+        "price"
+      ],
+      "rank_first_acceptable": 2
+    },
+    {
+      "id": "T55",
+      "prompt": "I'm looking for a vegan non-GMO nut butter that doesn't contain tree nuts, can you add that to my cart please?",
+      "expected": {
+        "category": "nut_butters",
+        "dietary_tags": [
+          "vegan",
+          "non_gmo"
+        ],
+        "excluded_allergens": [
+          "tree_nuts"
+        ],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0856260006005",
+        "0071018010183",
+        "0850791002352",
+        "0051500068243",
+        "0051500017012",
+        "0051500245408"
+      ],
+      "stratum": "3+",
+      "selected_code": "0058449770565",
+      "selected_name": "Pumpkin Seed + Flax Granola",
+      "violated": [
+        "category",
+        "allergen:tree_nuts"
+      ],
+      "rank_first_acceptable": 6
+    },
+    {
+      "id": "T56",
+      "prompt": "Hey, I need 2 packs of nuts or seeds that are vegan and kosher, can you add those to my cart for under $12?",
+      "expected": {
+        "category": "nuts_seeds",
+        "dietary_tags": [
+          "vegan",
+          "kosher"
+        ],
+        "excluded_allergens": [],
+        "max_price": 12,
+        "quantity": 2
+      },
+      "feasible": true,
+      "acceptable": [
+        "0096619066254",
+        "0691779205514",
+        "0096619332731",
+        "0096619196470",
+        "0096619107698",
+        "0096619142453",
+        "0897922002041",
+        "0810032300463"
+      ],
+      "stratum": "3+",
+      "selected_code": "0096619332731",
+      "selected_name": "Macadamia Nuts",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T57",
+      "prompt": "Can you please add some organic vegan bread to my shopping list for under $6.50?",
+      "expected": {
+        "category": "bread",
+        "dietary_tags": [
+          "organic",
+          "vegan"
+        ],
+        "excluded_allergens": [],
+        "max_price": 6.5,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0073472001202",
+        "0073472001233"
+      ],
+      "stratum": "3+",
+      "selected_code": "0013764027220",
+      "selected_name": "Organic Bread",
+      "violated": [
+        "tag:vegan",
+        "price"
+      ],
+      "rank_first_acceptable": 6
+    },
+    {
+      "id": "T58",
+      "prompt": "Hey, can you grab 4 packs of vegan non-GMO pasta, please? It has to be under $4 per pack, thanks!",
+      "expected": {
+        "category": "pasta",
+        "dietary_tags": [
+          "vegan",
+          "non_gmo"
+        ],
+        "excluded_allergens": [],
+        "max_price": 4,
+        "quantity": 4
+      },
+      "feasible": true,
+      "acceptable": [
+        "0076808280081",
+        "0076808005851",
+        "0857183005007",
+        "0076808533583"
+      ],
+      "stratum": "3+",
+      "selected_code": "0076808280081",
+      "selected_name": "SPAGHETTI",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T59",
+      "prompt": "Need a gluten-free pasta sauce that's vegan and doesn't contain any milk, please.",
+      "expected": {
+        "category": "pasta_sauce",
+        "dietary_tags": [
+          "vegan",
+          "gluten_free"
+        ],
+        "excluded_allergens": [
+          "milk"
+        ],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "8032817240319"
+      ],
+      "stratum": "3+",
+      "selected_code": "0070234215105",
+      "selected_name": "Pasta Sauce",
+      "violated": [
+        "tag:gluten_free"
+      ],
+      "rank_first_acceptable": 3
+    },
+    {
+      "id": "T60",
+      "prompt": "Hey, I need a gluten-free, organic soup that's under $5. Can you add one to my cart?",
+      "expected": {
+        "category": "soup",
+        "dietary_tags": [
+          "gluten_free",
+          "organic"
+        ],
+        "excluded_allergens": [],
+        "max_price": 5,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0052603054256",
+        "0052603283670",
+        "0042272005109",
+        "0052603056076",
+        "0042272005826"
+      ],
+      "stratum": "3+",
+      "selected_code": "0042272005826",
+      "selected_name": "Lentil Vegetable Soup",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T61",
+      "prompt": "I need 3 packs of vegan juice that's no added sugar, can you add that to my cart for under $6?",
+      "expected": {
+        "category": "juice",
+        "dietary_tags": [
+          "vegan",
+          "no_added_sugar"
+        ],
+        "excluded_allergens": [],
+        "max_price": 6,
+        "quantity": 3
+      },
+      "feasible": true,
+      "acceptable": [
+        "0048500205716",
+        "0898999011288",
+        "0025000100000"
+      ],
+      "stratum": "3+",
+      "selected_code": "0048500205716",
+      "selected_name": "No Pulp OJ",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T62",
+      "prompt": "I need a pack of organic vegan coffee or tea that's less than $12.",
+      "expected": {
+        "category": "coffee_tea",
+        "dietary_tags": [
+          "vegan",
+          "organic"
+        ],
+        "excluded_allergens": [],
+        "max_price": 12,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "3261342002108"
+      ],
+      "stratum": "3+",
+      "selected_code": "0028000743079",
+      "selected_name": "Coffee",
+      "violated": [
+        "tag:organic"
+      ],
+      "rank_first_acceptable": 18
+    },
+    {
+      "id": "T63",
+      "prompt": "I need some organic vegan gluten-free rice or grains, can you add a bag to my cart?",
+      "expected": {
+        "category": "rice_grains",
+        "dietary_tags": [
+          "organic",
+          "vegan",
+          "gluten_free"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0195893170920",
+        "0096619533602"
+      ],
+      "stratum": "3+",
+      "selected_code": "00530361",
+      "selected_name": "Organic Brown Rice",
+      "violated": [
+        "tag:gluten_free"
+      ],
+      "rank_first_acceptable": 5
+    },
+    {
+      "id": "T64",
+      "prompt": "Hey, can you grab some vegan chocolate without soy? I'm looking for something under $6.",
+      "expected": {
+        "category": "chocolate_candy",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [
+          "soy"
+        ],
+        "max_price": 6,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0037466016450",
+        "0857484006611"
+      ],
+      "stratum": "3+",
+      "selected_code": "03424005",
+      "selected_name": "milk chocolate",
+      "violated": [
+        "tag:vegan",
+        "allergen:soy"
+      ],
+      "rank_first_acceptable": 3
+    },
+    {
+      "id": "T65",
+      "prompt": "I need lactose-free milk that's also gluten-free, can you add it to my cart for under $6?",
+      "expected": {
+        "category": "milk",
+        "dietary_tags": [
+          "lactose_free",
+          "gluten_free"
+        ],
+        "excluded_allergens": [],
+        "max_price": 6,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0811620022194",
+        "0041383090738",
+        "0041383090363"
+      ],
+      "stratum": "3+",
+      "selected_code": "0041383090363",
+      "selected_name": "Lactose Free Whole Milk",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T66",
+      "prompt": "Need 2 packs of vegan pasta with no gluten in it, please.",
+      "expected": {
+        "category": "pasta",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [
+          "gluten"
+        ],
+        "max_price": null,
+        "quantity": 2
+      },
+      "feasible": true,
+      "acceptable": [
+        "0857183005007"
+      ],
+      "stratum": "2",
+      "selected_code": "8076800195019",
+      "selected_name": "Capellini No. 1",
+      "violated": [
+        "allergen:gluten"
+      ],
+      "rank_first_acceptable": 15
+    },
+    {
+      "id": "T67",
+      "prompt": "I need to add a non-GMO, gluten-free soup to my order, please make sure it doesn't contain any celery.",
+      "expected": {
+        "category": "soup",
+        "dietary_tags": [
+          "non_gmo",
+          "gluten_free"
+        ],
+        "excluded_allergens": [
+          "celery"
+        ],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0042272005109"
+      ],
+      "stratum": "3+",
+      "selected_code": "0041196010220",
+      "selected_name": "Lentil Soup",
+      "violated": [
+        "tag:non_gmo",
+        "allergen:celery"
+      ],
+      "rank_first_acceptable": 48
+    },
+    {
+      "id": "T68",
+      "prompt": "I need vegan kosher snacks that don't contain soy, can you please add some options to my cart that are under $8?",
+      "expected": {
+        "category": "snacks",
+        "dietary_tags": [
+          "vegan",
+          "kosher"
+        ],
+        "excluded_allergens": [
+          "soy"
+        ],
+        "max_price": 8,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0044000051709",
+        "0096619656493",
+        "0687456215587",
+        "0850036699187",
+        "0044000050986",
+        "0047495013054",
+        "0096619066254",
+        "0815099020309",
+        "0691779205514",
+        "0096619332731",
+        "0850180006053"
+      ],
+      "stratum": "3+",
+      "selected_code": "0058449770565",
+      "selected_name": "Pumpkin Seed + Flax Granola",
+      "violated": [
+        "category",
+        "tag:kosher",
+        "allergen:soy"
+      ],
+      "rank_first_acceptable": 7
+    },
+    {
+      "id": "T69",
+      "prompt": "Can I add a breakfast cereal with no gluten and no added sugar to my cart, something $7 or less?",
+      "expected": {
+        "category": "breakfast_cereal",
+        "dietary_tags": [
+          "no_added_sugar"
+        ],
+        "excluded_allergens": [
+          "gluten"
+        ],
+        "max_price": 7,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0021908133171"
+      ],
+      "stratum": "3+",
+      "selected_code": "0021908120232",
+      "selected_name": "Blueberry Almond Crunch Cereal",
+      "violated": [
+        "allergen:gluten"
+      ],
+      "rank_first_acceptable": 2
+    },
+    {
+      "id": "T70",
+      "prompt": "I need fair-trade snack bars that are soy-free, please add them to my cart if they're under $10 each.",
+      "expected": {
+        "category": "snack_bars",
+        "dietary_tags": [
+          "fair_trade"
+        ],
+        "excluded_allergens": [
+          "soy"
+        ],
+        "max_price": 10,
+        "quantity": 1
+      },
+      "feasible": true,
+      "acceptable": [
+        "0857484006543"
+      ],
+      "stratum": "3+",
+      "selected_code": "0857484006543",
+      "selected_name": "dark chocolate coconut bars",
+      "violated": [],
+      "rank_first_acceptable": 1
+    },
+    {
+      "id": "T71",
+      "prompt": "I'm looking for a vegan cheese, can you please add that to my cart?",
+      "expected": {
+        "category": "cheese",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": false,
+      "acceptable": [],
+      "stratum": "1",
+      "selected_code": "0096619362776",
+      "selected_name": "Shredded Mexican-Style Blend Cheese",
+      "violated": [
+        "tag:vegan"
+      ],
+      "rank_first_acceptable": null
+    },
+    {
+      "id": "T72",
+      "prompt": "I need a yogurt that doesn't have any milk in it.",
+      "expected": {
+        "category": "yogurt",
+        "dietary_tags": [],
+        "excluded_allergens": [
+          "milk"
+        ],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": false,
+      "acceptable": [],
+      "stratum": "1",
+      "selected_code": "0850000547568",
+      "selected_name": "MINI FRUIT BARS",
+      "violated": [
+        "category"
+      ],
+      "rank_first_acceptable": null
+    },
+    {
+      "id": "T73",
+      "prompt": "I need a loaf of gluten-free bread.",
+      "expected": {
+        "category": "bread",
+        "dietary_tags": [
+          "gluten_free"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": false,
+      "acceptable": [],
+      "stratum": "1",
+      "selected_code": "0060885000670",
+      "selected_name": "Sourdough Bistro Classic Loaf",
+      "violated": [
+        "tag:gluten_free"
+      ],
+      "rank_first_acceptable": null
+    },
+    {
+      "id": "T74",
+      "prompt": "Hey, can you add a coffee or tea for under $4, thanks?",
+      "expected": {
+        "category": "coffee_tea",
+        "dietary_tags": [],
+        "excluded_allergens": [],
+        "max_price": 4,
+        "quantity": 1
+      },
+      "feasible": false,
+      "acceptable": [],
+      "stratum": "1",
+      "selected_code": "0028000743079",
+      "selected_name": "Coffee",
+      "violated": [
+        "price"
+      ],
+      "rank_first_acceptable": null
+    },
+    {
+      "id": "T75",
+      "prompt": "Hey, can I get 2 packs of nuts or seeds? They need to be under $4 each, thanks!",
+      "expected": {
+        "category": "nuts_seeds",
+        "dietary_tags": [],
+        "excluded_allergens": [],
+        "max_price": 4,
+        "quantity": 2
+      },
+      "feasible": false,
+      "acceptable": [],
+      "stratum": "1",
+      "selected_code": "0096619885725",
+      "selected_name": "Extra Fancy Salted Mixed Nuts",
+      "violated": [
+        "price"
+      ],
+      "rank_first_acceptable": null
+    },
+    {
+      "id": "T76",
+      "prompt": "I need the gluten-free organic crackers, can you add them to my order?",
+      "expected": {
+        "category": "crackers",
+        "dietary_tags": [
+          "gluten_free",
+          "organic"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": false,
+      "acceptable": [],
+      "stratum": "2",
+      "selected_code": "0049508250302",
+      "selected_name": "Pretzel Crisps Original Organic",
+      "violated": [
+        "tag:gluten_free"
+      ],
+      "rank_first_acceptable": null
+    },
+    {
+      "id": "T77",
+      "prompt": "Need to add some organic lactose-free milk, thanks.",
+      "expected": {
+        "category": "milk",
+        "dietary_tags": [
+          "organic",
+          "lactose_free"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": false,
+      "acceptable": [],
+      "stratum": "2",
+      "selected_code": "0041383090363",
+      "selected_name": "Lactose Free Whole Milk",
+      "violated": [
+        "tag:organic"
+      ],
+      "rank_first_acceptable": null
+    },
+    {
+      "id": "T78",
+      "prompt": "I need kosher cookies without eggs, please.",
+      "expected": {
+        "category": "cookies",
+        "dietary_tags": [
+          "kosher"
+        ],
+        "excluded_allergens": [
+          "eggs"
+        ],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": false,
+      "acceptable": [],
+      "stratum": "2",
+      "selected_code": "0014100074724",
+      "selected_name": "Milano Double Dark Chocolate",
+      "violated": [
+        "allergen:eggs"
+      ],
+      "rank_first_acceptable": null
+    },
+    {
+      "id": "T79",
+      "prompt": "I'm looking for vegan cookies without soy that fit within my $4 budget, can you suggest some options?",
+      "expected": {
+        "category": "cookies",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [
+          "soy"
+        ],
+        "max_price": 4,
+        "quantity": 1
+      },
+      "feasible": false,
+      "acceptable": [],
+      "stratum": "3+",
+      "selected_code": "0856260006005",
+      "selected_name": "PEANUT BUTTER POWDER",
+      "violated": [
+        "category"
+      ],
+      "rank_first_acceptable": null
+    },
+    {
+      "id": "T80",
+      "prompt": "I need something vegan from the dairy section, please.",
+      "expected": {
+        "category": "dairy",
+        "dietary_tags": [
+          "vegan"
+        ],
+        "excluded_allergens": [],
+        "max_price": null,
+        "quantity": 1
+      },
+      "feasible": false,
+      "acceptable": [],
+      "stratum": "1",
+      "selected_code": "0898999000503",
+      "selected_name": "Coconut Water",
+      "violated": [
+        "category"
+      ],
+      "rank_first_acceptable": null
+    }
+  ]
+}
