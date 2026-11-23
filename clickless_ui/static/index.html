@@ -6,6 +6,7 @@
   <title>ClickLess AI</title>
   <link rel="stylesheet" href="/styles.css">
   <script src="/app.js" defer></script>
+  <script src="/extras.js" defer></script>
 </head>
 <body>
   <header class="masthead">
@@ -45,6 +46,11 @@
         </div>
         <ul id="products" class="products"></ul>
       </section>
+      <section id="addons" aria-labelledby="addons-title" hidden>
+        <h2 id="addons-title">Suggested add-ons</h2>
+        <p class="meta">From Instacart co-purchase rules; each add-on meets your dietary and allergen constraints.</p>
+        <ul id="addon-list" class="products"></ul>
+      </section>
     </section>
     <aside id="cart" class="cart" aria-labelledby="cart-title">
       <div class="cart-heading"><h2 id="cart-title" tabindex="-1">Your cart</h2><span id="cart-count" class="meta"></span></div>
@@ -54,6 +60,8 @@
       <p id="cart-status" class="status" role="status"></p>
       <button id="undo-remove" type="button" hidden>Undo removal</button>
       <button id="clear-cart" type="button" disabled>Clear cart</button>
+      <button id="confirm-order" class="primary" type="button">Approve &amp; place order</button>
+      <p id="order-status" class="status" role="status"></p>
     </aside>
   </main>
   <a id="mobile-cart" class="mobile-cart" href="#cart" hidden>View cart</a>

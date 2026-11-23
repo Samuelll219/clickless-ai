@@ -13,6 +13,10 @@ class ThreadedWSGIServer(ThreadingMixIn, WSGIServer):
 
 
 if __name__ == "__main__":
+    import os
+    import sys
+    if "--offline-kg" in sys.argv:
+        os.environ["CLICKLESS_KG"] = "offline"   # no Neo4j needed; same results as Cypher
     with make_server("127.0.0.1", 8000, application, server_class=ThreadedWSGIServer) as server:
         print("ClickLess AI is running at http://127.0.0.1:8000", flush=True)
         server.serve_forever()
