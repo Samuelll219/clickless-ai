@@ -22,7 +22,9 @@ tests/            unit tests + Neo4j integration test (Cypher vs reference filte
 ## Run it
 
 ```bash
-pip install -r requirements.txt
+python3.13 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
 
 # 1. Build the catalog (~10 min the first time because of OFF's rate limit; cached afterwards)
 python scripts/build_catalog.py --fetch
@@ -131,3 +133,85 @@ Product IDs are OFF barcodes (`code`, string). Price is a float in USD.
 
 **Apriori add-ons.**
 `kg.cheapest_in_category(category, dietary_tags, excluded_allergens)`.
+
+## Sujay UI / cart — completed
+
+Sujay's UI and cart implementation is complete on the `Sujay-ui` branch. Soumya's Config C pipeline is integrated directly into this branch, connecting the browser shopping flow to constraint extraction, validation, and Neo4j retrieval.
+
+The UI work includes:
+
+- A responsive shopping page with a natural-language request form.
+- A local Python web server that calls `run_config_c()` and returns extracted constraints, matches, quantity, and no-match status.
+- Product results with price, brand, category, dietary tags, and allergen details.
+- A cart that adds products at the requested quantity, groups by OFF barcode string, and supports quantity changes and removal.
+- USD subtotals calculated in cents, with cart contents saved in the browser.
+- User-facing messages for no matches, invalid requests, and service errors.
+
+### UI reliability and usability improvements
+
+- Search progress and slow-model feedback, with duplicate submissions prevented while a request runs.
+- Search cancellation, a three-minute browser timeout, and an explicit retry button after errors or cancellation.
+- Example requests that fill the form for review, plus price and name sorting without additional model calls.
+- Direct whole-number quantity editing, item counts, clear-cart, and undo for the most recent removal or clear. A subsequent cart change clears undo.
+- Requested-quantity line prices, visible barcodes, and catalog-based allergen match details.
+- Validation of returned products and saved cart data, preserving leading-zero barcodes and rejecting invalid prices, quantities, duplicate saved IDs, and unsafe totals.
+- Recovery messages for corrupt browser storage; shopping remains available in the current tab when saving fails.
+- Cart updates across tabs on the same browser origin. Remote updates invalidate undo so it cannot restore an outdated cart. Simultaneous edits use last-save-wins behavior; they are not merged transactionally.
+- Keyboard focus restoration after quantity edits, accessible control labels, and controls that wrap on narrow screens.
+- A mobile cart shortcut showing item count and subtotal, with space reserved so it does not cover the page content.
+- Separate messages for interpretation failures, language-service failures, and product-database failures; technical errors stay in server logs.
+
+Cancellation stops the browser waiting; it does not terminate an already-running
+Ollama/Neo4j operation. The local server handles requests in separate threads but
+allows only one Config C search at a time. While that search finishes, further
+searches receive a busy response with retry guidance, and static assets remain
+available. This prevents retries from queueing overlapping model work.
+
+### UI smoke checks
+
+Run from the repository root with the virtual environment active (Node.js is required for the cart check):
+
+```bash
+python -m pytest -m 'not integration' -q
+node --check clickless_ui/static/app.js
+node tests/ui_smoke.cjs
+```
+
+The Python checks exercise routes, request validation, Config C response forwarding,
+service-error handling, overlapping-search rejection, and retry after failures.
+The cart smoke check uses a simulated DOM to exercise quantity edits, clear/undo,
+cents totals, persistence, cross-tab storage events, sorting, examples, cancellation,
+timeout/retry, no-match handling, and malformed data.
+The latest local run passed 81 Python tests and the cart smoke check; 4 service
+tests were skipped and 6 live integrations were deselected. These checks do not
+verify model accuracy or browser layout. A rendered-browser check remains pending:
+the execution sandbox prevented the local server from binding to port 8000.
+
+For a manual check, launch the UI with Ollama and Neo4j running, search for two
+items, add a match twice, edit its quantity, remove and undo, then reload to check
+persistence. Try an infeasible request and verify the cart stays intact. Repeat
+at a narrow phone-sized browser width and navigate the controls with Tab.
+Also test cancel/retry during a search, price/name sorting, clear/undo, and the
+mobile cart shortcut. Open a second tab at the same URL, update or clear the cart,
+and verify the first tab updates and cannot undo over the remote change.
+
+### Run the shopping UI and cart
+
+From the repository root:
+
+```bash
+python3.13 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+ollama pull qwen2.5:7b
+# Start Ollama with ollama serve if it isn't already running.
+docker compose up -d
+python scripts/load_kg.py
+python -m clickless_ui
+```
+
+Open [ClickLess AI](http://127.0.0.1:8000). Enter a request, review the extracted
+criteria, and choose a matching product to add at the extracted quantity. A
+no-match response leaves the cart as it was. The price filter follows the KG's
+per-unit USD limit. The cart groups items by exact OFF barcode, calculates
+totals in cents, and saves quantities in this browser.
