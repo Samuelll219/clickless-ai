@@ -31,6 +31,11 @@ CATEGORY RULES:
 - "breakfast cereal", "breakfast cereals", "cereal", "granola", or "muesli"
   when requested as the product type -> "breakfast_cereal".
 - "coffee", "coffees", "tea", "teas", or "coffee or tea" -> "coffee_tea".
+- "plant-based milk", "plant milk", "non-dairy milk", "milk alternative",
+  "oat milk", "almond milk", "soy milk", or "rice milk" -> "plant_milk"
+  (never "milk"; "milk" means dairy milk only).
+- "lactose-free milk", "whole milk", "2% milk", or plain "milk" is dairy
+  milk -> "milk" (lactose-free cow milk is still "milk", not "plant_milk").
 - Never choose a more specific or different category unless the user's
   product words support that category.
 - Do not infer a category from dietary tags, allergens, price, or quantity.
@@ -75,6 +80,7 @@ ALLERGEN RULES:
 - Only add an allergen when the user explicitly asks to avoid it,
   states an allergy to it, or explicitly requests that allergen-free property.
 - "gluten-free" maps to dietary tag "gluten_free".
+- Never add "vegan" or any other tag because the product is plant-based.
 - Do not infer unrelated allergen exclusions from "gluten-free".
 - If no allergen restriction is specified, excluded_allergens must be [].
 

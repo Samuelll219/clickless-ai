@@ -190,3 +190,26 @@ def test_live_ollama_infeasible_candidates_return_none():
     )
 
     assert result is None
+
+
+def _mock_with_quantity(content):
+    response = Mock()
+    response.raise_for_status.return_value = None
+    response.json.return_value = {"message": {"content": content}}
+    return response
+
+
+@patch("clickless_llm.config_b.requests.post")
+def test_return_quantity_reports_units(mock_post):
+    mock_post.return_value = _mock_with_quantity('{"code": "B2", "quantity": 3}')
+    product, quantity = select_from_candidates("3 organic gf bars", CANDIDATES, return_quantity=True)
+    assert product["code"] == "B2" and quantity == 3
+
+
+@patch("clickless_llm.config_b.requests.post")
+def test_return_quantity_defaults_and_none(mock_post):
+    mock_post.return_value = _mock_with_quantity('{"code": null}')
+    assert select_from_candidates("x", CANDIDATES, return_quantity=True) == (None, 1)
+    mock_post.return_value = _mock_with_quantity('{"code": "A1", "quantity": 0}')
+    assert select_from_candidates("x", CANDIDATES, return_quantity=True) == (CANDIDATES[0], 1)
+    assert select_from_candidates("x", [], return_quantity=True) == (None, 1)

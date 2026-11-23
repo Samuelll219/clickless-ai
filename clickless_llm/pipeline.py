@@ -9,6 +9,7 @@ from clickless_llm.extractor import (
     ExtractionError,
     extract_constraints,
 )
+from clickless_llm.grounding import ground_constraints
 from clickless_llm.validator import (
     ValidationError,
     validate_constraints,
@@ -52,7 +53,9 @@ def extract_and_validate(
                 model=model,
             )
 
-            return validate_constraints(extracted)
+            validated = validate_constraints(extracted)
+            # Deterministic guard: drop tags the user never stated, fix milk type.
+            return ground_constraints(original_request, validated)
 
         except ValidationError as exc:
             last_error = exc

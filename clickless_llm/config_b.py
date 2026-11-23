@@ -42,6 +42,8 @@ Rules:
 - If NO supplied candidate satisfies EVERY explicit constraint, return
   {"code": null}.
 - Returning null is always better than choosing an invalid product.
+- Also return the number of units the user asked for in "quantity"
+  (1 when no quantity is stated).
 - Return only data matching the provided JSON schema.
 """.strip()
 
@@ -51,7 +53,11 @@ SELECTION_SCHEMA = {
     "properties": {
         "code": {
             "type": ["string", "null"],
-        }
+        },
+        "quantity": {
+            "type": "integer",
+            "minimum": 1,
+        },
     },
     "required": ["code"],
     "additionalProperties": False,
@@ -83,7 +89,8 @@ def select_from_candidates(
     candidates: list[dict[str, Any]],
     model: str = DEFAULT_MODEL,
     timeout: int = 120,
-) -> dict[str, Any] | None:
+    return_quantity: bool = False,
+):
     """Select one product from TF-IDF candidates using the local LLM.
 
     The function considers at most the first 20 candidates.
@@ -98,6 +105,10 @@ def select_from_candidates(
 
     A hallucinated product is therefore treated as an unsuccessful
     selection and can never reach cart execution.
+
+    With return_quantity=True the result is (candidate_or_None, quantity),
+    where quantity is the number of units the LLM read from the request
+    (needed for the TSR quantity check and the cart update).
     """
 
     if not user_request or not user_request.strip():
@@ -111,7 +122,7 @@ def select_from_candidates(
         )
 
     if not candidates:
-        return None
+        return (None, 1) if return_quantity else None
 
     # Config B is defined over the top-20 TF-IDF results.
     candidates = candidates[:20]
@@ -162,6 +173,9 @@ def select_from_candidates(
         content = response.json()["message"]["content"]
         selection = json.loads(content)
         selected_code = selection["code"]
+        quantity = selection.get("quantity", 1)
+        if isinstance(quantity, bool) or not isinstance(quantity, int) or quantity < 1:
+            quantity = 1
 
     except (
         KeyError,
@@ -174,7 +188,7 @@ def select_from_candidates(
 
     # The model explicitly reports that none qualifies.
     if selected_code is None:
-        return None
+        return (None, quantity) if return_quantity else None
 
     selected_code = str(selected_code)
 
@@ -189,7 +203,5 @@ def select_from_candidates(
     # Treat this as an unsuccessful selection instead of crashing,
     # because experimentally this is equivalent to Config B failing
     # to find an acceptable candidate.
-    if selected_code not in candidate_by_code:
-        return None
-
-    return candidate_by_code[selected_code]
+    chosen = candidate_by_code.get(selected_code)
+    return (chosen, quantity) if return_quantity else chosen
